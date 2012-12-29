@@ -1,0 +1,20 @@
+Fitter Status : Successful - Wed Dec 12 12:49:52 2012
+Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
+Revision Name : clkdiv
+Top-level Entity Name : clkdiv
+Family : Cyclone IV GX
+Device : EP4CGX15BF14C6
+Timing Models : Final
+Total logic elements : 26 / 14,400 ( < 1 % )
+    Total combinational functions : 26 / 14,400 ( < 1 % )
+    Dedicated logic registers : 21 / 14,400 ( < 1 % )
+Total registers : 21
+Total pins : 2 / 81 ( 2 % )
+Total virtual pins : 0
+Total memory bits : 0 / 552,960 ( 0 % )
+Embedded Multiplier 9-bit elements : 0
+Total GXB Receiver Channel PCS : 0 / 2 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 2 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 2 ( 0 % )
+Total PLLs : 0 / 3 ( 0 % )

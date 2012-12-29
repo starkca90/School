@@ -1,0 +1,95 @@
+# Reading C:/altera/12.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do serial_run_msim_rtl_vhdl.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying c:\altera\12.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied c:\altera\12.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vcom -93 -work work {C:/Users/Casey Stark/Desktop/serial/shift_reg.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity shift_reg
+# -- Compiling architecture Behaviour of shift_reg
+# vcom -93 -work work {C:/Users/Casey Stark/Desktop/serial/serial.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity serial
+# -- Compiling architecture Behaviour of serial
+# ** Warning: C:/Users/Casey Stark/Desktop/serial/serial.vhd(106): Cannot associate port "q" of mode BUFFER with port "sum" of mode OUT.
+# vcom -93 -work work {C:/Users/Casey Stark/Desktop/serial/FSM.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package STD_LOGIC_UNSIGNED
+# -- Loading package NUMERIC_STD
+# -- Compiling entity FSM
+# -- Compiling architecture Behaviour of FSM
+# ** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(32): Choice in CASE statement alternative must be locally static.
+# ** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(38): Choice in CASE statement alternative must be locally static.
+# ** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(44): Choice in CASE statement alternative must be locally static.
+# ** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(32): (vcom-1322) Case statement choice cannot be checked for uniqueness.
+# 
+# ** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(38): (vcom-1322) Case statement choice cannot be checked for uniqueness.
+# 
+# ** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(44): (vcom-1322) Case statement choice cannot be checked for uniqueness.
+# 
+# 
+# vcom -93 -work work {C:/Users/Casey Stark/Desktop/serial/serial_tb.vhd}
+# Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Compiling entity serial_tb
+# -- Compiling architecture serial_tb_arch of serial_tb
+# 
+# vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs="+acc"  serial_tb
+# vsim -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs=\"+acc\" -t 1ps serial_tb 
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading work.serial_tb(serial_tb_arch)
+# Loading work.serial(behaviour)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.numeric_std(body)
+# Loading work.fsm(behaviour)
+# Loading work.shift_reg(behaviour)
+# 
+# add wave *
+# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
+# 
+#           File in use by: Casey Stark  Hostname: CASEY-NOTEBOOK7  ProcessID: 7956
+# 
+#           Attempting to use alternate WLF file "./wlftntbt3j".
+# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
+# 
+#           Using alternate file: ./wlftntbt3j
+# 
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run 1200 ps
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /serial_tb/DUT1/my_control
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /serial_tb/DUT1/my_control
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 0  Instance: /serial_tb/DUT1/my_control
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /serial_tb/DUT1/my_control
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /serial_tb/DUT1/my_control
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ps  Iteration: 1  Instance: /serial_tb/DUT1/my_control

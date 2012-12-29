@@ -1,0 +1,151 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\Casey Stark\Desktop\serial\simulation\modelsim
+Efsm
+Z1 w1354659425
+Z2 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z4 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z5 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z6 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z7 dC:\Users\Casey Stark\Desktop\serial\simulation\modelsim
+Z8 8C:/Users/Casey Stark/Desktop/serial/FSM.vhd
+Z9 FC:/Users/Casey Stark/Desktop/serial/FSM.vhd
+l0
+L6
+Vog0YG7MAA13A6lQkzb:[I3
+Z10 OV;C;10.1b;51
+31
+Z11 !s108 1355326468.124000
+Z12 !s90 -reportprogress|300|-93|-work|work|C:/Users/Casey Stark/Desktop/serial/FSM.vhd|
+Z13 !s107 C:/Users/Casey Stark/Desktop/serial/FSM.vhd|
+Z14 o-93 -work work -O0
+Z15 tExplicit 1
+!s100 LAY?>CI3GhoSJjYCCzRkX3
+!i10b 1
+Abehaviour
+R2
+R3
+R4
+R5
+R6
+DEx4 work 3 fsm 0 22 og0YG7MAA13A6lQkzb:[I3
+l27
+L22
+V3_oCQ^cV83NVWX>H[K=_92
+R10
+31
+R11
+R12
+R13
+R14
+R15
+!s100 ^nhDQElkDfMdkR[RbOiD10
+!i10b 1
+Eserial
+Z16 w1354659426
+R5
+R6
+R7
+Z17 8C:/Users/Casey Stark/Desktop/serial/serial.vhd
+Z18 FC:/Users/Casey Stark/Desktop/serial/serial.vhd
+l0
+L9
+VAjm`io^d@Vz;nW01i<<Sn2
+R10
+31
+Z19 !s108 1355326468.035000
+Z20 !s90 -reportprogress|300|-93|-work|work|C:/Users/Casey Stark/Desktop/serial/serial.vhd|
+Z21 !s107 C:/Users/Casey Stark/Desktop/serial/serial.vhd|
+R14
+R15
+!s100 z<TdCOb3PoaRb<g0?0USD0
+!i10b 1
+Abehaviour
+R5
+R6
+DEx4 work 6 serial 0 22 Ajm`io^d@Vz;nW01i<<Sn2
+l74
+L20
+VF<3dXa2G?@<zMmCRL6no11
+R10
+31
+R19
+R20
+R21
+R14
+R15
+!s100 6]UGTg>oQW[j[z5G4WQ=U1
+!i10b 1
+Eserial_tb
+Z22 w1354721047
+R5
+R6
+R7
+Z23 8C:/Users/Casey Stark/Desktop/serial/serial_tb.vhd
+Z24 FC:/Users/Casey Stark/Desktop/serial/serial_tb.vhd
+l0
+L5
+VR99eCo<bIa91a`iad:8H:0
+!s100 30a:5=_Sf?TQ[[OmL7Bz[0
+R10
+31
+!i10b 1
+Z25 !s108 1355326468.236000
+Z26 !s90 -reportprogress|300|-93|-work|work|C:/Users/Casey Stark/Desktop/serial/serial_tb.vhd|
+Z27 !s107 C:/Users/Casey Stark/Desktop/serial/serial_tb.vhd|
+R14
+R15
+Aserial_tb_arch
+R5
+R6
+DEx4 work 9 serial_tb 0 22 R99eCo<bIa91a`iad:8H:0
+l28
+L9
+V`>L=dzoR6X?d6MEQdFWZP3
+!s100 dZI`dIomY8c^^Mj_1Azg_0
+R10
+31
+!i10b 1
+R25
+R26
+R27
+R14
+R15
+Eshift_reg
+Z28 w1354659427
+R5
+R6
+R7
+Z29 8C:/Users/Casey Stark/Desktop/serial/shift_reg.vhd
+Z30 FC:/Users/Casey Stark/Desktop/serial/shift_reg.vhd
+l0
+L4
+VJ7_560D=o>0mzgRTJcigK3
+R10
+31
+Z31 !s108 1355326467.937000
+Z32 !s90 -reportprogress|300|-93|-work|work|C:/Users/Casey Stark/Desktop/serial/shift_reg.vhd|
+Z33 !s107 C:/Users/Casey Stark/Desktop/serial/shift_reg.vhd|
+R14
+R15
+!s100 e9NQC;>WheQHhmDVMEON23
+!i10b 1
+Abehaviour
+R5
+R6
+DEx4 work 9 shift_reg 0 22 J7_560D=o>0mzgRTJcigK3
+l20
+L19
+VW2z?FdhQEEoIzf`cP_WT40
+R10
+31
+R31
+R32
+R33
+R14
+R15
+!s100 UlO0<<G4X6ZEgH702_XnZ3
+!i10b 1

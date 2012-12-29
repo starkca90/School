@@ -1,0 +1,116 @@
+m255
+K3
+13
+cModel Technology
+dC:\altera\12.1\modelsim_ase
+Efsm
+Z0 w1354659425
+Z1 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z6 dC:\Users\Casey Stark\Desktop\serial
+Z7 8C:/Users/Casey Stark/Desktop/serial/FSM.vhd
+Z8 FC:/Users/Casey Stark/Desktop/serial/FSM.vhd
+l0
+L6
+VQ2O9H]aHMCYLO5M]Y?cEE2
+Z9 OV;C;10.1b;51
+32
+Z10 !s108 1354659891.963000
+Z11 !s90 -reportprogress|300|-work|tutorial|-2002|-explicit|C:/Users/Casey Stark/Desktop/serial/FSM.vhd|
+Z12 !s107 C:/Users/Casey Stark/Desktop/serial/FSM.vhd|
+Z13 o-work tutorial -2002 -explicit -O0
+Z14 tExplicit 1
+!s100 LAY?>CI3GhoSJjYCCzRkX3
+!i10b 1
+Abehaviour
+R1
+R2
+R3
+R4
+R5
+DEx4 work 3 fsm 0 22 Q2O9H]aHMCYLO5M]Y?cEE2
+l27
+L22
+V]Ez6lRHDQzaTAVC@L=iFA2
+R9
+32
+R10
+R11
+R12
+R13
+R14
+!s100 ^nhDQElkDfMdkR[RbOiD10
+!i10b 1
+Eserial
+Z15 w1354659426
+R4
+R5
+R6
+Z16 8C:/Users/Casey Stark/Desktop/serial/serial.vhd
+Z17 FC:/Users/Casey Stark/Desktop/serial/serial.vhd
+l0
+L9
+VhB??G7Jg6eA[I[_a03l]82
+R9
+32
+Z18 !s108 1354659891.772000
+Z19 !s90 -reportprogress|300|-work|tutorial|-2002|-explicit|C:/Users/Casey Stark/Desktop/serial/serial.vhd|
+Z20 !s107 C:/Users/Casey Stark/Desktop/serial/serial.vhd|
+R13
+R14
+!s100 z<TdCOb3PoaRb<g0?0USD0
+!i10b 1
+Abehaviour
+R4
+R5
+DEx4 work 6 serial 0 22 hB??G7Jg6eA[I[_a03l]82
+l74
+L20
+V8Pn<8UQLgSJ3_Rl]i4AE:1
+R9
+32
+R18
+R19
+R20
+R13
+R14
+!s100 6]UGTg>oQW[j[z5G4WQ=U1
+!i10b 1
+Eshift_reg
+Z21 w1354659427
+R4
+R5
+R6
+Z22 8C:/Users/Casey Stark/Desktop/serial/shift_reg.vhd
+Z23 FC:/Users/Casey Stark/Desktop/serial/shift_reg.vhd
+l0
+L4
+V0CoSCTcYbcmCaF`4?ZQGo3
+!s100 e9NQC;>WheQHhmDVMEON23
+R9
+32
+!i10b 1
+Z24 !s108 1354659892.209000
+Z25 !s90 -reportprogress|300|-work|tutorial|-2002|-explicit|C:/Users/Casey Stark/Desktop/serial/shift_reg.vhd|
+Z26 !s107 C:/Users/Casey Stark/Desktop/serial/shift_reg.vhd|
+R13
+R14
+Abehaviour
+R4
+R5
+DEx4 work 9 shift_reg 0 22 0CoSCTcYbcmCaF`4?ZQGo3
+l20
+L19
+VlinYDocII9W6dYR2S;eFh0
+!s100 UlO0<<G4X6ZEgH702_XnZ3
+R9
+32
+!i10b 1
+R24
+R25
+R26
+R13
+R14

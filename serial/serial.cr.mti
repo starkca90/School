@@ -1,0 +1,37 @@
+{C:/Users/Casey Stark/Desktop/serial/FSM.vhd} {2 {vcom -work tutorial -2002 -explicit {C:/Users/Casey Stark/Desktop/serial/FSM.vhd}
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity FSM
+-- Compiling architecture Behaviour of FSM
+** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(32): Choice in CASE statement alternative must be locally static.
+** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(38): Choice in CASE statement alternative must be locally static.
+** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(44): Choice in CASE statement alternative must be locally static.
+** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(32): (vcom-1322) Case statement choice cannot be checked for uniqueness.
+
+** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(38): (vcom-1322) Case statement choice cannot be checked for uniqueness.
+
+** Warning: C:/Users/Casey Stark/Desktop/serial/FSM.vhd(44): (vcom-1322) Case statement choice cannot be checked for uniqueness.
+
+
+} {} {}} {C:/Users/Casey Stark/Desktop/serial/shift_reg.vhd} {1 {vcom -work tutorial -2002 -explicit {C:/Users/Casey Stark/Desktop/serial/shift_reg.vhd}
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity shift_reg
+-- Compiling architecture Behaviour of shift_reg
+
+} {} {}} {C:/Users/Casey Stark/Desktop/serial/serial.vhd} {1 {vcom -work tutorial -2002 -explicit {C:/Users/Casey Stark/Desktop/serial/serial.vhd}
+Model Technology ModelSim ALTERA vcom 10.1b Compiler 2012.04 Apr 27 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity serial
+-- Compiling architecture Behaviour of serial
+
+} {} {}}
