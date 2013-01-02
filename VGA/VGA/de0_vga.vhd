@@ -3,17 +3,16 @@ USE ieee.std_logic_1164.all;
 USE ieee.std_logic_arith.all;
 USE ieee.std_logic_unsigned.all;
 
-ENTITY de0_vga IS
+ENTITY de0_vga_controller IS
 	PORT (
 		CLOCK_50 :IN STD_LOGIC := '1';
-		SW :IN STD_LOGIC_VECTOR(9 downto 0);
 		rst_n :IN STD_LOGIC;
-		VGA_R, VGA_G, VGA_B :OUT STD_LOGIC_VECTOR(3 downto 0);
-		VGA_HS, VGA_VS :OUT STD_LOGIC
+		VGA_HS, VGA_VS, vga_on :OUT STD_LOGIC;
+		vga_hcount, vga_vcount :OUT STD_LOGIC_VECTOR(0 to 11)
 	);
-END de0_vga;
+END de0_vga_controller;
 
-ARCHITECTURE rtl OF de0_vga IS
+ARCHITECTURE rtl OF de0_vga_controller IS
 	
 	CONSTANT maximum_h :STD_LOGIC_VECTOR(0 to 11) := X"31F"; -- 799
 	CONSTANT display_h :STD_LOGIC_VECTOR(0 to 11) := X"27F"; -- 639
@@ -29,23 +28,7 @@ ARCHITECTURE rtl OF de0_vga IS
 	SIGNAL h_count, h_count_nxt, v_count, v_count_nxt :STD_LOGIC_VECTOR(0 to 11) := (OTHERS => '0');
 	SIGNAL h_on, v_on, video_on :STD_LOGIC := '0';
 	
-	SIGNAL clk25 :STD_LOGIC := '1';
-	
-	COMPONENT clkdiv
-		PORT
-		(
-			inclk0		: IN STD_LOGIC  := '0';
-			c0		: OUT STD_LOGIC 
-		);
-	END COMPONENT;
-	
 BEGIN
-
-	clkdiv1 : clkdiv
-		PORT MAP(
-			inclk0 => CLOCK_50,
-			c0 => clk25
-		);
  	
  	-- vga_hs ------------------------------------_________---------
  	-- h_count0							639		663		  758	   799
@@ -88,25 +71,23 @@ BEGIN
  	
  	-- Display video only when h_on and v_on are both "ready"
  	video_on <= h_on AND v_on;
+ 	vga_on <= h_on AND v_on;
  	
- 	PROCESS(clk25, rst_n)
+ 	PROCESS(CLOCK_50, rst_n)
  	BEGIN
- 		IF clk25'EVENT AND clk25 = '1' THEN
+ 		IF CLOCK_50'EVENT AND CLOCK_50 = '1' THEN
  			IF rst_n = '0' THEN
  				h_count <= (OTHERS => '0');
  				v_count <= (OTHERS => '0');
+ 				vga_hcount <= (OTHERS => '0');
+ 				vga_vcount <= (OTHERS => '0');
  			ELSE
  				h_count <= h_count_nxt;
  				v_count <= v_count_nxt;
+ 				vga_hcount <= h_count_nxt;
+ 				vga_vcount <= v_count_nxt;
  			END IF;
  		END IF;
  	END PROCESS;
-	
-	VGA_R <=	'1' & SW(8 downto 6) WHEN video_on = '1' ELSE
-				"0000";
-	VGA_G <=	'1' & SW(5 downto 3) WHEN video_on = '1' ELSE
-				"0000";
-	VGA_B <=	'1' & SW(2 downto 0) WHEN video_on = '1' ELSE
-				"0000";
 
 end architecture RTL;
