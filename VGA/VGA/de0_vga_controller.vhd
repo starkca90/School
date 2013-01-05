@@ -7,7 +7,7 @@ ENTITY de0_vga_controller IS
 	PORT (
 		CLOCK_50 :IN STD_LOGIC := '1';
 		rst_n :IN STD_LOGIC;
-		VGA_HS, VGA_VS, vga_on :OUT STD_LOGIC;
+		VGA_HS, VGA_VS, video_on :OUT STD_LOGIC;
 		vga_hcount, vga_vcount :OUT STD_LOGIC_VECTOR(0 to 11)
 	);
 END de0_vga_controller;
@@ -26,7 +26,7 @@ ARCHITECTURE rtl OF de0_vga_controller IS
 	CONSTANT sync_v :STD_LOGIC_VECTOR(0 to 11) := X"1EC"; -- 492
 
 	SIGNAL h_count, h_count_nxt, v_count, v_count_nxt :STD_LOGIC_VECTOR(0 to 11) := (OTHERS => '0');
-	SIGNAL h_on, v_on, video_on :STD_LOGIC := '0';
+	SIGNAL h_on, v_on :STD_LOGIC := '0';
 	
 BEGIN
  	
@@ -71,7 +71,6 @@ BEGIN
  	
  	-- Display video only when h_on and v_on are both "ready"
  	video_on <= h_on AND v_on;
- 	vga_on <= h_on AND v_on;
  	
  	PROCESS(CLOCK_50, rst_n)
  	BEGIN
