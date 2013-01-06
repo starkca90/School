@@ -1,6 +1,6 @@
 Flow report for VGA
-Fri Jan 04 20:41:29 2013
-Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+Sun Jan 06 17:49:14 2013
+Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
 ---------------------
@@ -38,18 +38,18 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Fri Jan 04 20:41:29 2013    ;
-; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
+; Flow Status                        ; Successful - Sun Jan 06 17:49:14 2013    ;
+; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; VGA                                      ;
-; Top-level Entity Name              ; de0_vga_controller                       ;
+; Top-level Entity Name              ; de0_vga_sprite_control_pb                ;
 ; Family                             ; Cyclone III                              ;
 ; Device                             ; EP3C16F484C6                             ;
 ; Timing Models                      ; Final                                    ;
-; Total logic elements               ; 97                                       ;
-;     Total combinational functions  ; 73                                       ;
-;     Dedicated logic registers      ; 48                                       ;
-; Total registers                    ; 48                                       ;
-; Total pins                         ; 29                                       ;
+; Total logic elements               ; 64                                       ;
+;     Total combinational functions  ; 64                                       ;
+;     Dedicated logic registers      ; 0                                        ;
+; Total registers                    ; 0                                        ;
+; Total pins                         ; 23                                       ;
 ; Total virtual pins                 ; 0                                        ;
 ; Total memory bits                  ; 0                                        ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
@@ -62,39 +62,42 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/04/2013 20:41:25 ;
+; Start date & time ; 01/06/2013 17:49:12 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; VGA                 ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                           ;
-+--------------------------------------+-------------------------------+---------------+--------------------+----------------+
-; Assignment Name                      ; Value                         ; Default Value ; Entity Name        ; Section Id     ;
-+--------------------------------------+-------------------------------+---------------+--------------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 1098396781896.135735368503200 ; --            ; --                 ; --             ;
-; EDA_DESIGN_INSTANCE_NAME             ; NA                            ; --            ; --                 ; de0_vga_tb     ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; de0_vga_tb                    ; --            ; --                 ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                          ; --            ; --                 ; eda_simulation ;
-; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)        ; <None>        ; --                 ; --             ;
-; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE               ; --            ; --                 ; eda_simulation ;
-; EDA_TEST_BENCH_FILE                  ; VGA/de0_vga_tb.vhd            ; --            ; --                 ; de0_vga_tb     ;
-; EDA_TEST_BENCH_MODULE_NAME           ; de0_vga_tb                    ; --            ; --                 ; de0_vga_tb     ;
-; EDA_TEST_BENCH_NAME                  ; de0_vga_tb                    ; --            ; --                 ; eda_simulation ;
-; IP_TOOL_NAME                         ; ALTPLL                        ; --            ; --                 ; --             ;
-; IP_TOOL_VERSION                      ; 12.1                          ; --            ; --                 ; --             ;
-; MAX_CORE_JUNCTION_TEMP               ; 85                            ; --            ; --                 ; --             ;
-; MIN_CORE_JUNCTION_TEMP               ; 0                             ; --            ; --                 ; --             ;
-; MISC_FILE                            ; clkdiv.cmp                    ; --            ; --                 ; --             ;
-; MISC_FILE                            ; clkdiv.ppf                    ; --            ; --                 ; --             ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                          ; --            ; --                 ; --             ;
-; PARTITION_COLOR                      ; 16764057                      ; --            ; de0_vga_controller ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING         ; --            ; de0_vga_controller ; Top            ;
-; PARTITION_NETLIST_TYPE               ; SOURCE                        ; --            ; de0_vga_controller ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY             ; output_files                  ; --            ; --                 ; --             ;
-; TOP_LEVEL_ENTITY                     ; de0_vga_controller            ; VGA           ; --                 ; --             ;
-+--------------------------------------+-------------------------------+---------------+--------------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                    ;
++--------------------------------------+---------------------------------+---------------+---------------------------+----------------+
+; Assignment Name                      ; Value                           ; Default Value ; Entity Name               ; Section Id     ;
++--------------------------------------+---------------------------------+---------------+---------------------------+----------------+
+; COMPILER_SIGNATURE_ID                ; 137240371491629.135751615205132 ; --            ; --                        ; --             ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                              ; --            ; --                        ; de0_vga_tb     ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; de0_vga_tb                      ; --            ; --                        ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                            ; --            ; --                        ; eda_simulation ;
+; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (VHDL)          ; <None>        ; --                        ; --             ;
+; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                 ; --            ; --                        ; eda_simulation ;
+; EDA_TEST_BENCH_FILE                  ; VGA/de0_vga_tb.vhd              ; --            ; --                        ; de0_vga_tb     ;
+; EDA_TEST_BENCH_MODULE_NAME           ; de0_vga_tb                      ; --            ; --                        ; de0_vga_tb     ;
+; EDA_TEST_BENCH_NAME                  ; de0_vga_tb                      ; --            ; --                        ; eda_simulation ;
+; IP_TOOL_NAME                         ; ALTPLL                          ; --            ; --                        ; --             ;
+; IP_TOOL_NAME                         ; ROM: 1-PORT                     ; --            ; --                        ; --             ;
+; IP_TOOL_VERSION                      ; 12.1                            ; --            ; --                        ; --             ;
+; IP_TOOL_VERSION                      ; 12.1                            ; --            ; --                        ; --             ;
+; MAX_CORE_JUNCTION_TEMP               ; 85                              ; --            ; --                        ; --             ;
+; MIN_CORE_JUNCTION_TEMP               ; 0                               ; --            ; --                        ; --             ;
+; MISC_FILE                            ; clkdiv.cmp                      ; --            ; --                        ; --             ;
+; MISC_FILE                            ; clkdiv.ppf                      ; --            ; --                        ; --             ;
+; MISC_FILE                            ; sprite.cmp                      ; --            ; --                        ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE          ; 1.2V                            ; --            ; --                        ; --             ;
+; PARTITION_COLOR                      ; 16764057                        ; --            ; de0_vga_sprite_control_pb ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; PLACEMENT_AND_ROUTING           ; --            ; de0_vga_sprite_control_pb ; Top            ;
+; PARTITION_NETLIST_TYPE               ; SOURCE                          ; --            ; de0_vga_sprite_control_pb ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY             ; output_files                    ; --            ; --                        ; --             ;
+; TOP_LEVEL_ENTITY                     ; de0_vga_sprite_control_pb       ; VGA           ; --                        ; --             ;
++--------------------------------------+---------------------------------+---------------+---------------------------+----------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -102,8 +105,8 @@ applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:03     ; 1.0                     ; 469 MB              ; 00:00:02                           ;
-; Total                ; 00:00:03     ; --                      ; --                  ; 00:00:02                           ;
+; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 361 MB              ; 00:00:02                           ;
+; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -112,7 +115,7 @@ applicable agreement for further details.
 +----------------------+------------------+-----------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +----------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis ; CASEY-NOTEBOOK7  ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis ; CaseyStark-PC    ; Windows 7 ; 6.1        ; x86_64         ;
 +----------------------+------------------+-----------+------------+----------------+
 
 

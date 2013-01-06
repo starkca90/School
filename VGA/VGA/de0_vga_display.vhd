@@ -38,7 +38,7 @@ BEGIN
 		q => sprite_data
 	);
 	
-	PROCESS(pixel_clock)
+	PROCESS(pixel_clock,video_on)
 	BEGIN
 		-- Rising Edge of clock and video_on signal controller is on
 		IF pixel_clock'event AND pixel_clock = '1' AND video_on = '1' THEN

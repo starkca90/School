@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Jan 04 20:41:29 2013
-Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
+Analysis & Synthesis Status : Successful - Sun Jan 06 17:49:14 2013
+Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
 Revision Name : VGA
-Top-level Entity Name : de0_vga_controller
+Top-level Entity Name : de0_vga_sprite_control_pb
 Family : Cyclone III
-Total logic elements : 97
-    Total combinational functions : 73
-    Dedicated logic registers : 48
-Total registers : 48
-Total pins : 29
+Total logic elements : 64
+    Total combinational functions : 64
+    Dedicated logic registers : 0
+Total registers : 0
+Total pins : 23
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0
