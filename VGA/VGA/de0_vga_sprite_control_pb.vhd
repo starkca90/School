@@ -25,6 +25,8 @@
 
 library ieee;
 use ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+USE ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
 -- *************************************************************
@@ -32,6 +34,7 @@ use ieee.numeric_std.all;
 -- * - SW9, SW8				: Switch Inputs                    *
 -- * - PB2, PB1				: Push Button Inputs               *
 -- * - rst_n				: Reset sprite to start			   *
+-- * - clock				: clock
 -- * - sprite_x, sprite_y	: Coordinates of sprite			   *
 -- *************************************************************
 
@@ -41,7 +44,7 @@ port
 		SW9, SW8			: in std_logic;
 		PB2, PB1			: in std_logic;
 		rst_n				: in std_logic;
-		sprite_x, sprite_y	: out std_logic_vector(8 downto 0)
+		sprite_x, sprite_y	: out std_logic_vector(9 downto 0)
 	);
 end entity de0_vga_sprite_control_pb;
 
@@ -54,42 +57,48 @@ end entity de0_vga_sprite_control_pb;
 
 architecture RTL of de0_vga_sprite_control_pb is
 
-	constant delta : integer := 10;
+	constant delta : std_logic_vector(9 downto 0) := b"0000001010"; -- 10
 	
-	signal sprite_x_int : integer range 0 to 640 := 320;
-	signal sprite_y_int : integer range 0 to 480 := 240;
+	constant x_start : std_logic_vector(9 downto 0) := b"0101000000"; -- 320
+	constant y_start : std_logic_vector(9 downto 0) := b"0011110000"; -- 240
 	
-begin
+	constant x_max : std_logic_vector(9 downto 0) := b"1010000000"; -- 640
+	constant y_max : std_logic_vector(9 downto 0) := b"0111100000"; -- 480
+	
+	signal sprite_x_reg : std_logic_vector(9 downto 0) := x_start;
+	signal sprite_y_reg : std_logic_vector(9 downto 0) := y_start;
+	
+begin			
 
-	sprite_x <= std_logic_vector(to_unsigned(sprite_x_int, 9));
-	sprite_y <= std_logic_vector(to_unsigned(sprite_y_int, 9));
-
-	process(PB2, PB1, rst_n, SW9, SW8, sprite_x_int, sprite_y_int)
+	process(PB2, PB1, rst_n, SW9, SW8)
 	begin
 		IF rst_n = '0' THEN
-			sprite_x_int <= 320;
-			sprite_y_int <= 240;
+			sprite_x_reg <= x_start;
+			sprite_y_reg <= y_start;
 		ELSIF PB2 = '0' THEN
-			IF SW9 = '1' AND sprite_x_int >= delta THEN
-				sprite_x_int <= sprite_x_int - delta;
-			ELSIF SW9 = '0' AND sprite_x_int <= 640 - delta THEN
-				sprite_x_int <= sprite_x_int + delta;
-			ELSE
-				sprite_x_int <= sprite_x_int;
+			IF SW9 = '1' THEN
+				IF sprite_x_reg >= delta THEN
+					sprite_x_reg <= sprite_x_reg - delta;
+				END IF;
+			ELSIF SW9 = '0' THEN
+				IF sprite_x_reg <= x_max - delta THEN
+					sprite_x_reg <= sprite_x_reg + delta;
+				END IF;
 			END IF;
 		ELSIF PB1 = '0' THEN
-			IF SW8 = '1' AND sprite_y_int >= delta THEN
-				sprite_y_int <= sprite_y_int - delta;
-			ELSIF SW8 = '0' AND sprite_y_int <= 480 - delta THEN
-				sprite_y_int <= sprite_y_int + delta;
-			ELSE
-				sprite_y_int <= sprite_y_int;
+			IF SW8 = '1' THEN 
+				IF sprite_y_reg >= delta THEN
+					sprite_y_reg <= sprite_y_reg - delta;
+				END IF;
+			ELSIF SW8 = '0' THEN 
+				IF sprite_y_reg <= y_max - delta THEN
+					sprite_y_reg <= sprite_y_reg + delta;
+				END IF;
 			END IF;
-		ELSE
-			-- Somehow the process got triggered when it shouldn't have
-			-- Shove sprite to origin to show issue occured
-			sprite_y_int <= 0;
-			sprite_x_int <= 0;
 		END IF;
+		
+		sprite_x <= sprite_x_reg;
+		sprite_y <= sprite_y_reg;
+		
 	end process;
 end architecture RTL;

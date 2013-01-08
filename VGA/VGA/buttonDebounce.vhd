@@ -1,5 +1,32 @@
+-- *************************************************************
+-- * FILENAME:  buttonDebounce                                 *
+-- * AUTHOR:    starkca@msoe.edu                               *
+-- * DATE:      05 January 2013                                *
+-- * PROVIDES:  a VHDL debouncer for a single push button	   *
+-- *			logic came from resource disc from Terasic 	   *
+-- *			DE0 board.									   *
+-- *														   *
+-- *			works by shifting the input signal quite a     *
+-- *			few times, then ouputs the value in the last   *
+-- *			register.									   *
+-- *                                                           *
+-- * HOW-TO USE:                                               *
+-- * - Use with other components that require push button	   *
+-- *	input by attaching hard ware button pin to data_in     *
+-- *	and the resulting signal is from data_out			   *
+-- *                                                           *
+-- *************************************************************
+
 library ieee;
 use ieee.std_logic_1164.all;
+
+-- *************************************************************
+-- * ENTITY DECLARATION                                        *
+-- * - clk		: clock input								   *
+-- * - data_in	: signal to be debounced					   *
+-- * - rst_n	: reset the process							   *
+-- * - data_out	: debounced signal							   *
+-- *************************************************************
 
 entity buttonDebounce is
 	port (
@@ -9,6 +36,14 @@ entity buttonDebounce is
 		data_out :out std_logic
 	);
 end entity buttonDebounce;
+
+-- *************************************************************
+-- * ARCHITECTURE DESCRIPTION                                  *
+-- * - Shift register to debounce a signal.					   *
+-- * - Shifts input to consecutive registers for some time,	   *
+-- *	then outputs the value in the last register after time *
+-- *	has passed.											   *
+-- *************************************************************
 
 architecture RTL of buttonDebounce is
 	constant preset_val : std_logic := '0';
