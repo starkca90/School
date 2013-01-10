@@ -5,11 +5,13 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vcom -93 -work work {C:/Users/Casey Stark/Documents/GitHub/School/VGA/VGA/de0_vga_controller.vhd}
+vlog -vlog01compat -work work +incdir+D:/GitHub/School/VGA/db {D:/GitHub/School/VGA/db/clkdiv_altpll.v}
+vcom -93 -work work {D:/GitHub/School/VGA/VGA/de0_vga_sync_generator.vhd}
+vcom -93 -work work {D:/GitHub/School/VGA/clkdiv.vhd}
 
-vcom -93 -work work {C:/Users/Casey Stark/Documents/GitHub/School/VGA/VGA/de0_vga_tb.vhd}
+vcom -93 -work work {D:/GitHub/School/VGA/VGA/de0_vga_sync_generator_tb.vhd}
 
-vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiii -L rtl_work -L work -voptargs="+acc"  de0_vga_tb
+vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiii -L rtl_work -L work -voptargs="+acc"  de0_vga_sync_generator_tb
 
 add wave *
 view structure

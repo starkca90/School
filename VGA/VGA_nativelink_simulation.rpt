@@ -1,5 +1,5 @@
 Info: Start Nativelink Simulation process
-Info: NativeLink has detected VHDL design -- VHDL simulation models will be used
+Info: NativeLink has detected a mixed Verilog and VHDL design -- vhdl simulation models will be used
 
 ========= EDA Simulation Settings =====================
 

@@ -3,17 +3,16 @@ USE ieee.std_logic_1164.all;
 USE ieee.std_logic_arith.all;
 USE ieee.std_logic_unsigned.all;
 
-ENTITY de0_vga_controller IS
+ENTITY de0_vga_sync_generator IS
 	PORT (
 		CLOCK_50 				:IN STD_LOGIC := '1';
-		VGA_HS, VGA_VS 			:OUT STD_LOGIC;
-		pixel_clock, video_on	:OUT STD_LOGIC;
-		pixel_row, pixel_col 	:OUT STD_LOGIC_VECTOR(9 downto 0);
-		sprite_x, sprite_y		:OUT STD_LOGIC_VECTOR(9 downto 0)
+		VGA_HS, VGA_VS			:OUT STD_LOGIC;
+		video_on				:OUT STD_LOGIC;
+		pixel_row, pixel_col 	:OUT STD_LOGIC_VECTOR(9 downto 0)
 	);
-END de0_vga_controller;
+END de0_vga_sync_generator;
 
-ARCHITECTURE rtl OF de0_vga_controller IS
+ARCHITECTURE rtl OF de0_vga_sync_generator IS
 	
 	CONSTANT maximum_h		:NATURAL := 799;
 	CONSTANT display_h		:NATURAL := 639;
@@ -26,7 +25,7 @@ ARCHITECTURE rtl OF de0_vga_controller IS
 	CONSTANT back_v 		:NATURAL := 490;
 	CONSTANT sync_v 		:NATURAL := 492;
 	
-	SIGNAL pixel_clock_int 		:STD_LOGIC;
+	SIGNAL pixel_clock 		:STD_LOGIC;
 	SIGNAL h_count, h_count_nxt	:STD_LOGIC_VECTOR(9 downto 0) := (OTHERS => '0'); 
 	SIGNAL v_count, v_count_nxt	:STD_LOGIC_VECTOR(9 downto 0) := (OTHERS => '0');
 	SIGNAL h_on, v_on 			:STD_LOGIC := '0';
@@ -44,22 +43,23 @@ BEGIN
 	clkdiv_inst : clkdiv
 	PORT MAP(
 		inclk0 => clock_50,
-		c0 => pixel_clock_int
-	);
-	
-	pixel_clock <= pixel_clock_int;
-	
+		c0 => pixel_clock
+	);	
  	
  	-- vga_hs ------------------------------------_________---------
  	-- h_count0							639		663		  758	   799
  	PROCESS(h_count)
  	BEGIN
+ 		h_on <= '0';
+ 		h_count_nxt <= h_count;
+ 		pixel_col <= h_count;
+ 		
  		IF h_count = maximum_h THEN
  			h_count_nxt <= (OTHERS => '0');
  		ELSE
  			h_count_nxt <= h_count + 1;
  			
- 			 IF h_count_nxt <= display_h THEN
+ 			 IF h_count <= display_h THEN
  				h_on <= '1';
  				pixel_col <= h_count + 1;
  			ELSE
@@ -77,12 +77,16 @@ BEGIN
  	-- v_count 0						479		   490	  492	   522
  	PROCESS(v_count, h_count)
  	BEGIN
+ 		v_on <= '0';
+ 		v_count_nxt <= v_count;
+ 		pixel_row <= v_count;
+ 	
  		IF v_count >= maximum_v AND h_count >= half_sync_h THEN
  			v_count_nxt <= (OTHERS => '0');
  		ELSIF h_count = half_sync_h THEN
  			v_count_nxt <= v_count + 1;
  			
- 			IF v_count_nxt <= display_v THEN
+ 			IF v_count <= display_v THEN
  				v_on <= '1';
  				pixel_row <= v_count + 1;
  			ELSE
@@ -98,9 +102,9 @@ BEGIN
  	-- Display video only when h_on and v_on are both "ready"
  	video_on <= h_on AND v_on;
  	
- 	PROCESS(CLOCK_50)
+ 	PROCESS(pixel_clock)
  	BEGIN
- 		IF CLOCK_50'EVENT AND CLOCK_50 = '1' THEN
+ 		IF rising_edge(pixel_clock) THEN
  			h_count <= h_count_nxt;
  			v_count <= v_count_nxt;
  		END IF;

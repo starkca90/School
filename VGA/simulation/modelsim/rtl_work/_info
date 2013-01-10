@@ -2,78 +2,133 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\Users\Casey Stark\Documents\GitHub\School\VGA\simulation\modelsim
-Ede0_vga_controller
-Z1 w1357349498
-Z2 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
-Z3 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
-Z4 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
-Z5 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z6 dC:\Users\Casey Stark\Documents\GitHub\School\VGA\simulation\modelsim
-Z7 8C:/Users/Casey Stark/Documents/GitHub/School/VGA/VGA/de0_vga_controller.vhd
-Z8 FC:/Users/Casey Stark/Documents/GitHub/School/VGA/VGA/de0_vga_controller.vhd
+Z0 dD:\GitHub\School\VGA\simulation\modelsim
+Eclkdiv
+Z1 w1357247979
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dD:\GitHub\School\VGA\simulation\modelsim
+Z5 8D:/GitHub/School/VGA/clkdiv.vhd
+Z6 FD:/GitHub/School/VGA/clkdiv.vhd
 l0
-L6
-Vi<8ofXM@njAA;=d^TYTB23
-Z9 OV;C;10.1b;51
+L42
+V2<60UFPEel^0[MmZ]eKog2
+Z7 OV;C;10.1b;51
 31
-Z10 !s108 1357353704.561000
-Z11 !s90 -reportprogress|300|-93|-work|work|C:/Users/Casey Stark/Documents/GitHub/School/VGA/VGA/de0_vga_controller.vhd|
-Z12 !s107 C:/Users/Casey Stark/Documents/GitHub/School/VGA/VGA/de0_vga_controller.vhd|
-Z13 o-93 -work work -O0
-Z14 tExplicit 1
-!s100 OX@;Ac;fl2Hm2zdn`j5jX3
+Z8 !s108 1357793577.779000
+Z9 !s90 -reportprogress|300|-93|-work|work|D:/GitHub/School/VGA/clkdiv.vhd|
+Z10 !s107 D:/GitHub/School/VGA/clkdiv.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 ^nRnBzhXE86fIM<6W?3eN0
 !i10b 1
-Artl
+Asyn
 R2
 R3
-R4
-R5
-DEx4 work 18 de0_vga_controller 0 22 i<8ofXM@njAA;=d^TYTB23
-l31
-L15
-VQVo1WHB[1bzB<l7dLoOAf0
-R9
+DEx4 work 6 clkdiv 0 22 2<60UFPEel^0[MmZ]eKog2
+l125
+L51
+V@bEEaollXjS^hl0kB8<[33
+R7
 31
+R8
+R9
 R10
 R11
 R12
-R13
-R14
-!s100 U3@K44f?VdY9AgbjW7J143
+!s100 hDbM7j=jTISbOa9Tl[E<i3
 !i10b 1
-Ede0_vga_tb
-Z15 w1357350081
+vclkdiv_altpll
+Ic94YG:b3iShc3l^]`5ZH^3
+V:zlVT_;WbMH6@AE?U7hcU3
 R4
-R5
-R6
-Z16 8C:/Users/Casey Stark/Documents/GitHub/School/VGA/VGA/de0_vga_tb.vhd
-Z17 FC:/Users/Casey Stark/Documents/GitHub/School/VGA/VGA/de0_vga_tb.vhd
+w1357793565
+8D:/GitHub/School/VGA/db/clkdiv_altpll.v
+FD:/GitHub/School/VGA/db/clkdiv_altpll.v
+L0 29
+Z13 OV;L;10.1b;51
+r1
+31
+o-vlog01compat -work work -O0
+!i10b 1
+!s100 [NBN^4g;T8V46I06M?b2G1
+!s85 0
+!s108 1357793577.553000
+!s107 D:/GitHub/School/VGA/db/clkdiv_altpll.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/GitHub/School/VGA/db|D:/GitHub/School/VGA/db/clkdiv_altpll.v|
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+D:/GitHub/School/VGA/db -O0
+Ede0_vga_sync_generator
+Z14 w1357791660
+Z15 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z16 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+R2
+R3
+R4
+Z17 8D:/GitHub/School/VGA/VGA/de0_vga_sync_generator.vhd
+Z18 FD:/GitHub/School/VGA/VGA/de0_vga_sync_generator.vhd
 l0
-L4
-VeBLM@QkVADF5>3Fb_OkjZ1
-!s100 agi4YC:idj:@=_OOU_iel2
-R9
+L6
+Vma=cMklP@Jh>kUk]A5c`_3
+R7
 31
+Z19 !s108 1357793577.678000
+Z20 !s90 -reportprogress|300|-93|-work|work|D:/GitHub/School/VGA/VGA/de0_vga_sync_generator.vhd|
+Z21 !s107 D:/GitHub/School/VGA/VGA/de0_vga_sync_generator.vhd|
+R11
+R12
+!s100 KS_?[^5`9h1@G@7@`CcOh3
 !i10b 1
-Z18 !s108 1357353704.672000
-Z19 !s90 -reportprogress|300|-93|-work|work|C:/Users/Casey Stark/Documents/GitHub/School/VGA/VGA/de0_vga_tb.vhd|
-Z20 !s107 C:/Users/Casey Stark/Documents/GitHub/School/VGA/VGA/de0_vga_tb.vhd|
-R13
-R14
-Ade0_vga_tb_arch
-R4
-R5
-DEx4 work 10 de0_vga_tb 0 22 eBLM@QkVADF5>3Fb_OkjZ1
-l20
-L7
-V]Vl60_AhRhYR`1^Y^DSEm3
-!s100 mcl`f_9;hTG?D@>FCmD]62
-R9
+Artl
+R15
+R16
+R2
+R3
+DEx4 work 22 de0_vga_sync_generator 0 22 ma=cMklP@Jh>kUk]A5c`_3
+l41
+L15
+VEYF5]oA^NSO<n4U_Flh^V2
+R7
 31
-!i10b 1
-R18
 R19
 R20
-R13
-R14
+R21
+R11
+R12
+!s100 I@F;d<17XIWbLg59RTVT43
+!i10b 1
+Ede0_vga_sync_generator_tb
+Z22 w1357793228
+R2
+R3
+R4
+Z23 8D:/GitHub/School/VGA/VGA/de0_vga_sync_generator_tb.vhd
+Z24 FD:/GitHub/School/VGA/VGA/de0_vga_sync_generator_tb.vhd
+l0
+L4
+V_m`R2gGm^;eF65ib07@P<1
+!s100 48oYPHo:coC^D`;_XZVZY3
+R7
+31
+!i10b 1
+Z25 !s108 1357793577.883000
+Z26 !s90 -reportprogress|300|-93|-work|work|D:/GitHub/School/VGA/VGA/de0_vga_sync_generator_tb.vhd|
+Z27 !s107 D:/GitHub/School/VGA/VGA/de0_vga_sync_generator_tb.vhd|
+R11
+R12
+Ade0_vga_sync_generator_tb_arch
+R2
+R3
+DEx4 work 25 de0_vga_sync_generator_tb 0 22 _m`R2gGm^;eF65ib07@P<1
+l20
+L7
+VOH32<>?1>laie`1MQ^d7K3
+!s100 zWdH_]3<oh?Vd=SNIi]4U0
+R7
+31
+!i10b 1
+R25
+R26
+R27
+R11
+R12

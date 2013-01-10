@@ -1,0 +1,5 @@
+PLL_Name	de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|pll1
+PLLJITTER	30
+PLLSPEmax	84
+PLLSPEmin	-53
+

@@ -7,9 +7,9 @@ ENTITY de0_vga_display IS
 	PORT(
 		pixel_col, pixel_row 	:IN STD_LOGIC_VECTOR(9 downto 0);
 		sprite_x, sprite_y		:IN STD_LOGIC_VECTOR(9 downto 0);
-		red, green, blue		:IN STD_LOGIC_VECTOR(3 downto 0);
-		video_on, pixel_clock 	:IN std_logic;
-		VGA_R, VGA_B, VGA_G 	:OUT std_logic_vector(3 downto 0)	
+		red, green, blue		:IN STD_LOGIC_VECTOR(3 downto 0); -- Switches
+		video_on, clock		 	:IN std_logic;
+		R_VGA, B_VGA, G_VGA 	:OUT std_logic_vector(3 downto 0)	
 	);
 END de0_vga_display;
 
@@ -18,6 +18,9 @@ ARCHITECTURE rtl of de0_vga_display IS
 	SIGNAL sprite_count :std_logic_vector(7 downto 0) := (OTHERS => '0');
 	-- Connection for ROM to hold the current rows sprite data
 	SIGNAL sprite_data :std_logic_vector(15 downto 0) := (OTHERS => '0');
+	
+	-- Divided Clock
+	SIGNAL pixel_clock :std_logic := '1';
 	
 	-- Sprite ROM component
 	COMPONENT sprite IS
@@ -29,34 +32,48 @@ ARCHITECTURE rtl of de0_vga_display IS
 	);
 	END COMPONENT sprite;
 	
+	COMPONENT clkdiv IS
+	PORT
+	(
+		inclk0	: IN STD_LOGIC  := '0';
+		c0		: OUT STD_LOGIC 
+	);
+	END COMPONENT clkdiv;
+	
 BEGIN
 
 	spriterom :sprite
-	PORT MAP(
-		address => sprite_count(7 downto 4),
-		clock => pixel_clock,
-		q => sprite_data
+		PORT MAP (
+			address => sprite_count(7 downto 4),
+			clock => clock,
+			q => sprite_data
+		);
+		
+	clockDiv : clkdiv
+		PORT MAP (
+		inclk0 => clock,
+		c0 => pixel_clock
 	);
 	
 	PROCESS(pixel_clock,video_on)
 	BEGIN
 		-- Rising Edge of clock and video_on signal controller is on
-		IF pixel_clock'event AND pixel_clock = '1' AND video_on = '1' THEN
+		IF rising_edge(pixel_clock) AND video_on = '1' THEN
 			-- Current pixel is withing the rows of the sprite
 			IF pixel_row >= sprite_y AND pixel_row <= sprite_y + 16 THEN
 				-- Current pixel is within the columns of the sprite
 				IF pixel_col >= sprite_x AND pixel_col <= sprite_x + 16 THEN
 					-- Get the sprite data for that row from the ROM and make it red
-					VGA_R <= sprite_data(CONV_INTEGER(sprite_count(3 downto 0))) & '1' & '1' & '1';
+					R_VGA <= sprite_data(CONV_INTEGER(sprite_count(3 downto 0))) & '1' & '1' & '1';
 					-- Increment the counter
 					sprite_count <= sprite_count + 1;
 				END IF;	
 			-- Not in the rows of the sprite
 			ELSE
 				-- Output the background color
-				VGA_R <= red;
-				VGA_G <= green;
-				VGA_B <= blue;
+				R_VGA <= red;
+				G_VGA <= green;
+				B_VGA <= blue;
 			END IF;
 		END IF;
 	END PROCESS;

@@ -58,7 +58,7 @@ begin
 
 	PROCESS(clk, rst_n)
 	BEGIN
-		IF clk'event AND clk = '1' THEN
+		IF rising_edge(clk) THEN
 			IF rst_n = '0' THEN
 				data_out <= preset_val;
 				counter <= counter_max;
