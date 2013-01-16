@@ -1,5 +1,5 @@
 Analysis & Synthesis report for VGA
-Wed Jan 09 23:58:46 2013
+Thu Jan 10 12:01:30 2013
 Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -13,21 +13,25 @@ Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis IP Cores Summary
-  9. Registers Removed During Synthesis
- 10. Removed Registers Triggering Further Register Optimizations
- 11. General Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Source assignments for de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated
- 14. Parameter Settings for User Entity Instance: de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component
- 15. Parameter Settings for User Entity Instance: de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component
- 16. Parameter Settings for User Entity Instance: de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component
- 17. altsyncram Parameter Settings by Entity Instance
- 18. altpll Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "buttonDebounce:debounce1"
- 20. Port Connectivity Checks: "buttonDebounce:debounce2"
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated
+ 17. Parameter Settings for User Entity Instance: de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component
+ 18. Parameter Settings for User Entity Instance: de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component
+ 19. Parameter Settings for User Entity Instance: de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. altpll Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "colors:color"
+ 23. Port Connectivity Checks: "buttonDebounce:debounce1"
+ 24. Port Connectivity Checks: "buttonDebounce:debounce2"
+ 25. Elapsed Time Per Partition
+ 26. Analysis & Synthesis Messages
 
 
 
@@ -53,20 +57,20 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jan 09 23:58:46 2013    ;
+; Analysis & Synthesis Status        ; Successful - Thu Jan 10 12:01:30 2013    ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; VGA                                      ;
 ; Top-level Entity Name              ; VGA                                      ;
 ; Family                             ; Cyclone III                              ;
-; Total logic elements               ; 52                                       ;
-;     Total combinational functions  ; 52                                       ;
-;     Dedicated logic registers      ; 20                                       ;
-; Total registers                    ; 20                                       ;
-; Total pins                         ; 38                                       ;
+; Total logic elements               ; 222                                      ;
+;     Total combinational functions  ; 199                                      ;
+;     Dedicated logic registers      ; 91                                       ;
+; Total registers                    ; 91                                       ;
+; Total pins                         ; 28                                       ;
 ; Total virtual pins                 ; 0                                        ;
-; Total memory bits                  ; 0                                        ;
+; Total memory bits                  ; 256                                      ;
 ; Embedded Multiplier 9-bit elements ; 0                                        ;
-; Total PLLs                         ; 1                                        ;
+; Total PLLs                         ; 2                                        ;
 +------------------------------------+------------------------------------------+
 
 
@@ -205,45 +209,65 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 52    ;
+; Estimated Total logic elements              ; 222   ;
 ;                                             ;       ;
-; Total combinational functions               ; 52    ;
+; Total combinational functions               ; 199   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 26    ;
-;     -- 3 input functions                    ; 1     ;
-;     -- <=2 input functions                  ; 25    ;
+;     -- 4 input functions                    ; 80    ;
+;     -- 3 input functions                    ; 28    ;
+;     -- <=2 input functions                  ; 91    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 34    ;
-;     -- arithmetic mode                      ; 18    ;
+;     -- normal mode                          ; 132   ;
+;     -- arithmetic mode                      ; 67    ;
 ;                                             ;       ;
-; Total registers                             ; 20    ;
-;     -- Dedicated logic registers            ; 20    ;
+; Total registers                             ; 91    ;
+;     -- Dedicated logic registers            ; 91    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
-; I/O pins                                    ; 38    ;
+; I/O pins                                    ; 28    ;
+; Total memory bits                           ; 256   ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
-; Total PLLs                                  ; 1     ;
-;     -- PLLs                                 ; 1     ;
+; Total PLLs                                  ; 2     ;
+;     -- PLLs                                 ; 2     ;
 ;                                             ;       ;
-; Maximum fan-out                             ; 21    ;
-; Total fan-out                               ; 251   ;
-; Average fan-out                             ; 1.68  ;
+; Maximum fan-out                             ; 57    ;
+; Total fan-out                               ; 924   ;
+; Average fan-out                             ; 2.54  ;
 +---------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                   ;
-+--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                 ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Library Name ;
-+--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
-; |VGA                                       ; 52 (0)            ; 20 (0)       ; 0           ; 0            ; 0       ; 0         ; 38   ; 0            ; |VGA                                                                                                          ;              ;
-;    |de0_vga_sync_generator:generator|      ; 52 (52)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator                                                                         ;              ;
-;       |clkdiv:clkdiv_inst|                 ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst                                                      ;              ;
-;          |altpll:altpll_component|         ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component                              ;              ;
-;             |clkdiv_altpll:auto_generated| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated ;              ;
-+--------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                     ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Library Name ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
+; |VGA                                         ; 199 (0)           ; 91 (0)       ; 256         ; 0            ; 0       ; 0         ; 28   ; 0            ; |VGA                                                                                                          ;              ;
+;    |buttonDebounce:debounce1|                ; 28 (28)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|buttonDebounce:debounce1                                                                                 ;              ;
+;    |buttonDebounce:debounce2|                ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|buttonDebounce:debounce2                                                                                 ;              ;
+;    |de0_vga_display:display|                 ; 76 (76)           ; 20 (20)      ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display                                                                                  ;              ;
+;       |clkdiv:clockDiv|                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|clkdiv:clockDiv                                                                  ;              ;
+;          |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component                                          ;              ;
+;             |clkdiv_altpll:auto_generated|   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component|clkdiv_altpll:auto_generated             ;              ;
+;       |sprite:spriterom|                     ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|sprite:spriterom                                                                 ;              ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component                                 ;              ;
+;             |altsyncram_vi91:auto_generated| ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated  ;              ;
+;    |de0_vga_sprite_control_pb:sprite|        ; 24 (24)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sprite_control_pb:sprite                                                                         ;              ;
+;    |de0_vga_sync_generator:generator|        ; 65 (65)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator                                                                         ;              ;
+;       |clkdiv:clkdiv_inst|                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst                                                      ;              ;
+;          |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component                              ;              ;
+;             |clkdiv_altpll:auto_generated|   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated ;              ;
++----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                              ;
++--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------+
+; Name                                                                                                               ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF     ;
++--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------+
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 16           ; 16           ; --           ; --           ; 256  ; VGA.mif ;
++--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -257,88 +281,58 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------------------------------------------+---------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                     ;
-+-----------------------------------------------------+--------------------------------------------------+
-; Register name                                       ; Reason for Removal                               ;
-+-----------------------------------------------------+--------------------------------------------------+
-; buttonDebounce:debounce2|counter[0]                 ; Merged with buttonDebounce:debounce1|counter[0]  ;
-; buttonDebounce:debounce2|counter[1]                 ; Merged with buttonDebounce:debounce1|counter[1]  ;
-; buttonDebounce:debounce2|counter[2]                 ; Merged with buttonDebounce:debounce1|counter[2]  ;
-; buttonDebounce:debounce2|counter[3]                 ; Merged with buttonDebounce:debounce1|counter[3]  ;
-; buttonDebounce:debounce2|counter[4]                 ; Merged with buttonDebounce:debounce1|counter[4]  ;
-; buttonDebounce:debounce2|counter[5]                 ; Merged with buttonDebounce:debounce1|counter[5]  ;
-; buttonDebounce:debounce2|counter[6]                 ; Merged with buttonDebounce:debounce1|counter[6]  ;
-; buttonDebounce:debounce2|counter[7]                 ; Merged with buttonDebounce:debounce1|counter[7]  ;
-; buttonDebounce:debounce2|counter[8]                 ; Merged with buttonDebounce:debounce1|counter[8]  ;
-; buttonDebounce:debounce2|counter[9]                 ; Merged with buttonDebounce:debounce1|counter[9]  ;
-; buttonDebounce:debounce2|counter[10]                ; Merged with buttonDebounce:debounce1|counter[10] ;
-; buttonDebounce:debounce2|counter[11]                ; Merged with buttonDebounce:debounce1|counter[11] ;
-; buttonDebounce:debounce2|counter[12]                ; Merged with buttonDebounce:debounce1|counter[12] ;
-; buttonDebounce:debounce2|counter[13]                ; Merged with buttonDebounce:debounce1|counter[13] ;
-; buttonDebounce:debounce2|counter[14]                ; Merged with buttonDebounce:debounce1|counter[14] ;
-; buttonDebounce:debounce2|counter[15]                ; Merged with buttonDebounce:debounce1|counter[15] ;
-; buttonDebounce:debounce2|counter[16]                ; Merged with buttonDebounce:debounce1|counter[16] ;
-; de0_vga_display:display|R_VGA[0..2]                 ; Stuck at GND due to stuck port data_in           ;
-; de0_vga_display:display|R_VGA[3]                    ; Stuck at GND due to stuck port clock_enable      ;
-; de0_vga_display:display|B_VGA[0..3]                 ; Stuck at GND due to stuck port clock_enable      ;
-; de0_vga_display:display|G_VGA[0..3]                 ; Stuck at GND due to stuck port clock_enable      ;
-; de0_vga_display:display|sprite_count[0..7]          ; Stuck at GND due to stuck port clock_enable      ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_reg[0..9] ; Lost fanout                                      ;
-; de0_vga_sprite_control_pb:sprite|sprite_x_reg[0..9] ; Lost fanout                                      ;
-; buttonDebounce:debounce2|data_out                   ; Lost fanout                                      ;
-; buttonDebounce:debounce1|data_out                   ; Lost fanout                                      ;
-; buttonDebounce:debounce2|data_in_3                  ; Lost fanout                                      ;
-; buttonDebounce:debounce1|counter[0..16]             ; Lost fanout                                      ;
-; buttonDebounce:debounce1|data_in_3                  ; Lost fanout                                      ;
-; buttonDebounce:debounce2|data_in_2                  ; Lost fanout                                      ;
-; buttonDebounce:debounce1|data_in_2                  ; Lost fanout                                      ;
-; buttonDebounce:debounce2|data_in_1                  ; Lost fanout                                      ;
-; buttonDebounce:debounce1|data_in_1                  ; Lost fanout                                      ;
-; buttonDebounce:debounce2|data_in_0                  ; Lost fanout                                      ;
-; buttonDebounce:debounce1|data_in_0                  ; Lost fanout                                      ;
-; Total Number of Removed Registers = 84              ;                                                  ;
-+-----------------------------------------------------+--------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                         ;
++----------------------------------------------------+-----------------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                           ; Free of Timing Hazards ;
++----------------------------------------------------+-----------------------------------------------+------------------------+
+; de0_vga_sync_generator:generator|h_on              ; de0_vga_sync_generator:generator|Equal0       ; yes                    ;
+; de0_vga_sync_generator:generator|v_on              ; de0_vga_sync_generator:generator|pixel_row[9] ; yes                    ;
+; Number of user-specified and inferred latches = 2  ;                                               ;                        ;
++----------------------------------------------------+-----------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                           ;
-+--------------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------+
-; Register name                                    ; Reason for Removal             ; Registers Removed due to This Register                                            ;
-+--------------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------+
-; de0_vga_sprite_control_pb:sprite|sprite_y_reg[9] ; Lost Fanouts                   ; de0_vga_sprite_control_pb:sprite|sprite_y_reg[8],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_y_reg[7],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_y_reg[6],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_y_reg[5],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_y_reg[3],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_y_reg[2],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_y_reg[1],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_y_reg[0],                                 ;
-;                                                  ;                                ; buttonDebounce:debounce2|data_out, buttonDebounce:debounce2|data_in_3,            ;
-;                                                  ;                                ; buttonDebounce:debounce1|counter[0], buttonDebounce:debounce1|counter[1],         ;
-;                                                  ;                                ; buttonDebounce:debounce1|counter[2], buttonDebounce:debounce1|counter[3],         ;
-;                                                  ;                                ; buttonDebounce:debounce1|counter[4], buttonDebounce:debounce1|counter[5],         ;
-;                                                  ;                                ; buttonDebounce:debounce1|counter[6], buttonDebounce:debounce1|counter[7],         ;
-;                                                  ;                                ; buttonDebounce:debounce1|counter[8], buttonDebounce:debounce1|counter[9],         ;
-;                                                  ;                                ; buttonDebounce:debounce1|counter[10], buttonDebounce:debounce1|counter[11],       ;
-;                                                  ;                                ; buttonDebounce:debounce1|counter[12], buttonDebounce:debounce1|counter[13],       ;
-;                                                  ;                                ; buttonDebounce:debounce1|counter[14], buttonDebounce:debounce1|counter[15],       ;
-;                                                  ;                                ; buttonDebounce:debounce1|counter[16], buttonDebounce:debounce2|data_in_2,         ;
-;                                                  ;                                ; buttonDebounce:debounce2|data_in_1, buttonDebounce:debounce2|data_in_0            ;
-; de0_vga_sprite_control_pb:sprite|sprite_x_reg[9] ; Lost Fanouts                   ; de0_vga_sprite_control_pb:sprite|sprite_x_reg[8],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_x_reg[7],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_x_reg[6],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_x_reg[5],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_x_reg[3],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_x_reg[2],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_x_reg[1],                                 ;
-;                                                  ;                                ; de0_vga_sprite_control_pb:sprite|sprite_x_reg[0],                                 ;
-;                                                  ;                                ; buttonDebounce:debounce1|data_out, buttonDebounce:debounce1|data_in_3,            ;
-;                                                  ;                                ; buttonDebounce:debounce1|data_in_2, buttonDebounce:debounce1|data_in_1,           ;
-;                                                  ;                                ; buttonDebounce:debounce1|data_in_0                                                ;
-; de0_vga_display:display|sprite_count[0]          ; Stuck at GND                   ; de0_vga_display:display|sprite_count[4], de0_vga_display:display|sprite_count[5], ;
-;                                                  ; due to stuck port clock_enable ; de0_vga_display:display|sprite_count[6], de0_vga_display:display|sprite_count[7]  ;
-+--------------------------------------------------+--------------------------------+-----------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                 ;
++-----------------------------------------------------+--------------------------------------------------------------+
+; Register name                                       ; Reason for Removal                                           ;
++-----------------------------------------------------+--------------------------------------------------------------+
+; buttonDebounce:debounce2|counter[0]                 ; Merged with buttonDebounce:debounce1|counter[0]              ;
+; buttonDebounce:debounce2|counter[1]                 ; Merged with buttonDebounce:debounce1|counter[1]              ;
+; buttonDebounce:debounce2|counter[2]                 ; Merged with buttonDebounce:debounce1|counter[2]              ;
+; buttonDebounce:debounce2|counter[3]                 ; Merged with buttonDebounce:debounce1|counter[3]              ;
+; buttonDebounce:debounce2|counter[4]                 ; Merged with buttonDebounce:debounce1|counter[4]              ;
+; buttonDebounce:debounce2|counter[5]                 ; Merged with buttonDebounce:debounce1|counter[5]              ;
+; buttonDebounce:debounce2|counter[6]                 ; Merged with buttonDebounce:debounce1|counter[6]              ;
+; buttonDebounce:debounce2|counter[7]                 ; Merged with buttonDebounce:debounce1|counter[7]              ;
+; buttonDebounce:debounce2|counter[8]                 ; Merged with buttonDebounce:debounce1|counter[8]              ;
+; buttonDebounce:debounce2|counter[9]                 ; Merged with buttonDebounce:debounce1|counter[9]              ;
+; buttonDebounce:debounce2|counter[10]                ; Merged with buttonDebounce:debounce1|counter[10]             ;
+; buttonDebounce:debounce2|counter[11]                ; Merged with buttonDebounce:debounce1|counter[11]             ;
+; buttonDebounce:debounce2|counter[12]                ; Merged with buttonDebounce:debounce1|counter[12]             ;
+; buttonDebounce:debounce2|counter[13]                ; Merged with buttonDebounce:debounce1|counter[13]             ;
+; buttonDebounce:debounce2|counter[14]                ; Merged with buttonDebounce:debounce1|counter[14]             ;
+; buttonDebounce:debounce2|counter[15]                ; Merged with buttonDebounce:debounce1|counter[15]             ;
+; buttonDebounce:debounce2|counter[16]                ; Merged with buttonDebounce:debounce1|counter[16]             ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[1..4] ; Merged with de0_vga_sprite_control_pb:sprite|sprite_x_reg[0] ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[1..3] ; Merged with de0_vga_sprite_control_pb:sprite|sprite_y_reg[0] ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[1..4] ; Merged with de0_vga_sprite_control_pb:sprite|sprite_x_nxt[0] ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[1..3] ; Merged with de0_vga_sprite_control_pb:sprite|sprite_y_nxt[0] ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[0]    ; Stuck at GND due to stuck port data_in                       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[0]    ; Stuck at GND due to stuck port data_in                       ;
+; Total Number of Removed Registers = 33              ;                                                              ;
++-----------------------------------------------------+--------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                     ;
++--------------------------------------------------+---------------------------+--------------------------------------------------+
+; Register name                                    ; Reason for Removal        ; Registers Removed due to This Register           ;
++--------------------------------------------------+---------------------------+--------------------------------------------------+
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[0] ; Stuck at GND              ; de0_vga_sprite_control_pb:sprite|sprite_y_reg[0] ;
+;                                                  ; due to stuck port data_in ;                                                  ;
++--------------------------------------------------+---------------------------+--------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -346,14 +340,35 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 20    ;
+; Total registers                              ; 91    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 12    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 4     ;
+; Number of registers using Clock Enable       ; 28    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Inverted Register Statistics                               ;
++--------------------------------------------------+---------+
+; Inverted Register                                ; Fan out ;
++--------------------------------------------------+---------+
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[8] ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[6] ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[7] ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[6] ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[5] ; 4       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[4] ; 4       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[8] ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[6] ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[7] ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[6] ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[5] ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[4] ; 2       ;
+; Total number of inverted registers = 12          ;         ;
++--------------------------------------------------+---------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -361,14 +376,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGA|de0_vga_sync_generator:generator|v_count[8]      ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VGA|de0_vga_display:display|R_VGA[0]                 ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_x_reg[0] ;
-; 4:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_y_reg[9] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_x_reg[6] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_y_reg[4] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |VGA|de0_vga_sync_generator:generator|pixel_col[8]    ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |VGA|de0_vga_sync_generator:generator|pixel_row[9]    ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGA|de0_vga_sync_generator:generator|v_count[3]      ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_y_nxt[9] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_x_nxt[5] ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_y_nxt[7] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_x_nxt[6] ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |VGA|de0_vga_sync_generator:generator|pixel_row[8]    ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |VGA|de0_vga_sync_generator:generator|pixel_col[1]    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
 
 
@@ -1235,6 +1249,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+-----------------------------------------------------------------------------+
 
 
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "colors:color"                                                                        ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; red   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; green ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; blue  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +------------------------------------------------------+
 ; Port Connectivity Checks: "buttonDebounce:debounce1" ;
 +-------+-------+----------+---------------------------+
@@ -1258,7 +1283,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -1268,7 +1293,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Wed Jan 09 23:58:43 2013
+    Info: Processing started: Thu Jan 10 12:01:27 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA -c VGA
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file vga/colors.vhd
@@ -1308,6 +1333,9 @@ Info (12021): Found 2 design units, including 1 entities, in source file sprite.
     Info (12022): Found design unit 1: sprite-SYN
     Info (12023): Found entity 1: sprite
 Info (12127): Elaborating entity "VGA" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at VGA.vhd(65): object "red_sig" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VGA.vhd(65): object "green_sig" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at VGA.vhd(65): object "blue_sig" assigned a value but never read
 Info (12128): Elaborating entity "de0_vga_display" for hierarchy "de0_vga_display:display"
 Info (12128): Elaborating entity "sprite" for hierarchy "de0_vga_display:display|sprite:spriterom"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component"
@@ -1392,59 +1420,31 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/clkd
     Info (12023): Found entity 1: clkdiv_altpll
 Info (12128): Elaborating entity "clkdiv_altpll" for hierarchy "de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component|clkdiv_altpll:auto_generated"
 Info (12128): Elaborating entity "de0_vga_sync_generator" for hierarchy "de0_vga_sync_generator:generator"
+Warning (10631): VHDL Process Statement warning at de0_vga_sync_generator.vhd(51): inferring latch(es) for signal or variable "h_on", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at de0_vga_sync_generator.vhd(78): inferring latch(es) for signal or variable "v_on", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "v_on" at de0_vga_sync_generator.vhd(78)
+Info (10041): Inferred latch for "h_on" at de0_vga_sync_generator.vhd(51)
 Info (12128): Elaborating entity "de0_vga_sprite_control_pb" for hierarchy "de0_vga_sprite_control_pb:sprite"
 Info (12128): Elaborating entity "buttonDebounce" for hierarchy "buttonDebounce:debounce2"
 Info (12128): Elaborating entity "colors" for hierarchy "colors:color"
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following PLL node(s):
-        Warning (14320): Synthesized away node "de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component|clkdiv_altpll:auto_generated|wire_pll1_clk[0]"
-Warning (14284): Synthesized away the following node(s):
-    Warning (14285): Synthesized away the following RAM node(s):
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[15]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[14]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[13]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[12]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[11]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[10]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[9]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[8]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[7]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[6]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[5]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[4]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[3]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[2]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[1]"
-        Warning (14320): Synthesized away node "de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[0]"
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_R[0]" is stuck at GND
-    Warning (13410): Pin "VGA_R[1]" is stuck at GND
-    Warning (13410): Pin "VGA_R[2]" is stuck at GND
-    Warning (13410): Pin "VGA_R[3]" is stuck at GND
-    Warning (13410): Pin "VGA_B[0]" is stuck at GND
-    Warning (13410): Pin "VGA_B[1]" is stuck at GND
-    Warning (13410): Pin "VGA_B[2]" is stuck at GND
-    Warning (13410): Pin "VGA_B[3]" is stuck at GND
-    Warning (13410): Pin "VGA_G[0]" is stuck at GND
-    Warning (13410): Pin "VGA_G[1]" is stuck at GND
-    Warning (13410): Pin "VGA_G[2]" is stuck at GND
-    Warning (13410): Pin "VGA_G[3]" is stuck at GND
+Warning (13012): Latch de0_vga_sync_generator:generator|h_on has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal de0_vga_sync_generator:generator|h_count[9]
+Warning (13012): Latch de0_vga_sync_generator:generator|v_on has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal de0_vga_sync_generator:generator|v_count[9]
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 47 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]"
-    Warning (15610): No output dependent on input pin "KEY[2]"
-    Warning (15610): No output dependent on input pin "KEY[1]"
-Info (21057): Implemented 91 device resources after synthesis - the final resource count might be different
+    Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 275 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
-    Info (21059): Implemented 24 output pins
-    Info (21061): Implemented 52 logic cells
-    Info (21065): Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 39 warnings
-    Info: Peak virtual memory: 493 megabytes
-    Info: Processing ended: Wed Jan 09 23:58:46 2013
+    Info (21059): Implemented 14 output pins
+    Info (21061): Implemented 229 logic cells
+    Info (21064): Implemented 16 RAM segments
+    Info (21065): Implemented 2 PLLs
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 494 megabytes
+    Info: Processing ended: Thu Jan 10 12:01:30 2013
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 

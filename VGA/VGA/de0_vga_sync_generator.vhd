@@ -1,7 +1,29 @@
+-- *************************************************************
+-- * FILENAME:  de0_vga_sync_generator.vhd	                  *
+-- * AUTHOR:    starkca@msoe.edu                               *
+-- * DATE:      06 January 2013                                *
+-- * PROVIDES:  a VHDL VGA sync/signal generation component		*
+-- *					Generates signals to be used for 640x480 		*
+-- *					60Hz resolution.									   *
+-- *                                                           *
+-- * HOW-TO USE:                                               *
+-- * - use this component in other entities to control the 	   *
+-- *	generation of required VGA signals								*
+-- * 																				*
+-- *************************************************************
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.std_logic_arith.all;
 USE ieee.std_logic_unsigned.all;
+
+-- *************************************************************
+-- * ENTITY DECLARATION                                        *
+-- * - CLOCK_50		: System Clock_50									*
+-- * - VGA_HS, VGA_VS: VGA Horizontal and vertical sync pulses *
+-- * - video_on		: Can colors be displayed						*
+-- * - pixel_row/col : Current pixel that can be displayed		*
+-- *************************************************************
 
 ENTITY de0_vga_sync_generator IS
 	PORT (
@@ -50,7 +72,7 @@ BEGIN
  	-- h_count0							639		663		  758	   799
  	PROCESS(h_count)
  	BEGIN
- 		h_on <= '0';
+ 		--h_on <= '0';
  		h_count_nxt <= h_count;
  		pixel_col <= h_count;
  		
@@ -70,18 +92,18 @@ BEGIN
  	END PROCESS;
  	
  	-- Generate h_sync using h_count
- 	VGA_HS <= 	'0'  WHEN h_count <= sync_h AND h_count >= back_h ELSE
+ 	VGA_HS <= 	'0'  WHEN (h_count <= sync_h) AND (h_count >= back_h) ELSE
  				'1';
  	
  	-- vga_vs  --------------------------------------______---------
  	-- v_count 0						479		   490	  492	   522
  	PROCESS(v_count, h_count)
  	BEGIN
- 		v_on <= '0';
+ 		--v_on <= '0';
  		v_count_nxt <= v_count;
  		pixel_row <= v_count;
  	
- 		IF v_count >= maximum_v AND h_count >= half_sync_h THEN
+ 		IF v_count >= maximum_v AND h_count = half_sync_h THEN
  			v_count_nxt <= (OTHERS => '0');
  		ELSIF h_count = half_sync_h THEN
  			v_count_nxt <= v_count + 1;
@@ -96,7 +118,7 @@ BEGIN
  	END PROCESS;
  	
  	-- Generate v_sync using v_count
- 	VGA_VS <= 	'0' WHEN v_count <= sync_v AND v_count >= back_v ELSE
+ 	VGA_VS <= 	'0' WHEN (v_count <= sync_v) AND (v_count >= back_v) ELSE
  				'1';
 
  	-- Display video only when h_on and v_on are both "ready"

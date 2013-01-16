@@ -7,7 +7,8 @@ ENTITY de0_vga_display IS
 	PORT(
 		pixel_col, pixel_row 	:IN STD_LOGIC_VECTOR(9 downto 0);
 		sprite_x, sprite_y		:IN STD_LOGIC_VECTOR(9 downto 0);
-		red, green, blue		:IN STD_LOGIC_VECTOR(3 downto 0); -- Switches
+		switches						:IN STD_LOGIC_VECTOR(7 downto 0);
+		--red, green, blue		:IN STD_LOGIC_VECTOR(3 downto 0); -- Switches
 		video_on, clock		 	:IN std_logic;
 		R_VGA, B_VGA, G_VGA 	:OUT std_logic_vector(3 downto 0)	
 	);
@@ -58,22 +59,31 @@ BEGIN
 	PROCESS(pixel_clock,video_on)
 	BEGIN
 		-- Rising Edge of clock and video_on signal controller is on
-		IF rising_edge(pixel_clock) AND video_on = '1' THEN
+		IF rising_edge(pixel_clock) THEN
 			-- Current pixel is withing the rows of the sprite
-			IF pixel_row >= sprite_y AND pixel_row <= sprite_y + 16 THEN
+			IF pixel_row >= sprite_y AND pixel_row <= sprite_y + 15 AND pixel_col >= sprite_x AND pixel_col <= sprite_x + 15 THEN
+			--IF pixel_row >= sprite_y AND pixel_row <= sprite_y + 15 THEN
 				-- Current pixel is within the columns of the sprite
-				IF pixel_col >= sprite_x AND pixel_col <= sprite_x + 16 THEN
+				--IF pixel_col >= sprite_x AND pixel_col <= sprite_x + 15 THEN
 					-- Get the sprite data for that row from the ROM and make it red
-					R_VGA <= sprite_data(CONV_INTEGER(sprite_count(3 downto 0))) & '1' & '1' & '1';
+					R_VGA <= sprite_data(CONV_INTEGER(sprite_count(3 downto 0))) & '1' & '1' & '1' AND video_on & video_on & video_on & video_on;
 					-- Increment the counter
 					sprite_count <= sprite_count + 1;
-				END IF;	
+				--END IF;	
 			-- Not in the rows of the sprite
 			ELSE
+			
+				--R_VGA <= b"1111" AND video_on & video_on & video_on & video_on;
+				--B_VGA <= b"1111";
+				--G_VGA <= b"1111";
+				
+				R_VGA <= switches(7 downto 4) AND video_on & video_on & video_on & video_on;
+				G_VGA <= switches(7 downto 6) & switches(3 downto 2) AND video_on & video_on & video_on & video_on;
+				B_VGA <= switches(7 downto 6) & switches(1 downto 0) AND video_on & video_on & video_on & video_on;
 				-- Output the background color
-				R_VGA <= red;
-				G_VGA <= green;
-				B_VGA <= blue;
+				--R_VGA <= red AND video_on & video_on & video_on & video_on;
+				--G_VGA <= green AND video_on & video_on & video_on & video_on;
+				--B_VGA <= blue AND video_on & video_on & video_on & video_on;
 			END IF;
 		END IF;
 	END PROCESS;

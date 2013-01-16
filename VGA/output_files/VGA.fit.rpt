@@ -1,5 +1,5 @@
 Fitter report for VGA
-Wed Jan 09 23:49:10 2013
+Thu Jan 10 12:01:40 2013
 Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -11,39 +11,44 @@ Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
   3. Fitter Settings
   4. Parallel Compilation
   5. I/O Assignment Warnings
-  6. Ignored Assignments
-  7. Incremental Compilation Preservation Summary
-  8. Incremental Compilation Partition Settings
-  9. Incremental Compilation Placement Preservation
- 10. Pin-Out File
- 11. Fitter Resource Usage Summary
- 12. Fitter Partition Statistics
- 13. Input Pins
- 14. Output Pins
- 15. Dual Purpose and Dedicated Pins
- 16. I/O Bank Usage
- 17. All Package Pins
- 18. PLL Summary
- 19. PLL Usage
- 20. Fitter Resource Utilization by Entity
- 21. Delay Chain Summary
- 22. Pad To Core Delay Chain Fanout
- 23. Control Signals
- 24. Global & Other Fast Signals
- 25. Non-Global High Fan-Out Signals
- 26. Other Routing Usage Summary
- 27. LAB Logic Elements
- 28. LAB-wide Signals
- 29. LAB Signals Sourced
- 30. LAB Signals Sourced Out
- 31. LAB Distinct Inputs
- 32. I/O Rules Summary
- 33. I/O Rules Details
- 34. I/O Rules Matrix
- 35. Fitter Device Options
- 36. Operating Settings and Conditions
- 37. Fitter Messages
- 38. Fitter Suppressed Messages
+  6. Fitter Netlist Optimizations
+  7. Ignored Assignments
+  8. Incremental Compilation Preservation Summary
+  9. Incremental Compilation Partition Settings
+ 10. Incremental Compilation Placement Preservation
+ 11. Pin-Out File
+ 12. Fitter Resource Usage Summary
+ 13. Fitter Partition Statistics
+ 14. Input Pins
+ 15. Output Pins
+ 16. Dual Purpose and Dedicated Pins
+ 17. I/O Bank Usage
+ 18. All Package Pins
+ 19. PLL Summary
+ 20. PLL Usage
+ 21. Fitter Resource Utilization by Entity
+ 22. Delay Chain Summary
+ 23. Pad To Core Delay Chain Fanout
+ 24. Control Signals
+ 25. Global & Other Fast Signals
+ 26. Non-Global High Fan-Out Signals
+ 27. Fitter RAM Summary
+ 28. |VGA|de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|ALTSYNCRAM
+ 29. Other Routing Usage Summary
+ 30. LAB Logic Elements
+ 31. LAB-wide Signals
+ 32. LAB Signals Sourced
+ 33. LAB Signals Sourced Out
+ 34. LAB Distinct Inputs
+ 35. I/O Rules Summary
+ 36. I/O Rules Details
+ 37. I/O Rules Matrix
+ 38. Fitter Device Options
+ 39. Operating Settings and Conditions
+ 40. Estimated Delay Added for Hold Timing Summary
+ 41. Estimated Delay Added for Hold Timing Details
+ 42. Fitter Messages
+ 43. Fitter Suppressed Messages
 
 
 
@@ -69,20 +74,20 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +------------------------------------+------------------------------------------+
-; Fitter Status                      ; Successful - Wed Jan 09 23:49:10 2013    ;
+; Fitter Status                      ; Successful - Thu Jan 10 12:01:40 2013    ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; VGA                                      ;
 ; Top-level Entity Name              ; VGA                                      ;
 ; Family                             ; Cyclone III                              ;
 ; Device                             ; EP3C16F484C6                             ;
 ; Timing Models                      ; Final                                    ;
-; Total logic elements               ; 52 / 15,408 ( < 1 % )                    ;
-;     Total combinational functions  ; 52 / 15,408 ( < 1 % )                    ;
-;     Dedicated logic registers      ; 20 / 15,408 ( < 1 % )                    ;
-; Total registers                    ; 20                                       ;
+; Total logic elements               ; 215 / 15,408 ( 1 % )                     ;
+;     Total combinational functions  ; 199 / 15,408 ( 1 % )                     ;
+;     Dedicated logic registers      ; 91 / 15,408 ( < 1 % )                    ;
+; Total registers                    ; 91                                       ;
 ; Total pins                         ; 28 / 347 ( 8 % )                         ;
 ; Total virtual pins                 ; 0                                        ;
-; Total memory bits                  ; 0 / 516,096 ( 0 % )                      ;
+; Total memory bits                  ; 256 / 516,096 ( < 1 % )                  ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                          ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                           ;
 +------------------------------------+------------------------------------------+
@@ -179,6 +184,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; VGA_HS   ; Missing drive strength and slew rate ;
 ; VGA_VS   ; Missing drive strength and slew rate ;
 +----------+--------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                                                                                                                                                                                                                                                                                               ;
++------------------------------------------------------------------------------------------------------+------------+-------------+------------------------+-----------+--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+------------------+-------------------------------------------------------------------+
+; Node                                                                                                 ; Action     ; Operation   ; Reason                 ; Node Port ; Node Port Name                                               ; Destination Node                                                                                              ; Destination Port ; Destination Port Name                                             ;
++------------------------------------------------------------------------------------------------------+------------+-------------+------------------------+-----------+--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+------------------+-------------------------------------------------------------------+
+; de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component|clkdiv_altpll:auto_generated|pll1    ; Merged PLL ; PLL Merging ; PLL Usage Optimization ;           ;                                                              ; de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|pll1 ;                  ;                                                                   ;
+;    de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component|clkdiv_altpll:auto_generated|pll1 ; Merged PLL ; PLL Merging ; PLL Usage Optimization ; CLK       ; display|clockDiv|altpll_component|auto_generated|pll1/clk[0] ; de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|pll1 ; CLK              ; generator|clkdiv_inst|altpll_component|auto_generated|pll1/clk[0] ;
++------------------------------------------------------------------------------------------------------+------------+-------------+------------------------+-----------+--------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+------------------+-------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------+
@@ -420,8 +435,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 137 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 137 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 375 ( 0.00 % )     ;
+;     -- Achieved     ; 0 / 375 ( 0.00 % )     ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -444,7 +459,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 129     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 367     ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 8       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -455,54 +470,54 @@ Parallel compilation was disabled, but you have multiple processors available. E
 The pin-out file can be found in D:/GitHub/School/VGA/output_files/VGA.pin.
 
 
-+---------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                       ;
-+---------------------------------------------+-----------------------+
-; Resource                                    ; Usage                 ;
-+---------------------------------------------+-----------------------+
-; Total logic elements                        ; 52 / 15,408 ( < 1 % ) ;
-;     -- Combinational with no register       ; 32                    ;
-;     -- Register only                        ; 0                     ;
-;     -- Combinational with a register        ; 20                    ;
-;                                             ;                       ;
-; Logic element usage by number of LUT inputs ;                       ;
-;     -- 4 input functions                    ; 26                    ;
-;     -- 3 input functions                    ; 1                     ;
-;     -- <=2 input functions                  ; 25                    ;
-;     -- Register only                        ; 0                     ;
-;                                             ;                       ;
-; Logic elements by mode                      ;                       ;
-;     -- normal mode                          ; 34                    ;
-;     -- arithmetic mode                      ; 18                    ;
-;                                             ;                       ;
-; Total registers*                            ; 20 / 17,068 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 20 / 15,408 ( < 1 % ) ;
-;     -- I/O registers                        ; 0 / 1,660 ( 0 % )     ;
-;                                             ;                       ;
-; Total LABs:  partially or completely used   ; 5 / 963 ( < 1 % )     ;
-; Virtual pins                                ; 0                     ;
-; I/O pins                                    ; 28 / 347 ( 8 % )      ;
-;     -- Clock pins                           ; 1 / 8 ( 13 % )        ;
-;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )         ;
-;                                             ;                       ;
-; Global signals                              ; 1                     ;
-; M9Ks                                        ; 0 / 56 ( 0 % )        ;
-; Total block memory bits                     ; 0 / 516,096 ( 0 % )   ;
-; Total block memory implementation bits      ; 0 / 516,096 ( 0 % )   ;
-; Embedded Multiplier 9-bit elements          ; 0 / 112 ( 0 % )       ;
-; PLLs                                        ; 1 / 4 ( 25 % )        ;
-; Global clocks                               ; 1 / 20 ( 5 % )        ;
-; JTAGs                                       ; 0 / 1 ( 0 % )         ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )         ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )         ;
-; Impedance control blocks                    ; 0 / 4 ( 0 % )         ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%          ;
-; Peak interconnect usage (total/H/V)         ; 0% / 0% / 0%          ;
-; Maximum fan-out                             ; 20                    ;
-; Highest non-global fan-out                  ; 10                    ;
-; Total fan-out                               ; 235                   ;
-; Average fan-out                             ; 1.73                  ;
-+---------------------------------------------+-----------------------+
++-----------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                         ;
++---------------------------------------------+-------------------------+
+; Resource                                    ; Usage                   ;
++---------------------------------------------+-------------------------+
+; Total logic elements                        ; 215 / 15,408 ( 1 % )    ;
+;     -- Combinational with no register       ; 124                     ;
+;     -- Register only                        ; 16                      ;
+;     -- Combinational with a register        ; 75                      ;
+;                                             ;                         ;
+; Logic element usage by number of LUT inputs ;                         ;
+;     -- 4 input functions                    ; 80                      ;
+;     -- 3 input functions                    ; 28                      ;
+;     -- <=2 input functions                  ; 91                      ;
+;     -- Register only                        ; 16                      ;
+;                                             ;                         ;
+; Logic elements by mode                      ;                         ;
+;     -- normal mode                          ; 132                     ;
+;     -- arithmetic mode                      ; 67                      ;
+;                                             ;                         ;
+; Total registers*                            ; 91 / 17,068 ( < 1 % )   ;
+;     -- Dedicated logic registers            ; 91 / 15,408 ( < 1 % )   ;
+;     -- I/O registers                        ; 0 / 1,660 ( 0 % )       ;
+;                                             ;                         ;
+; Total LABs:  partially or completely used   ; 19 / 963 ( 2 % )        ;
+; Virtual pins                                ; 0                       ;
+; I/O pins                                    ; 28 / 347 ( 8 % )        ;
+;     -- Clock pins                           ; 2 / 8 ( 25 % )          ;
+;     -- Dedicated input pins                 ; 0 / 9 ( 0 % )           ;
+;                                             ;                         ;
+; Global signals                              ; 5                       ;
+; M9Ks                                        ; 1 / 56 ( 2 % )          ;
+; Total block memory bits                     ; 256 / 516,096 ( < 1 % ) ;
+; Total block memory implementation bits      ; 9,216 / 516,096 ( 2 % ) ;
+; Embedded Multiplier 9-bit elements          ; 0 / 112 ( 0 % )         ;
+; PLLs                                        ; 1 / 4 ( 25 % )          ;
+; Global clocks                               ; 5 / 20 ( 25 % )         ;
+; JTAGs                                       ; 0 / 1 ( 0 % )           ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )           ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )           ;
+; Impedance control blocks                    ; 0 / 4 ( 0 % )           ;
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%            ;
+; Peak interconnect usage (total/H/V)         ; 1% / 2% / 1%            ;
+; Maximum fan-out                             ; 40                      ;
+; Highest non-global fan-out                  ; 20                      ;
+; Total fan-out                               ; 862                     ;
+; Average fan-out                             ; 2.30                    ;
++---------------------------------------------+-------------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
@@ -514,51 +529,52 @@ The pin-out file can be found in D:/GitHub/School/VGA/output_files/VGA.pin.
 +---------------------------------------------+----------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                  ; Low                            ;
 ;                                             ;                      ;                                ;
-; Total logic elements                        ; 52 / 15408 ( < 1 % ) ; 0 / 15408 ( 0 % )              ;
-;     -- Combinational with no register       ; 32                   ; 0                              ;
-;     -- Register only                        ; 0                    ; 0                              ;
-;     -- Combinational with a register        ; 20                   ; 0                              ;
+; Total logic elements                        ; 215 / 15408 ( 1 % )  ; 0 / 15408 ( 0 % )              ;
+;     -- Combinational with no register       ; 124                  ; 0                              ;
+;     -- Register only                        ; 16                   ; 0                              ;
+;     -- Combinational with a register        ; 75                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic element usage by number of LUT inputs ;                      ;                                ;
-;     -- 4 input functions                    ; 26                   ; 0                              ;
-;     -- 3 input functions                    ; 1                    ; 0                              ;
-;     -- <=2 input functions                  ; 25                   ; 0                              ;
-;     -- Register only                        ; 0                    ; 0                              ;
+;     -- 4 input functions                    ; 80                   ; 0                              ;
+;     -- 3 input functions                    ; 28                   ; 0                              ;
+;     -- <=2 input functions                  ; 91                   ; 0                              ;
+;     -- Register only                        ; 16                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Logic elements by mode                      ;                      ;                                ;
-;     -- normal mode                          ; 34                   ; 0                              ;
-;     -- arithmetic mode                      ; 18                   ; 0                              ;
+;     -- normal mode                          ; 132                  ; 0                              ;
+;     -- arithmetic mode                      ; 67                   ; 0                              ;
 ;                                             ;                      ;                                ;
-; Total registers                             ; 20                   ; 0                              ;
-;     -- Dedicated logic registers            ; 20 / 15408 ( < 1 % ) ; 0 / 15408 ( 0 % )              ;
+; Total registers                             ; 91                   ; 0                              ;
+;     -- Dedicated logic registers            ; 91 / 15408 ( < 1 % ) ; 0 / 15408 ( 0 % )              ;
 ;                                             ;                      ;                                ;
-; Total LABs:  partially or completely used   ; 5 / 963 ( < 1 % )    ; 0 / 963 ( 0 % )                ;
+; Total LABs:  partially or completely used   ; 19 / 963 ( 2 % )     ; 0 / 963 ( 0 % )                ;
 ;                                             ;                      ;                                ;
 ; Virtual pins                                ; 0                    ; 0                              ;
 ; I/O pins                                    ; 28                   ; 0                              ;
 ; Embedded Multiplier 9-bit elements          ; 0 / 112 ( 0 % )      ; 0 / 112 ( 0 % )                ;
-; Total memory bits                           ; 0                    ; 0                              ;
-; Total RAM block bits                        ; 0                    ; 0                              ;
+; Total memory bits                           ; 256                  ; 0                              ;
+; Total RAM block bits                        ; 9216                 ; 0                              ;
 ; PLL                                         ; 0 / 4 ( 0 % )        ; 1 / 4 ( 25 % )                 ;
-; Clock control block                         ; 0 / 24 ( 0 % )       ; 1 / 24 ( 4 % )                 ;
+; M9K                                         ; 1 / 56 ( 1 % )       ; 0 / 56 ( 0 % )                 ;
+; Clock control block                         ; 4 / 24 ( 16 % )      ; 1 / 24 ( 4 % )                 ;
 ;                                             ;                      ;                                ;
 ; Connections                                 ;                      ;                                ;
-;     -- Input Connections                    ; 20                   ; 1                              ;
-;     -- Registered Input Connections         ; 20                   ; 0                              ;
-;     -- Output Connections                   ; 1                    ; 20                             ;
+;     -- Input Connections                    ; 40                   ; 1                              ;
+;     -- Registered Input Connections         ; 40                   ; 0                              ;
+;     -- Output Connections                   ; 1                    ; 40                             ;
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 230                  ; 26                             ;
-;     -- Registered Connections               ; 95                   ; 0                              ;
+;     -- Total Connections                    ; 865                  ; 46                             ;
+;     -- Registered Connections               ; 310                  ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
-;     -- Top                                  ; 0                    ; 21                             ;
-;     -- hard_block:auto_generated_inst       ; 21                   ; 0                              ;
+;     -- Top                                  ; 0                    ; 41                             ;
+;     -- hard_block:auto_generated_inst       ; 41                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Partition Interface                         ;                      ;                                ;
-;     -- Input Ports                          ; 14                   ; 1                              ;
-;     -- Output Ports                         ; 14                   ; 1                              ;
+;     -- Input Ports                          ; 14                   ; 2                              ;
+;     -- Output Ports                         ; 14                   ; 2                              ;
 ;     -- Bidir Ports                          ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Registered Ports                            ;                      ;                                ;
@@ -572,7 +588,7 @@ The pin-out file can be found in D:/GitHub/School/VGA/output_files/VGA.pin.
 ;     -- Output Ports driven by VCC           ; 0                    ; 0                              ;
 ;     -- Input Ports with no Source           ; 0                    ; 0                              ;
 ;     -- Output Ports with no Source          ; 0                    ; 0                              ;
-;     -- Input Ports with no Fanout           ; 0                    ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0                    ; 1                              ;
 ;     -- Output Ports with no Fanout          ; 0                    ; 0                              ;
 +---------------------------------------------+----------------------+--------------------------------+
 
@@ -582,20 +598,20 @@ The pin-out file can be found in D:/GitHub/School/VGA/output_files/VGA.pin.
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 ; Name     ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination Control Block ; Location assigned by ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
-; CLOCK_50 ; G21   ; 6        ; 41           ; 15           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; KEY[0]   ; AA10  ; 3        ; 19           ; 0            ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
-; KEY[1]   ; G3    ; 1        ; 0            ; 23           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; KEY[2]   ; F1    ; 1        ; 0            ; 23           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[0]    ; J6    ; 1        ; 0            ; 24           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[1]    ; H5    ; 1        ; 0            ; 27           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[2]    ; H6    ; 1        ; 0            ; 25           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[3]    ; G4    ; 1        ; 0            ; 23           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[4]    ; G5    ; 1        ; 0            ; 27           ; 21           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[5]    ; J7    ; 1        ; 0            ; 22           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[6]    ; H7    ; 1        ; 0            ; 25           ; 14           ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[7]    ; E3    ; 1        ; 0            ; 26           ; 7            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[8]    ; E4    ; 1        ; 0            ; 26           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
-; SW[9]    ; D2    ; 1        ; 0            ; 25           ; 0            ; 0                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; CLOCK_50 ; G21   ; 6        ; 41           ; 15           ; 0            ; 41                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; KEY[0]   ; G2    ; 1        ; 0            ; 14           ; 0            ; 12                    ; 0                  ; yes    ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; Fitter               ;
+; KEY[1]   ; G3    ; 1        ; 0            ; 23           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; KEY[2]   ; F1    ; 1        ; 0            ; 23           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[0]    ; J6    ; 1        ; 0            ; 24           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[1]    ; H5    ; 1        ; 0            ; 27           ; 0            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[2]    ; H6    ; 1        ; 0            ; 25           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[3]    ; G4    ; 1        ; 0            ; 23           ; 7            ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[4]    ; G5    ; 1        ; 0            ; 27           ; 21           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[5]    ; J7    ; 1        ; 0            ; 22           ; 14           ; 1                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[6]    ; H7    ; 1        ; 0            ; 25           ; 14           ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[7]    ; E3    ; 1        ; 0            ; 26           ; 7            ; 3                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[8]    ; E4    ; 1        ; 0            ; 26           ; 0            ; 5                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
+; SW[9]    ; D2    ; 1        ; 0            ; 25           ; 0            ; 6                     ; 0                  ; no     ; no             ; no            ; yes             ; no       ; Off          ; 2.5 V        ; --                        ; User                 ;
 +----------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+---------------------------+----------------------+
 
 
@@ -650,9 +666,9 @@ The pin-out file can be found in D:/GitHub/School/VGA/output_files/VGA.pin.
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 15 / 33 ( 45 % ) ; 2.5V          ; --           ;
+; 1        ; 16 / 33 ( 48 % ) ; 2.5V          ; --           ;
 ; 2        ; 0 / 48 ( 0 % )   ; 2.5V          ; --           ;
-; 3        ; 1 / 46 ( 2 % )   ; 2.5V          ; --           ;
+; 3        ; 0 / 46 ( 0 % )   ; 2.5V          ; --           ;
 ; 4        ; 0 / 41 ( 0 % )   ; 2.5V          ; --           ;
 ; 5        ; 0 / 46 ( 0 % )   ; 2.5V          ; --           ;
 ; 6        ; 15 / 43 ( 35 % ) ; 2.5V          ; --           ;
@@ -697,7 +713,7 @@ The pin-out file can be found in D:/GitHub/School/VGA/output_files/VGA.pin.
 ; AA7      ; 115        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA8      ; 123        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA9      ; 126        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
-; AA10     ; 132        ; 3        ; KEY[0]                                                    ; input  ; 2.5 V        ;         ; Column I/O ; N               ; no       ; Off          ;
+; AA10     ; 132        ; 3        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
 ; AA11     ; 134        ; 3        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AA12     ; 136        ; 4        ; GND+                                                      ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
 ; AA13     ; 138        ; 4        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Column I/O ;                 ; no       ; On           ;
@@ -843,7 +859,7 @@ The pin-out file can be found in D:/GitHub/School/VGA/output_files/VGA.pin.
 ; F21      ; 251        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; F22      ; 250        ; 6        ; RESERVED_INPUT_WITH_WEAK_PULLUP                           ;        ;              ;         ; Row I/O    ;                 ; no       ; On           ;
 ; G1       ; 39         ; 1        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
-; G2       ; 38         ; 1        ; GND+                                                      ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
+; G2       ; 38         ; 1        ; KEY[0]                                                    ; input  ; 2.5 V        ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; G3       ; 18         ; 1        ; KEY[1]                                                    ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; G4       ; 17         ; 1        ; SW[3]                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
 ; G5       ; 3          ; 1        ; SW[4]                                                     ; input  ; 2.5 V        ;         ; Row I/O    ; Y               ; no       ; Off          ;
@@ -1204,17 +1220,24 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +---------------------------------------------------------------------------------------------------------------------------+--------------+------+-----+------------------+-------------+------------------+------------+---------+---------------+------------+---------------+---------+---------+-------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                     ;
-+--------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                 ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                           ; Library Name ;
-+--------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------+--------------+
-; |VGA                                       ; 52 (0)      ; 20 (0)                    ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 28   ; 0            ; 32 (0)       ; 0 (0)             ; 20 (0)           ; |VGA                                                                                                          ;              ;
-;    |de0_vga_sync_generator:generator|      ; 52 (52)     ; 20 (20)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 32 (32)      ; 0 (0)             ; 20 (20)          ; |VGA|de0_vga_sync_generator:generator                                                                         ;              ;
-;       |clkdiv:clkdiv_inst|                 ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst                                                      ;              ;
-;          |altpll:altpll_component|         ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component                              ;              ;
-;             |clkdiv_altpll:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated ;              ;
-+--------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                       ;
++----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                   ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M9Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                                                                           ; Library Name ;
++----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------+--------------+
+; |VGA                                         ; 215 (0)     ; 91 (0)                    ; 0 (0)         ; 256         ; 1    ; 0            ; 0       ; 0         ; 28   ; 0            ; 124 (0)      ; 16 (0)            ; 75 (0)           ; |VGA                                                                                                          ;              ;
+;    |buttonDebounce:debounce1|                ; 33 (33)     ; 22 (22)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 11 (11)      ; 5 (5)             ; 17 (17)          ; |VGA|buttonDebounce:debounce1                                                                                 ;              ;
+;    |buttonDebounce:debounce2|                ; 11 (11)     ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 5 (5)             ; 0 (0)            ; |VGA|buttonDebounce:debounce2                                                                                 ;              ;
+;    |de0_vga_display:display|                 ; 76 (76)     ; 20 (20)                   ; 0 (0)         ; 256         ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 53 (53)      ; 0 (0)             ; 23 (23)          ; |VGA|de0_vga_display:display                                                                                  ;              ;
+;       |sprite:spriterom|                     ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 256         ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |VGA|de0_vga_display:display|sprite:spriterom                                                                 ;              ;
+;          |altsyncram:altsyncram_component|   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 256         ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |VGA|de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component                                 ;              ;
+;             |altsyncram_vi91:auto_generated| ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 256         ; 1    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |VGA|de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated  ;              ;
+;    |de0_vga_sprite_control_pb:sprite|        ; 30 (30)     ; 24 (24)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 6 (6)        ; 5 (5)             ; 19 (19)          ; |VGA|de0_vga_sprite_control_pb:sprite                                                                         ;              ;
+;    |de0_vga_sync_generator:generator|        ; 68 (68)     ; 20 (20)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 48 (48)      ; 1 (1)             ; 19 (19)          ; |VGA|de0_vga_sync_generator:generator                                                                         ;              ;
+;       |clkdiv:clkdiv_inst|                   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst                                                      ;              ;
+;          |altpll:altpll_component|           ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component                              ;              ;
+;             |clkdiv_altpll:auto_generated|   ; 0 (0)       ; 0 (0)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated ;              ;
++----------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+---------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -1237,43 +1260,68 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; VGA_G[3] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; VGA_HS   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; VGA_VS   ; Output   ; --            ; --            ; --                    ; --  ; --   ;
-; SW[4]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[5]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[6]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[7]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[0]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[1]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[2]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[3]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[9]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; KEY[0]   ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; SW[8]    ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; KEY[2]   ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; KEY[1]   ; Input    ; --            ; --            ; --                    ; --  ; --   ;
-; CLOCK_50 ; Input    ; --            ; --            ; --                    ; --  ; --   ;
+; SW[4]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[5]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[6]    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[7]    ; Input    ; --            ; (6) 1314 ps   ; --                    ; --  ; --   ;
+; SW[0]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[1]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[2]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[3]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; CLOCK_50 ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
+; KEY[0]   ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
+; SW[8]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; SW[9]    ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; KEY[1]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
+; KEY[2]   ; Input    ; (6) 1314 ps   ; --            ; --                    ; --  ; --   ;
 +----------+----------+---------------+---------------+-----------------------+-----+------+
 
 
-+---------------------------------------------------+
-; Pad To Core Delay Chain Fanout                    ;
-+---------------------+-------------------+---------+
-; Source Pin / Fanout ; Pad To Core Index ; Setting ;
-+---------------------+-------------------+---------+
-; SW[4]               ;                   ;         ;
-; SW[5]               ;                   ;         ;
-; SW[6]               ;                   ;         ;
-; SW[7]               ;                   ;         ;
-; SW[0]               ;                   ;         ;
-; SW[1]               ;                   ;         ;
-; SW[2]               ;                   ;         ;
-; SW[3]               ;                   ;         ;
-; SW[9]               ;                   ;         ;
-; KEY[0]              ;                   ;         ;
-; SW[8]               ;                   ;         ;
-; KEY[2]              ;                   ;         ;
-; KEY[1]              ;                   ;         ;
-; CLOCK_50            ;                   ;         ;
-+---------------------+-------------------+---------+
++-----------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                          ;
++-----------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                       ; Pad To Core Index ; Setting ;
++-----------------------------------------------------------+-------------------+---------+
+; SW[4]                                                     ;                   ;         ;
+;      - de0_vga_display:display|R_VGA~7                    ; 0                 ; 6       ;
+; SW[5]                                                     ;                   ;         ;
+;      - de0_vga_display:display|R_VGA~8                    ; 0                 ; 6       ;
+; SW[6]                                                     ;                   ;         ;
+;      - de0_vga_display:display|B_VGA[2]~2                 ; 1                 ; 6       ;
+;      - de0_vga_display:display|G_VGA[2]~2                 ; 1                 ; 6       ;
+;      - de0_vga_display:display|R_VGA~9                    ; 1                 ; 6       ;
+; SW[7]                                                     ;                   ;         ;
+;      - de0_vga_display:display|R_VGA~6                    ; 1                 ; 6       ;
+;      - de0_vga_display:display|B_VGA[3]~3                 ; 1                 ; 6       ;
+;      - de0_vga_display:display|G_VGA[3]~3                 ; 1                 ; 6       ;
+; SW[0]                                                     ;                   ;         ;
+;      - de0_vga_display:display|B_VGA[0]~0                 ; 0                 ; 6       ;
+; SW[1]                                                     ;                   ;         ;
+;      - de0_vga_display:display|B_VGA[1]~1                 ; 0                 ; 6       ;
+; SW[2]                                                     ;                   ;         ;
+;      - de0_vga_display:display|G_VGA[0]~0                 ; 0                 ; 6       ;
+; SW[3]                                                     ;                   ;         ;
+;      - de0_vga_display:display|G_VGA[1]~1                 ; 0                 ; 6       ;
+; CLOCK_50                                                  ;                   ;         ;
+; KEY[0]                                                    ;                   ;         ;
+; SW[8]                                                     ;                   ;         ;
+;      - de0_vga_sprite_control_pb:sprite|Add2~10           ; 0                 ; 6       ;
+;      - de0_vga_sprite_control_pb:sprite|Add2~8            ; 0                 ; 6       ;
+;      - de0_vga_sprite_control_pb:sprite|Add2~6            ; 0                 ; 6       ;
+;      - de0_vga_sprite_control_pb:sprite|Add2~4            ; 0                 ; 6       ;
+;      - de0_vga_sprite_control_pb:sprite|sprite_x_nxt[5]~2 ; 0                 ; 6       ;
+; SW[9]                                                     ;                   ;         ;
+;      - de0_vga_sprite_control_pb:sprite|Add0~10           ; 0                 ; 6       ;
+;      - de0_vga_sprite_control_pb:sprite|Add0~8            ; 0                 ; 6       ;
+;      - de0_vga_sprite_control_pb:sprite|Add0~6            ; 0                 ; 6       ;
+;      - de0_vga_sprite_control_pb:sprite|Add0~4            ; 0                 ; 6       ;
+;      - de0_vga_sprite_control_pb:sprite|sprite_y_nxt[9]~0 ; 0                 ; 6       ;
+;      - de0_vga_sprite_control_pb:sprite|sprite_y_nxt~1    ; 0                 ; 6       ;
+; KEY[1]                                                    ;                   ;         ;
+;      - buttonDebounce:debounce1|data_in_0~feeder          ; 0                 ; 6       ;
+; KEY[2]                                                    ;                   ;         ;
+;      - buttonDebounce:debounce2|data_in_0~feeder          ; 0                 ; 6       ;
++-----------------------------------------------------------+-------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1281,19 +1329,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                                                                      ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +---------------------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; CLOCK_50                                                                                                                  ; PIN_G21            ; 1       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2              ; 20      ; Clock        ; yes    ; Global Clock         ; GCLK8            ; --                        ;
-; de0_vga_sync_generator:generator|v_count[8]~0                                                                             ; LCCOMB_X39_Y18_N14 ; 10      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CLOCK_50                                                                                                                  ; PIN_G21            ; 2       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; CLOCK_50                                                                                                                  ; PIN_G21            ; 40      ; Clock        ; yes    ; Global Clock         ; GCLK9            ; --                        ;
+; KEY[0]                                                                                                                    ; PIN_G2             ; 12      ; Async. clear ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; buttonDebounce:debounce1|data_out                                                                                         ; FF_X19_Y27_N23     ; 6       ; Clock        ; yes    ; Global Clock         ; GCLK14           ; --                        ;
+; buttonDebounce:debounce2|Equal0~5                                                                                         ; LCCOMB_X21_Y1_N26  ; 13      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; buttonDebounce:debounce2|data_out                                                                                         ; FF_X21_Y1_N29      ; 6       ; Clock        ; yes    ; Global Clock         ; GCLK16           ; --                        ;
+; de0_vga_display:display|process_0~5                                                                                       ; LCCOMB_X29_Y22_N8  ; 20      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[5]~2                                                                        ; LCCOMB_X29_Y22_N4  ; 6       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[9]~0                                                                        ; LCCOMB_X29_Y19_N18 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; de0_vga_sync_generator:generator|Equal0~2                                                                                 ; LCCOMB_X32_Y22_N4  ; 4       ; Latch enable ; no     ; --                   ; --               ; --                        ;
+; de0_vga_sync_generator:generator|Equal1~1                                                                                 ; LCCOMB_X31_Y22_N28 ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2              ; 40      ; Clock        ; yes    ; Global Clock         ; GCLK8            ; --                        ;
+; de0_vga_sync_generator:generator|pixel_row[9]~2                                                                           ; LCCOMB_X31_Y22_N30 ; 9       ; Latch enable ; no     ; --                   ; --               ; --                        ;
 +---------------------------------------------------------------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Global & Other Fast Signals                                                                                                                                                                                                                                 ;
-+---------------------------------------------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; Name                                                                                                                      ; Location ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+---------------------------------------------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
-; de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2    ; 20      ; 0                                    ; Global Clock         ; GCLK8            ; --                        ;
-+---------------------------------------------------------------------------------------------------------------------------+----------+---------+--------------------------------------+----------------------+------------------+---------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Global & Other Fast Signals                                                                                                                                                                                                                                       ;
++---------------------------------------------------------------------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; Name                                                                                                                      ; Location       ; Fan-Out ; Fan-Out Using Intentional Clock Skew ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++---------------------------------------------------------------------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
+; CLOCK_50                                                                                                                  ; PIN_G21        ; 40      ; 0                                    ; Global Clock         ; GCLK9            ; --                        ;
+; KEY[0]                                                                                                                    ; PIN_G2         ; 12      ; 0                                    ; Global Clock         ; GCLK2            ; --                        ;
+; buttonDebounce:debounce1|data_out                                                                                         ; FF_X19_Y27_N23 ; 6       ; 0                                    ; Global Clock         ; GCLK14           ; --                        ;
+; buttonDebounce:debounce2|data_out                                                                                         ; FF_X21_Y1_N29  ; 6       ; 0                                    ; Global Clock         ; GCLK16           ; --                        ;
+; de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|wire_pll1_clk[0] ; PLL_2          ; 40      ; 20                                   ; Global Clock         ; GCLK8            ; --                        ;
++---------------------------------------------------------------------------------------------------------------------------+----------------+---------+--------------------------------------+----------------------+------------------+---------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------+
@@ -1301,70 +1363,348 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------------------+---------+
 ; Name                                                                                                                     ; Fan-Out ;
 +--------------------------------------------------------------------------------------------------------------------------+---------+
-; de0_vga_sync_generator:generator|v_count[8]~0                                                                            ; 10      ;
-; de0_vga_sync_generator:generator|process_1~6                                                                             ; 6       ;
-; de0_vga_sync_generator:generator|process_1~5                                                                             ; 6       ;
-; de0_vga_sync_generator:generator|process_1~4                                                                             ; 6       ;
-; de0_vga_sync_generator:generator|process_1~3                                                                             ; 5       ;
-; de0_vga_sync_generator:generator|h_count[8]                                                                              ; 5       ;
+; de0_vga_display:display|process_0~5                                                                                      ; 20      ;
+; buttonDebounce:debounce2|Equal0~5                                                                                        ; 13      ;
+; de0_vga_sync_generator:generator|LessThan0~0                                                                             ; 13      ;
+; de0_vga_sync_generator:generator|Equal1~1                                                                                ; 12      ;
+; de0_vga_sync_generator:generator|pixel_row[9]~2                                                                          ; 9       ;
+; de0_vga_sync_generator:generator|video_on                                                                                ; 9       ;
+; de0_vga_sync_generator:generator|h_count[7]                                                                              ; 9       ;
+; de0_vga_sync_generator:generator|h_count[8]                                                                              ; 9       ;
+; de0_vga_sync_generator:generator|process_1~0                                                                             ; 8       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[0]                                                                         ; 8       ;
+; de0_vga_sync_generator:generator|h_count[9]                                                                              ; 8       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[9]                                                                         ; 7       ;
+; de0_vga_sync_generator:generator|v_count[9]                                                                              ; 7       ;
+; de0_vga_sync_generator:generator|h_count[5]                                                                              ; 7       ;
+; de0_vga_sync_generator:generator|h_count[6]                                                                              ; 7       ;
+; de0_vga_display:display|sprite_count[2]                                                                                  ; 7       ;
+; de0_vga_display:display|sprite_count[1]                                                                                  ; 7       ;
+; SW[9]~input                                                                                                              ; 6       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[5]~2                                                                       ; 6       ;
+; de0_vga_sync_generator:generator|LessThan4~1                                                                             ; 6       ;
+; de0_vga_sync_generator:generator|h_count[4]                                                                              ; 6       ;
+; SW[8]~input                                                                                                              ; 5       ;
+; de0_vga_sync_generator:generator|v_on                                                                                    ; 5       ;
+; de0_vga_sync_generator:generator|h_on                                                                                    ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[9]~0                                                                       ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[6]                                                                         ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[7]                                                                         ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[8]                                                                         ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[9]                                                                         ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[5]                                                                         ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[6]                                                                         ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[7]                                                                         ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[8]                                                                         ; 5       ;
+; de0_vga_sync_generator:generator|v_count[8]                                                                              ; 5       ;
+; de0_vga_sync_generator:generator|h_count[3]                                                                              ; 5       ;
+; de0_vga_sync_generator:generator|h_count[0]                                                                              ; 5       ;
+; de0_vga_sync_generator:generator|Add0~10                                                                                 ; 5       ;
+; de0_vga_sync_generator:generator|Equal0~2                                                                                ; 4       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[4]                                                                         ; 4       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[5]                                                                         ; 4       ;
 ; de0_vga_sync_generator:generator|v_count[5]                                                                              ; 4       ;
 ; de0_vga_sync_generator:generator|v_count[6]                                                                              ; 4       ;
 ; de0_vga_sync_generator:generator|v_count[7]                                                                              ; 4       ;
-; de0_vga_sync_generator:generator|v_count[8]                                                                              ; 4       ;
-; de0_vga_sync_generator:generator|v_count[9]                                                                              ; 4       ;
 ; de0_vga_sync_generator:generator|v_count[4]                                                                              ; 4       ;
-; de0_vga_sync_generator:generator|h_count[3]                                                                              ; 4       ;
-; de0_vga_sync_generator:generator|h_count[2]                                                                              ; 4       ;
 ; de0_vga_sync_generator:generator|h_count[1]                                                                              ; 4       ;
-; de0_vga_sync_generator:generator|h_count[0]                                                                              ; 4       ;
-; de0_vga_sync_generator:generator|h_count[4]                                                                              ; 4       ;
-; de0_vga_sync_generator:generator|h_count[6]                                                                              ; 4       ;
-; de0_vga_sync_generator:generator|h_count[5]                                                                              ; 4       ;
-; de0_vga_sync_generator:generator|h_count[9]                                                                              ; 4       ;
-; de0_vga_sync_generator:generator|h_count[7]                                                                              ; 4       ;
-; de0_vga_sync_generator:generator|Equal0~2                                                                                ; 3       ;
-; de0_vga_sync_generator:generator|LessThan7~0                                                                             ; 3       ;
+; de0_vga_sync_generator:generator|h_count[2]                                                                              ; 4       ;
+; de0_vga_sync_generator:generator|Add0~12                                                                                 ; 4       ;
+; SW[7]~input                                                                                                              ; 3       ;
+; SW[6]~input                                                                                                              ; 3       ;
+; de0_vga_sync_generator:generator|pixel_col[7]~11                                                                         ; 3       ;
+; de0_vga_sync_generator:generator|pixel_col[8]~10                                                                         ; 3       ;
+; de0_vga_sync_generator:generator|pixel_col[9]~9                                                                          ; 3       ;
+; de0_vga_display:display|sprite_count[0]                                                                                  ; 3       ;
+; de0_vga_sync_generator:generator|LessThan4~0                                                                             ; 3       ;
+; de0_vga_sync_generator:generator|LessThan6~0                                                                             ; 3       ;
 ; de0_vga_sync_generator:generator|v_count[1]                                                                              ; 3       ;
 ; de0_vga_sync_generator:generator|v_count[2]                                                                              ; 3       ;
-; de0_vga_sync_generator:generator|Equal1~1                                                                                ; 2       ;
-; de0_vga_sync_generator:generator|Equal1~0                                                                                ; 2       ;
-; de0_vga_sync_generator:generator|process_1~2                                                                             ; 2       ;
+; de0_vga_display:display|sprite_count[3]                                                                                  ; 3       ;
+; de0_vga_display:display|Add1~18                                                                                          ; 3       ;
+; de0_vga_sync_generator:generator|Add0~18                                                                                 ; 3       ;
+; de0_vga_sync_generator:generator|Add0~16                                                                                 ; 3       ;
+; de0_vga_sync_generator:generator|Add0~8                                                                                  ; 3       ;
+; de0_vga_sync_generator:generator|pixel_row[9]~8                                                                          ; 2       ;
+; buttonDebounce:debounce1|counter[16]                                                                                     ; 2       ;
+; buttonDebounce:debounce1|counter[15]                                                                                     ; 2       ;
+; buttonDebounce:debounce1|counter[14]                                                                                     ; 2       ;
+; buttonDebounce:debounce1|counter[13]                                                                                     ; 2       ;
+; buttonDebounce:debounce1|counter[12]                                                                                     ; 2       ;
+; buttonDebounce:debounce1|counter[11]                                                                                     ; 2       ;
+; buttonDebounce:debounce1|counter[10]                                                                                     ; 2       ;
+; buttonDebounce:debounce1|counter[9]                                                                                      ; 2       ;
+; buttonDebounce:debounce1|counter[8]                                                                                      ; 2       ;
+; buttonDebounce:debounce1|counter[1]                                                                                      ; 2       ;
+; buttonDebounce:debounce1|counter[0]                                                                                      ; 2       ;
+; buttonDebounce:debounce1|counter[7]                                                                                      ; 2       ;
+; buttonDebounce:debounce1|counter[6]                                                                                      ; 2       ;
+; buttonDebounce:debounce1|counter[5]                                                                                      ; 2       ;
+; buttonDebounce:debounce1|counter[4]                                                                                      ; 2       ;
+; buttonDebounce:debounce1|counter[3]                                                                                      ; 2       ;
+; buttonDebounce:debounce1|counter[2]                                                                                      ; 2       ;
+; de0_vga_sprite_control_pb:sprite|LessThan0~1                                                                             ; 2       ;
+; de0_vga_sprite_control_pb:sprite|LessThan0~0                                                                             ; 2       ;
+; de0_vga_sprite_control_pb:sprite|LessThan1~0                                                                             ; 2       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[4]                                                                         ; 2       ;
+; de0_vga_display:display|LessThan3~8                                                                                      ; 2       ;
+; de0_vga_sync_generator:generator|pixel_row[4]~7                                                                          ; 2       ;
+; de0_vga_sync_generator:generator|pixel_row[5]~6                                                                          ; 2       ;
+; de0_vga_sync_generator:generator|pixel_row[6]~5                                                                          ; 2       ;
+; de0_vga_sync_generator:generator|pixel_row[7]~4                                                                          ; 2       ;
+; de0_vga_sync_generator:generator|pixel_row[8]~3                                                                          ; 2       ;
+; de0_vga_sync_generator:generator|LessThan3~0                                                                             ; 2       ;
 ; de0_vga_sync_generator:generator|Equal0~0                                                                                ; 2       ;
 ; de0_vga_sync_generator:generator|v_count[0]                                                                              ; 2       ;
 ; de0_vga_sync_generator:generator|v_count[3]                                                                              ; 2       ;
+; de0_vga_display:display|G_VGA[3]                                                                                         ; 2       ;
+; de0_vga_display:display|G_VGA[2]                                                                                         ; 2       ;
+; de0_vga_display:display|G_VGA[1]                                                                                         ; 2       ;
+; de0_vga_display:display|G_VGA[0]                                                                                         ; 2       ;
+; de0_vga_display:display|B_VGA[3]                                                                                         ; 2       ;
+; de0_vga_display:display|B_VGA[2]                                                                                         ; 2       ;
+; de0_vga_display:display|B_VGA[1]                                                                                         ; 2       ;
+; de0_vga_display:display|B_VGA[0]                                                                                         ; 2       ;
+; de0_vga_display:display|sprite_count[7]                                                                                  ; 2       ;
+; de0_vga_display:display|sprite_count[6]                                                                                  ; 2       ;
+; de0_vga_display:display|sprite_count[5]                                                                                  ; 2       ;
+; de0_vga_display:display|sprite_count[4]                                                                                  ; 2       ;
+; de0_vga_sync_generator:generator|Add1~18                                                                                 ; 2       ;
+; de0_vga_sync_generator:generator|Add1~16                                                                                 ; 2       ;
+; de0_vga_sync_generator:generator|Add1~14                                                                                 ; 2       ;
+; de0_vga_sync_generator:generator|Add1~12                                                                                 ; 2       ;
+; de0_vga_sync_generator:generator|Add1~10                                                                                 ; 2       ;
+; de0_vga_sync_generator:generator|Add1~8                                                                                  ; 2       ;
+; de0_vga_display:display|Add1~16                                                                                          ; 2       ;
+; de0_vga_display:display|Add1~10                                                                                          ; 2       ;
+; de0_vga_sync_generator:generator|Add0~14                                                                                 ; 2       ;
+; de0_vga_sync_generator:generator|Add0~6                                                                                  ; 2       ;
+; de0_vga_sync_generator:generator|Add0~4                                                                                  ; 2       ;
+; de0_vga_sync_generator:generator|Add0~2                                                                                  ; 2       ;
+; de0_vga_sync_generator:generator|Add0~0                                                                                  ; 2       ;
+; KEY[2]~input                                                                                                             ; 1       ;
+; KEY[1]~input                                                                                                             ; 1       ;
 ; CLOCK_50~input                                                                                                           ; 1       ;
-; de0_vga_sync_generator:generator|v_count[5]~6                                                                            ; 1       ;
-; de0_vga_sync_generator:generator|v_count[6]~5                                                                            ; 1       ;
-; de0_vga_sync_generator:generator|v_count[7]~4                                                                            ; 1       ;
-; de0_vga_sync_generator:generator|v_count[8]~3                                                                            ; 1       ;
-; de0_vga_sync_generator:generator|v_count_nxt[0]~3                                                                        ; 1       ;
-; de0_vga_sync_generator:generator|v_count[9]~2                                                                            ; 1       ;
-; de0_vga_sync_generator:generator|v_count_nxt[3]~2                                                                        ; 1       ;
-; de0_vga_sync_generator:generator|v_count_nxt[1]~1                                                                        ; 1       ;
-; de0_vga_sync_generator:generator|v_count_nxt[2]~0                                                                        ; 1       ;
-; de0_vga_sync_generator:generator|v_count[4]~1                                                                            ; 1       ;
-; de0_vga_sync_generator:generator|Equal1~2                                                                                ; 1       ;
-; de0_vga_sync_generator:generator|h_count_nxt[5]~2                                                                        ; 1       ;
-; de0_vga_sync_generator:generator|h_count_nxt[9]~1                                                                        ; 1       ;
+; SW[3]~input                                                                                                              ; 1       ;
+; SW[2]~input                                                                                                              ; 1       ;
+; SW[1]~input                                                                                                              ; 1       ;
+; SW[0]~input                                                                                                              ; 1       ;
+; SW[5]~input                                                                                                              ; 1       ;
+; SW[4]~input                                                                                                              ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[5]~5                                                                       ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[6]~4                                                                       ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[7]~3                                                                       ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[6]~4                                                                       ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[8]~3                                                                       ; 1       ;
+; de0_vga_display:display|process_0~7                                                                                      ; 1       ;
+; de0_vga_display:display|process_0~6                                                                                      ; 1       ;
+; de0_vga_display:display|R_VGA~9                                                                                          ; 1       ;
+; de0_vga_display:display|R_VGA~8                                                                                          ; 1       ;
+; de0_vga_display:display|R_VGA~7                                                                                          ; 1       ;
+; de0_vga_display:display|LessThan3~9                                                                                      ; 1       ;
+; buttonDebounce:debounce2|data_in_0                                                                                       ; 1       ;
+; buttonDebounce:debounce1|data_in_0                                                                                       ; 1       ;
+; buttonDebounce:debounce2|data_in_1                                                                                       ; 1       ;
+; buttonDebounce:debounce1|data_in_1                                                                                       ; 1       ;
+; buttonDebounce:debounce2|data_in_2                                                                                       ; 1       ;
+; buttonDebounce:debounce1|counter~10                                                                                      ; 1       ;
+; buttonDebounce:debounce1|counter~9                                                                                       ; 1       ;
+; buttonDebounce:debounce1|counter~8                                                                                       ; 1       ;
+; buttonDebounce:debounce1|counter~7                                                                                       ; 1       ;
+; buttonDebounce:debounce1|counter~6                                                                                       ; 1       ;
+; buttonDebounce:debounce1|counter~5                                                                                       ; 1       ;
+; buttonDebounce:debounce1|counter~4                                                                                       ; 1       ;
+; buttonDebounce:debounce1|counter~3                                                                                       ; 1       ;
+; buttonDebounce:debounce1|counter~2                                                                                       ; 1       ;
+; buttonDebounce:debounce1|counter~1                                                                                       ; 1       ;
+; buttonDebounce:debounce1|counter~0                                                                                       ; 1       ;
+; buttonDebounce:debounce1|data_in_2                                                                                       ; 1       ;
+; buttonDebounce:debounce2|data_in_3                                                                                       ; 1       ;
+; buttonDebounce:debounce2|Equal0~4                                                                                        ; 1       ;
+; buttonDebounce:debounce2|Equal0~3                                                                                        ; 1       ;
+; buttonDebounce:debounce2|Equal0~2                                                                                        ; 1       ;
+; buttonDebounce:debounce2|Equal0~1                                                                                        ; 1       ;
+; buttonDebounce:debounce2|Equal0~0                                                                                        ; 1       ;
+; buttonDebounce:debounce1|data_in_3                                                                                       ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[4]~2                                                                       ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt~1                                                                          ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[5]~1                                                                       ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[5]~0                                                                       ; 1       ;
+; de0_vga_display:display|sprite_count[0]~13                                                                               ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[5]                                                                         ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[6]                                                                         ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[7]                                                                         ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[8]                                                                         ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[9]                                                                         ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[0]                                                                         ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[5]                                                                         ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[6]                                                                         ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[7]                                                                         ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[9]                                                                         ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[8]                                                                         ; 1       ;
+; de0_vga_sync_generator:generator|v_count_nxt[5]~7                                                                        ; 1       ;
+; de0_vga_sync_generator:generator|v_count_nxt[6]~6                                                                        ; 1       ;
+; de0_vga_sync_generator:generator|v_count_nxt[7]~5                                                                        ; 1       ;
+; de0_vga_sync_generator:generator|v_count[8]~1                                                                            ; 1       ;
+; de0_vga_sync_generator:generator|v_count_nxt[0]~4                                                                        ; 1       ;
+; de0_vga_sync_generator:generator|v_count[9]~0                                                                            ; 1       ;
+; de0_vga_sync_generator:generator|v_count_nxt[3]~3                                                                        ; 1       ;
+; de0_vga_sync_generator:generator|v_count_nxt[1]~2                                                                        ; 1       ;
+; de0_vga_sync_generator:generator|v_count_nxt[2]~1                                                                        ; 1       ;
+; de0_vga_sync_generator:generator|v_count_nxt[4]~0                                                                        ; 1       ;
+; de0_vga_sync_generator:generator|h_count_nxt[9]~2                                                                        ; 1       ;
+; de0_vga_sync_generator:generator|h_count_nxt[5]~1                                                                        ; 1       ;
 ; de0_vga_sync_generator:generator|h_count_nxt[8]~0                                                                        ; 1       ;
 ; de0_vga_sync_generator:generator|Equal0~1                                                                                ; 1       ;
-; de0_vga_sync_generator:generator|VGA_VS~2                                                                                ; 1       ;
+; de0_vga_display:display|G_VGA[3]~3                                                                                       ; 1       ;
+; de0_vga_display:display|G_VGA[2]~2                                                                                       ; 1       ;
+; de0_vga_display:display|G_VGA[1]~1                                                                                       ; 1       ;
+; de0_vga_display:display|G_VGA[0]~0                                                                                       ; 1       ;
+; de0_vga_display:display|B_VGA[3]~3                                                                                       ; 1       ;
+; de0_vga_display:display|B_VGA[2]~2                                                                                       ; 1       ;
+; de0_vga_display:display|B_VGA[1]~1                                                                                       ; 1       ;
+; de0_vga_display:display|B_VGA[0]~0                                                                                       ; 1       ;
+; de0_vga_display:display|R_VGA~6                                                                                          ; 1       ;
+; de0_vga_display:display|Mux0~9                                                                                           ; 1       ;
+; de0_vga_display:display|Mux0~8                                                                                           ; 1       ;
+; de0_vga_display:display|Mux0~7                                                                                           ; 1       ;
+; de0_vga_display:display|Mux0~6                                                                                           ; 1       ;
+; de0_vga_display:display|Mux0~5                                                                                           ; 1       ;
+; de0_vga_display:display|Mux0~4                                                                                           ; 1       ;
+; de0_vga_display:display|Mux0~3                                                                                           ; 1       ;
+; de0_vga_display:display|Mux0~2                                                                                           ; 1       ;
+; de0_vga_display:display|Mux0~1                                                                                           ; 1       ;
+; de0_vga_display:display|Mux0~0                                                                                           ; 1       ;
+; de0_vga_display:display|LessThan2~7                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan2~6                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan2~5                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan2~4                                                                                      ; 1       ;
+; de0_vga_sync_generator:generator|pixel_col[4]~8                                                                          ; 1       ;
+; de0_vga_display:display|LessThan2~3                                                                                      ; 1       ;
+; de0_vga_sync_generator:generator|pixel_col[6]~7                                                                          ; 1       ;
+; de0_vga_display:display|LessThan2~2                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan2~1                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan2~0                                                                                      ; 1       ;
+; de0_vga_display:display|process_0~4                                                                                      ; 1       ;
+; de0_vga_display:display|process_0~3                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan3~7                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan3~6                                                                                      ; 1       ;
+; de0_vga_sync_generator:generator|pixel_col[5]~6                                                                          ; 1       ;
+; de0_vga_display:display|LessThan3~5                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan3~4                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan3~3                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan3~2                                                                                      ; 1       ;
+; de0_vga_display:display|process_0~2                                                                                      ; 1       ;
+; de0_vga_sync_generator:generator|Equal1~0                                                                                ; 1       ;
+; de0_vga_display:display|process_0~1                                                                                      ; 1       ;
+; de0_vga_display:display|process_0~0                                                                                      ; 1       ;
 ; de0_vga_sync_generator:generator|VGA_VS~1                                                                                ; 1       ;
 ; de0_vga_sync_generator:generator|VGA_VS~0                                                                                ; 1       ;
 ; de0_vga_sync_generator:generator|VGA_HS~2                                                                                ; 1       ;
 ; de0_vga_sync_generator:generator|VGA_HS~1                                                                                ; 1       ;
 ; de0_vga_sync_generator:generator|VGA_HS~0                                                                                ; 1       ;
-; de0_vga_sync_generator:generator|Add1~18                                                                                 ; 1       ;
+; de0_vga_display:display|R_VGA[3]                                                                                         ; 1       ;
+; de0_vga_display:display|R_VGA[2]                                                                                         ; 1       ;
+; de0_vga_display:display|R_VGA[1]                                                                                         ; 1       ;
+; de0_vga_display:display|R_VGA[0]                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~32                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~31                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~30                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~29                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~28                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~27                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~26                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~25                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~24                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~23                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~22                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~21                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~20                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~19                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~18                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~17                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~16                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~15                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~14                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~13                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~12                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~11                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~10                                                                                         ; 1       ;
+; buttonDebounce:debounce1|Add0~9                                                                                          ; 1       ;
+; buttonDebounce:debounce1|Add0~8                                                                                          ; 1       ;
+; buttonDebounce:debounce1|Add0~7                                                                                          ; 1       ;
+; buttonDebounce:debounce1|Add0~6                                                                                          ; 1       ;
+; buttonDebounce:debounce1|Add0~5                                                                                          ; 1       ;
+; buttonDebounce:debounce1|Add0~4                                                                                          ; 1       ;
+; buttonDebounce:debounce1|Add0~3                                                                                          ; 1       ;
+; buttonDebounce:debounce1|Add0~2                                                                                          ; 1       ;
+; buttonDebounce:debounce1|Add0~1                                                                                          ; 1       ;
+; buttonDebounce:debounce1|Add0~0                                                                                          ; 1       ;
+; de0_vga_display:display|sprite_count[7]~20                                                                               ; 1       ;
+; de0_vga_display:display|sprite_count[6]~19                                                                               ; 1       ;
+; de0_vga_display:display|sprite_count[6]~18                                                                               ; 1       ;
+; de0_vga_display:display|sprite_count[5]~17                                                                               ; 1       ;
+; de0_vga_display:display|sprite_count[5]~16                                                                               ; 1       ;
+; de0_vga_display:display|sprite_count[4]~15                                                                               ; 1       ;
+; de0_vga_display:display|sprite_count[4]~14                                                                               ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add0~10                                                                                 ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add0~9                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add0~8                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add0~7                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add0~6                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add0~5                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add0~4                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add0~3                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add0~2                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add2~10                                                                                 ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add2~9                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add2~8                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add2~7                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add2~6                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add2~5                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add2~4                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add2~3                                                                                  ; 1       ;
+; de0_vga_sprite_control_pb:sprite|Add2~2                                                                                  ; 1       ;
+; de0_vga_display:display|sprite_count[3]~12                                                                               ; 1       ;
+; de0_vga_display:display|sprite_count[3]~11                                                                               ; 1       ;
+; de0_vga_display:display|sprite_count[2]~10                                                                               ; 1       ;
+; de0_vga_display:display|sprite_count[2]~9                                                                                ; 1       ;
+; de0_vga_display:display|sprite_count[1]~8                                                                                ; 1       ;
+; de0_vga_display:display|sprite_count[1]~7                                                                                ; 1       ;
+; de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|wire_pll1_fbout ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[1]           ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[2]           ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[3]           ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[4]           ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[5]           ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[6]           ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[7]           ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[8]           ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[9]           ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[10]          ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[11]          ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[12]          ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[13]          ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[14]          ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[15]          ; 1       ;
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|q_a[0]           ; 1       ;
+; de0_vga_display:display|LessThan0~10                                                                                     ; 1       ;
+; de0_vga_display:display|LessThan0~9                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan0~7                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan0~5                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan0~3                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan0~1                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan1~10                                                                                     ; 1       ;
+; de0_vga_display:display|LessThan1~9                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan1~7                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan1~5                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan1~3                                                                                      ; 1       ;
+; de0_vga_display:display|LessThan1~1                                                                                      ; 1       ;
 ; de0_vga_sync_generator:generator|Add1~17                                                                                 ; 1       ;
-; de0_vga_sync_generator:generator|Add1~16                                                                                 ; 1       ;
 ; de0_vga_sync_generator:generator|Add1~15                                                                                 ; 1       ;
-; de0_vga_sync_generator:generator|Add1~14                                                                                 ; 1       ;
 ; de0_vga_sync_generator:generator|Add1~13                                                                                 ; 1       ;
-; de0_vga_sync_generator:generator|Add1~12                                                                                 ; 1       ;
 ; de0_vga_sync_generator:generator|Add1~11                                                                                 ; 1       ;
-; de0_vga_sync_generator:generator|Add1~10                                                                                 ; 1       ;
 ; de0_vga_sync_generator:generator|Add1~9                                                                                  ; 1       ;
-; de0_vga_sync_generator:generator|Add1~8                                                                                  ; 1       ;
 ; de0_vga_sync_generator:generator|Add1~7                                                                                  ; 1       ;
 ; de0_vga_sync_generator:generator|Add1~6                                                                                  ; 1       ;
 ; de0_vga_sync_generator:generator|Add1~5                                                                                  ; 1       ;
@@ -1373,160 +1713,199 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; de0_vga_sync_generator:generator|Add1~2                                                                                  ; 1       ;
 ; de0_vga_sync_generator:generator|Add1~1                                                                                  ; 1       ;
 ; de0_vga_sync_generator:generator|Add1~0                                                                                  ; 1       ;
-; de0_vga_sync_generator:generator|Add0~18                                                                                 ; 1       ;
+; de0_vga_display:display|Add1~17                                                                                          ; 1       ;
+; de0_vga_display:display|Add1~15                                                                                          ; 1       ;
+; de0_vga_display:display|Add1~14                                                                                          ; 1       ;
+; de0_vga_display:display|Add1~13                                                                                          ; 1       ;
+; de0_vga_display:display|Add1~12                                                                                          ; 1       ;
+; de0_vga_display:display|Add1~11                                                                                          ; 1       ;
+; de0_vga_display:display|Add1~9                                                                                           ; 1       ;
+; de0_vga_display:display|Add1~7                                                                                           ; 1       ;
+; de0_vga_display:display|Add1~5                                                                                           ; 1       ;
+; de0_vga_display:display|Add1~3                                                                                           ; 1       ;
+; de0_vga_display:display|Add1~1                                                                                           ; 1       ;
+; de0_vga_display:display|Add1~0                                                                                           ; 1       ;
 ; de0_vga_sync_generator:generator|Add0~17                                                                                 ; 1       ;
-; de0_vga_sync_generator:generator|Add0~16                                                                                 ; 1       ;
-; de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|wire_pll1_fbout ; 1       ;
 ; de0_vga_sync_generator:generator|Add0~15                                                                                 ; 1       ;
-; de0_vga_sync_generator:generator|Add0~14                                                                                 ; 1       ;
 ; de0_vga_sync_generator:generator|Add0~13                                                                                 ; 1       ;
-; de0_vga_sync_generator:generator|Add0~12                                                                                 ; 1       ;
 ; de0_vga_sync_generator:generator|Add0~11                                                                                 ; 1       ;
-; de0_vga_sync_generator:generator|Add0~10                                                                                 ; 1       ;
 ; de0_vga_sync_generator:generator|Add0~9                                                                                  ; 1       ;
-; de0_vga_sync_generator:generator|Add0~8                                                                                  ; 1       ;
 ; de0_vga_sync_generator:generator|Add0~7                                                                                  ; 1       ;
-; de0_vga_sync_generator:generator|Add0~6                                                                                  ; 1       ;
 ; de0_vga_sync_generator:generator|Add0~5                                                                                  ; 1       ;
-; de0_vga_sync_generator:generator|Add0~4                                                                                  ; 1       ;
 ; de0_vga_sync_generator:generator|Add0~3                                                                                  ; 1       ;
-; de0_vga_sync_generator:generator|Add0~2                                                                                  ; 1       ;
 ; de0_vga_sync_generator:generator|Add0~1                                                                                  ; 1       ;
-; de0_vga_sync_generator:generator|Add0~0                                                                                  ; 1       ;
 +--------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Other Routing Usage Summary                         ;
-+-----------------------------+-----------------------+
-; Other Routing Resource Type ; Usage                 ;
-+-----------------------------+-----------------------+
-; Block interconnects         ; 60 / 47,787 ( < 1 % ) ;
-; C16 interconnects           ; 0 / 1,804 ( 0 % )     ;
-; C4 interconnects            ; 2 / 31,272 ( < 1 % )  ;
-; Direct links                ; 35 / 47,787 ( < 1 % ) ;
-; Global clocks               ; 1 / 20 ( 5 % )        ;
-; Local interconnects         ; 34 / 15,408 ( < 1 % ) ;
-; R24 interconnects           ; 0 / 1,775 ( 0 % )     ;
-; R4 interconnects            ; 20 / 41,310 ( < 1 % ) ;
-+-----------------------------+-----------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter RAM Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ;
++--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+---------+----------------+
+; Name                                                                                                               ; Type ; Mode ; Clock Mode   ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Port A Input Registers ; Port A Output Registers ; Port B Input Registers ; Port B Output Registers ; Size ; Implementation Port A Depth ; Implementation Port A Width ; Implementation Port B Depth ; Implementation Port B Width ; Implementation Bits ; M9Ks ; MIF     ; Location       ;
++--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+---------+----------------+
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; Single Clock ; 16           ; 16           ; --           ; --           ; yes                    ; no                      ; --                     ; --                      ; 256  ; 16                          ; 16                          ; --                          ; --                          ; 256                 ; 1    ; VGA.mif ; M9K_X25_Y23_N0 ;
++--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+--------------+------------------------+-------------------------+------------------------+-------------------------+------+-----------------------------+-----------------------------+-----------------------------+-----------------------------+---------------------+------+---------+----------------+
+Note: Fitter may spread logical memories into multiple blocks to improve timing. The actual required RAM blocks can be found in the Fitter Resource Usage section.
 
 
-+---------------------------------------------------------------------------+
-; LAB Logic Elements                                                        ;
-+---------------------------------------------+-----------------------------+
-; Number of Logic Elements  (Average = 10.40) ; Number of LABs  (Total = 5) ;
-+---------------------------------------------+-----------------------------+
-; 1                                           ; 1                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 1                           ;
-; 4                                           ; 0                           ;
-; 5                                           ; 0                           ;
-; 6                                           ; 0                           ;
-; 7                                           ; 0                           ;
-; 8                                           ; 0                           ;
-; 9                                           ; 0                           ;
-; 10                                          ; 0                           ;
-; 11                                          ; 0                           ;
-; 12                                          ; 0                           ;
-; 13                                          ; 0                           ;
-; 14                                          ; 0                           ;
-; 15                                          ; 0                           ;
-; 16                                          ; 3                           ;
-+---------------------------------------------+-----------------------------+
+RAM content values are presented in the following format: (Binary) (Octal) (Decimal) (Hexadecimal) 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; |VGA|de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|ALTSYNCRAM                                                                                                                                          ;
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+;   Addr   ;              +0              ;              +1              ;              +2              ;              +3              ;              +4              ;              +5              ;              +6              ;              +7              ;
++----------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+------------------------------+
+;0;(0000001100000000) (1400) (768) (300)    ;(0000010010000000) (2200) (1152) (480)   ;(0000000001000000) (100) (64) (40)   ;(0000000001000000) (100) (64) (40)   ;(0000010010000000) (2200) (1152) (480)   ;(0000001100000000) (1400) (768) (300)   ;(0000000000000000) (0) (0) (00)   ;(0000000000000000) (0) (0) (00)   ;
+;8;(0000000000000000) (0) (0) (00)    ;(0000001100000000) (1400) (768) (300)   ;(0000010010000000) (2200) (1152) (480)   ;(0000000001000000) (100) (64) (40)   ;(0000010010000000) (2200) (1152) (480)   ;(0000000100000000) (400) (256) (100)   ;(0000010010000000) (2200) (1152) (480)   ;(0000001100000000) (1400) (768) (300)   ;
 
 
-+------------------------------------------------------------------+
-; LAB-wide Signals                                                 ;
-+------------------------------------+-----------------------------+
-; LAB-wide Signals  (Average = 0.60) ; Number of LABs  (Total = 5) ;
-+------------------------------------+-----------------------------+
-; 1 Clock                            ; 3                           ;
-+------------------------------------+-----------------------------+
+
+
++------------------------------------------------------+
+; Other Routing Usage Summary                          ;
++-----------------------------+------------------------+
+; Other Routing Resource Type ; Usage                  ;
++-----------------------------+------------------------+
+; Block interconnects         ; 272 / 47,787 ( < 1 % ) ;
+; C16 interconnects           ; 1 / 1,804 ( < 1 % )    ;
+; C4 interconnects            ; 134 / 31,272 ( < 1 % ) ;
+; Direct links                ; 100 / 47,787 ( < 1 % ) ;
+; Global clocks               ; 5 / 20 ( 25 % )        ;
+; Local interconnects         ; 128 / 15,408 ( < 1 % ) ;
+; R24 interconnects           ; 27 / 1,775 ( 2 % )     ;
+; R4 interconnects            ; 164 / 41,310 ( < 1 % ) ;
++-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
-; LAB Signals Sourced                                                        ;
-+----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 14.40) ; Number of LABs  (Total = 5) ;
-+----------------------------------------------+-----------------------------+
-; 0                                            ; 0                           ;
-; 1                                            ; 1                           ;
-; 2                                            ; 0                           ;
-; 3                                            ; 1                           ;
-; 4                                            ; 0                           ;
-; 5                                            ; 0                           ;
-; 6                                            ; 0                           ;
-; 7                                            ; 0                           ;
-; 8                                            ; 0                           ;
-; 9                                            ; 0                           ;
-; 10                                           ; 0                           ;
-; 11                                           ; 0                           ;
-; 12                                           ; 0                           ;
-; 13                                           ; 0                           ;
-; 14                                           ; 0                           ;
-; 15                                           ; 0                           ;
-; 16                                           ; 0                           ;
-; 17                                           ; 0                           ;
-; 18                                           ; 0                           ;
-; 19                                           ; 0                           ;
-; 20                                           ; 1                           ;
-; 21                                           ; 0                           ;
-; 22                                           ; 0                           ;
-; 23                                           ; 1                           ;
-; 24                                           ; 0                           ;
-; 25                                           ; 1                           ;
-+----------------------------------------------+-----------------------------+
+; LAB Logic Elements                                                         ;
++---------------------------------------------+------------------------------+
+; Number of Logic Elements  (Average = 11.32) ; Number of LABs  (Total = 19) ;
++---------------------------------------------+------------------------------+
+; 1                                           ; 2                            ;
+; 2                                           ; 0                            ;
+; 3                                           ; 1                            ;
+; 4                                           ; 0                            ;
+; 5                                           ; 0                            ;
+; 6                                           ; 1                            ;
+; 7                                           ; 1                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 0                            ;
+; 10                                          ; 1                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 2                            ;
+; 13                                          ; 1                            ;
+; 14                                          ; 1                            ;
+; 15                                          ; 0                            ;
+; 16                                          ; 8                            ;
++---------------------------------------------+------------------------------+
 
 
-+-------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                       ;
-+-------------------------------------------------+-----------------------------+
-; Number of Signals Sourced Out  (Average = 7.60) ; Number of LABs  (Total = 5) ;
-+-------------------------------------------------+-----------------------------+
-; 0                                               ; 0                           ;
-; 1                                               ; 2                           ;
-; 2                                               ; 0                           ;
-; 3                                               ; 0                           ;
-; 4                                               ; 0                           ;
-; 5                                               ; 0                           ;
-; 6                                               ; 0                           ;
-; 7                                               ; 0                           ;
-; 8                                               ; 0                           ;
-; 9                                               ; 0                           ;
-; 10                                              ; 0                           ;
-; 11                                              ; 0                           ;
-; 12                                              ; 3                           ;
-+-------------------------------------------------+-----------------------------+
++-------------------------------------------------------------------+
+; LAB-wide Signals                                                  ;
++------------------------------------+------------------------------+
+; LAB-wide Signals  (Average = 1.16) ; Number of LABs  (Total = 19) ;
++------------------------------------+------------------------------+
+; 1 Async. clear                     ; 4                            ;
+; 1 Clock                            ; 11                           ;
+; 1 Clock enable                     ; 3                            ;
+; 2 Clocks                           ; 4                            ;
++------------------------------------+------------------------------+
 
 
-+---------------------------------------------------------------------------+
-; LAB Distinct Inputs                                                       ;
-+---------------------------------------------+-----------------------------+
-; Number of Distinct Inputs  (Average = 9.60) ; Number of LABs  (Total = 5) ;
-+---------------------------------------------+-----------------------------+
-; 0                                           ; 0                           ;
-; 1                                           ; 0                           ;
-; 2                                           ; 0                           ;
-; 3                                           ; 1                           ;
-; 4                                           ; 1                           ;
-; 5                                           ; 0                           ;
-; 6                                           ; 0                           ;
-; 7                                           ; 0                           ;
-; 8                                           ; 0                           ;
-; 9                                           ; 0                           ;
-; 10                                          ; 1                           ;
-; 11                                          ; 1                           ;
-; 12                                          ; 0                           ;
-; 13                                          ; 0                           ;
-; 14                                          ; 0                           ;
-; 15                                          ; 0                           ;
-; 16                                          ; 0                           ;
-; 17                                          ; 0                           ;
-; 18                                          ; 0                           ;
-; 19                                          ; 0                           ;
-; 20                                          ; 1                           ;
-+---------------------------------------------+-----------------------------+
++-----------------------------------------------------------------------------+
+; LAB Signals Sourced                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Signals Sourced  (Average = 15.32) ; Number of LABs  (Total = 19) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 1                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 0                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 0                            ;
+; 6                                            ; 0                            ;
+; 7                                            ; 1                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 0                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 1                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 0                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 1                            ;
+; 17                                           ; 0                            ;
+; 18                                           ; 2                            ;
+; 19                                           ; 1                            ;
+; 20                                           ; 2                            ;
+; 21                                           ; 0                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 3                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 2                            ;
++----------------------------------------------+------------------------------+
+
+
++--------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                        ;
++-------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 7.21) ; Number of LABs  (Total = 19) ;
++-------------------------------------------------+------------------------------+
+; 0                                               ; 0                            ;
+; 1                                               ; 2                            ;
+; 2                                               ; 2                            ;
+; 3                                               ; 1                            ;
+; 4                                               ; 2                            ;
+; 5                                               ; 1                            ;
+; 6                                               ; 0                            ;
+; 7                                               ; 2                            ;
+; 8                                               ; 1                            ;
+; 9                                               ; 1                            ;
+; 10                                              ; 4                            ;
+; 11                                              ; 0                            ;
+; 12                                              ; 1                            ;
+; 13                                              ; 0                            ;
+; 14                                              ; 0                            ;
+; 15                                              ; 0                            ;
+; 16                                              ; 2                            ;
++-------------------------------------------------+------------------------------+
+
+
++-----------------------------------------------------------------------------+
+; LAB Distinct Inputs                                                         ;
++----------------------------------------------+------------------------------+
+; Number of Distinct Inputs  (Average = 11.68) ; Number of LABs  (Total = 19) ;
++----------------------------------------------+------------------------------+
+; 0                                            ; 0                            ;
+; 1                                            ; 0                            ;
+; 2                                            ; 0                            ;
+; 3                                            ; 3                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 0                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 0                            ;
+; 9                                            ; 1                            ;
+; 10                                           ; 4                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 1                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 2                            ;
+; 15                                           ; 0                            ;
+; 16                                           ; 0                            ;
+; 17                                           ; 2                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 0                            ;
+; 20                                           ; 0                            ;
+; 21                                           ; 1                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 0                            ;
+; 24                                           ; 0                            ;
+; 25                                           ; 0                            ;
+; 26                                           ; 0                            ;
+; 27                                           ; 0                            ;
+; 28                                           ; 1                            ;
++----------------------------------------------+------------------------------+
 
 
 +------------------------------------------+
@@ -1612,12 +1991,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[1]              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[2]              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[3]              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; SW[9]              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; CLOCK_50           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[8]              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; KEY[2]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; SW[9]              ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[1]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; CLOCK_50           ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; KEY[2]             ; Pass         ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass      ; Pass         ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -1658,18 +2037,56 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------+--------+
 
 
++--------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Summary                                                                ;
++-------------------------------------------------------------------+----------------------+-------------------+
+; Source Clock(s)                                                   ; Destination Clock(s) ; Delay Added in ns ;
++-------------------------------------------------------------------+----------------------+-------------------+
+; generator|clkdiv_inst|altpll_component|auto_generated|pll1|clk[0] ; CLOCK_50             ; 14.4              ;
++-------------------------------------------------------------------+----------------------+-------------------+
+Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
+This will disable optimization of problematic paths and expose them for further analysis using either the TimeQuest Timing Analyzer or the Classic Timing Analyzer.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                                                                                                              ;
++---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; Source Register                             ; Destination Register                                                                                                                     ; Delay Added in ns ;
++---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+; de0_vga_display:display|sprite_count[4]     ; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|ram_block1a10~porta_address_reg0 ; 3.610             ;
+; de0_vga_display:display|sprite_count[7]     ; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|ram_block1a10~porta_address_reg0 ; 3.605             ;
+; de0_vga_display:display|sprite_count[6]     ; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|ram_block1a10~porta_address_reg0 ; 3.605             ;
+; de0_vga_display:display|sprite_count[5]     ; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|ram_block1a10~porta_address_reg0 ; 3.599             ;
+; de0_vga_sync_generator:generator|v_count[9] ; de0_vga_sync_generator:generator|v_on                                                                                                    ; 0.433             ;
+; de0_vga_sync_generator:generator|v_count[7] ; de0_vga_sync_generator:generator|v_on                                                                                                    ; 0.280             ;
+; de0_vga_sync_generator:generator|v_count[5] ; de0_vga_sync_generator:generator|v_on                                                                                                    ; 0.222             ;
+; de0_vga_sync_generator:generator|v_count[8] ; de0_vga_sync_generator:generator|v_on                                                                                                    ; 0.216             ;
+; de0_vga_sync_generator:generator|v_count[6] ; de0_vga_sync_generator:generator|v_on                                                                                                    ; 0.210             ;
+; de0_vga_sync_generator:generator|h_count[7] ; de0_vga_sync_generator:generator|h_on                                                                                                    ; 0.139             ;
+; de0_vga_sync_generator:generator|v_count[7] ; VGA_VS                                                                                                                                   ; 0.139             ;
+; de0_vga_sync_generator:generator|h_count[9] ; de0_vga_sync_generator:generator|h_on                                                                                                    ; 0.137             ;
+; de0_vga_sync_generator:generator|h_count[8] ; de0_vga_sync_generator:generator|h_on                                                                                                    ; 0.129             ;
+; de0_vga_sync_generator:generator|v_count[5] ; VGA_VS                                                                                                                                   ; 0.081             ;
+; de0_vga_sync_generator:generator|v_count[8] ; VGA_VS                                                                                                                                   ; 0.075             ;
+; de0_vga_sync_generator:generator|v_count[6] ; VGA_VS                                                                                                                                   ; 0.069             ;
++---------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------+-------------------+
+Note: This table only shows the top 100 paths that have the largest delay added for hold.
+
+
 +-----------------+
 ; Fitter Messages ;
 +-----------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Fitter
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Wed Jan 09 23:49:02 2013
+    Info: Processing started: Thu Jan 10 12:01:31 2013
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off VGA -c VGA
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (119006): Selected device EP3C16F484C6 for design "VGA"
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
+Info (15535): Implemented PLL "de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component|clkdiv_altpll:auto_generated|pll1" as Cyclone III PLL type
+    Info (15099): Implementing clock multiplication of 1, clock division of 2, and phase shift of 0 degrees (0 ps) for de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component|clkdiv_altpll:auto_generated|wire_pll1_clk[0] port
 Info (15535): Implemented PLL "de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|pll1" as Cyclone III PLL type
     Info (15099): Implementing clock multiplication of 1, clock division of 2, and phase shift of 0 degrees (0 ps) for de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|wire_pll1_clk[0] port
 Info (171003): Fitter is performing an Auto Fit compilation, which may decrease Fitter effort to reduce compilation time
@@ -1683,33 +2100,30 @@ Info (169124): Fitter converted 3 user pins into dedicated programming pins
     Info (169125): Pin ~ALTERA_FLASH_nCE_nCSO~ is reserved at location E2
     Info (169125): Pin ~ALTERA_DATA0~ is reserved at location K1
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
+Info (176045): Design uses memory blocks. Violating setup or hold times of memory block address registers for either read or write operations could cause memory contents to be corrupted. Make sure that all memory block address registers meet the setup and hold time requirements.
 Critical Warning (169085): No exact pin location assignment(s) for 1 pins of 28 total pins
     Info (169086): Pin KEY[0] not assigned to an exact location on the device
-Info (176353): Automatically promoted node de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_2)
-    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G8
+Info (176132): Successfully merged PLL de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|pll1 and PLL de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component|clkdiv_altpll:auto_generated|pll1
+Warning (335093): TimeQuest Timing Analyzer is analyzing 2 combinational loops as latches.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'VGA.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332144): No user constrained generated clocks found in the design
 Info (332144): No user constrained base clocks found in the design
-Info (332096): The command derive_clocks did not find any clocks to derive.  No clocks were created or changed.
 Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info (332130): Timing requirements not specified -- quality metrics such as performance may be sacrificed to reduce compilation time.
+Info (176353): Automatically promoted node CLOCK_50~input (placed in PIN G21 (CLK4, DIFFCLK_2p))
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G9
+Info (176353): Automatically promoted node de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated|wire_pll1_clk[0] (placed in counter C0 of PLL_2)
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G8
+Info (176353): Automatically promoted node buttonDebounce:debounce1|data_out 
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
+Info (176353): Automatically promoted node buttonDebounce:debounce2|data_out 
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock
+Info (176353): Automatically promoted node KEY[0]~input (placed in PIN G2 (CLK0, DIFFCLK_0p))
+    Info (176355): Automatically promoted destinations to use location or clock signal Global Clock CLKCTRL_G2
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (176214): Statistics of I/O pins that need to be placed that use the same VCCIO and VREF, before I/O pin placement
-    Info (176211): Number of I/O pins in group: 1 (unused VREF, 2.5V VCCIO, 1 input, 0 output, 0 bidirectional)
-        Info (176212): I/O standards used: 2.5 V.
-Info (176215): I/O bank details before I/O pin placement
-    Info (176214): Statistics of I/O banks
-        Info (176213): I/O bank number 1 does not use VREF pins and has undetermined VCCIO pins. 15 total pin(s) used --  17 pins available
-        Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  48 pins available
-        Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  46 pins available
-        Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  41 pins available
-        Info (176213): I/O bank number 5 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  46 pins available
-        Info (176213): I/O bank number 6 does not use VREF pins and has 2.5V VCCIO pins. 15 total pin(s) used --  28 pins available
-        Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  47 pins available
-        Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  43 pins available
 Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "CLOCK_50_2" is assigned to location or region, but does not exist in design
     Warning (15706): Node "DRAM_ADDR[0]" is assigned to location or region, but does not exist in design
@@ -1936,19 +2350,18 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "UART_RXD" is assigned to location or region, but does not exist in design
     Warning (15706): Node "UART_TXD" is assigned to location or region, but does not exist in design
     Warning (15706): Node "rst_n" is assigned to location or region, but does not exist in design
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:02
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X31_Y10 to location X41_Y19
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X21_Y20 to location X30_Y29
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-    Info (170200): Optimizations that may affect the design's timing were skipped
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -1956,11 +2369,11 @@ Info (334004): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:02
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file D:/GitHub/School/VGA/output_files/VGA.fit.smsg
-Info: Quartus II 64-Bit Fitter was successful. 0 errors, 232 warnings
-    Info: Peak virtual memory: 543 megabytes
-    Info: Processing ended: Wed Jan 09 23:49:11 2013
+Info: Quartus II 64-Bit Fitter was successful. 0 errors, 233 warnings
+    Info: Peak virtual memory: 561 megabytes
+    Info: Processing ended: Thu Jan 10 12:01:40 2013
     Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:07
+    Info: Total CPU time (on all processors): 00:00:09
 
 
 +----------------------------+

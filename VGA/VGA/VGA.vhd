@@ -6,7 +6,7 @@ entity VGA is
 		CLOCK_50 : in std_logic;
 		SW : in std_logic_vector(9 downto 0);
 		KEY : in std_logic_vector(2 downto 0);
-		LED : out std_logic_vector(9 downto 0);
+		--LED : out std_logic_vector(9 downto 0);
 		VGA_R, VGA_B, VGA_G : out std_logic_vector(3 downto 0) := b"1111";
 		VGA_HS, VGA_VS : out std_logic
 	);
@@ -18,7 +18,8 @@ architecture RTL of VGA is
 		PORT(
 			pixel_col, pixel_row 	:IN STD_LOGIC_VECTOR(9 downto 0);
 			sprite_x, sprite_y		:IN STD_LOGIC_VECTOR(9 downto 0);
-			red, green, blue		:IN STD_LOGIC_VECTOR(3 downto 0); -- Switches
+			switches						:IN STD_LOGIC_VECTOR(7 downto 0);
+			--red, green, blue		:IN STD_LOGIC_VECTOR(3 downto 0); -- Switches
 			video_on, clock		 	:IN std_logic;
 			R_VGA, B_VGA, G_VGA 	:OUT std_logic_vector(3 downto 0)	
 		);
@@ -74,9 +75,10 @@ begin
 			pixel_row => pixel_row_sig,
 			sprite_x => sprite_x_sig,
 			sprite_y => sprite_y_sig,
-			red => red_sig,
-			green => green_sig,
-			blue => blue_sig,
+			switches => SW(7 downto 0),
+--			red => red_sig,
+--			green => green_sig,
+--			blue => blue_sig,
 			video_on => video_on_sig,
 			clock => CLOCK_50,
 			R_VGA => VGA_R,
@@ -130,6 +132,6 @@ begin
 				blue => blue_sig
 			);
 		
-		LED <= SW;
+		--LED <= SW;
 
 end architecture RTL;
