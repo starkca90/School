@@ -1,6 +1,6 @@
 |DE0_PS2
 CLOCK_50 => ps2KBD:keyboard.clk
-CLOCK_50 => en_us_rom:rom.clock
+CLOCK_50 => en_us_rom:convert.clock
 CLOCK_50 => ascii_to_7seg:display.clock
 KEY[0] => ps2KBD:keyboard.reset_n
 KEY[0] => ascii_to_7seg:display.reset
@@ -20,6 +20,14 @@ HEX1[3] <= ascii_to_7seg:display.char1[3]
 HEX1[2] <= ascii_to_7seg:display.char1[2]
 HEX1[1] <= ascii_to_7seg:display.char1[1]
 HEX1[0] <= ascii_to_7seg:display.char1[0]
+LEDG[0] <= ps2KBD:keyboard.dout[0]
+LEDG[1] <= ps2KBD:keyboard.dout[1]
+LEDG[2] <= ps2KBD:keyboard.dout[2]
+LEDG[3] <= ps2KBD:keyboard.dout[3]
+LEDG[4] <= ps2KBD:keyboard.dout[4]
+LEDG[5] <= ps2KBD:keyboard.dout[5]
+LEDG[6] <= ps2KBD:keyboard.dout[6]
+LEDG[7] <= ps2KBD:keyboard.dout[7]
 
 
 |DE0_PS2|ps2KBD:keyboard
@@ -86,7 +94,7 @@ dout[6] <= b_reg[7].DB_MAX_OUTPUT_PORT_TYPE
 dout[7] <= b_reg[8].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE0_PS2|en_us_rom:rom
+|DE0_PS2|en_us_rom:convert
 address[0] => altsyncram:altsyncram_component.address_a[0]
 address[1] => altsyncram:altsyncram_component.address_a[1]
 address[2] => altsyncram:altsyncram_component.address_a[2]
@@ -94,6 +102,7 @@ address[3] => altsyncram:altsyncram_component.address_a[3]
 address[4] => altsyncram:altsyncram_component.address_a[4]
 address[5] => altsyncram:altsyncram_component.address_a[5]
 address[6] => altsyncram:altsyncram_component.address_a[6]
+address[7] => altsyncram:altsyncram_component.address_a[7]
 clock => altsyncram:altsyncram_component.clock0
 q[0] <= altsyncram:altsyncram_component.q_a[0]
 q[1] <= altsyncram:altsyncram_component.q_a[1]
@@ -105,7 +114,7 @@ q[6] <= altsyncram:altsyncram_component.q_a[6]
 q[7] <= altsyncram:altsyncram_component.q_a[7]
 
 
-|DE0_PS2|en_us_rom:rom|altsyncram:altsyncram_component
+|DE0_PS2|en_us_rom:convert|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -119,17 +128,18 @@ data_a[5] => ~NO_FANOUT~
 data_a[6] => ~NO_FANOUT~
 data_a[7] => ~NO_FANOUT~
 data_b[0] => ~NO_FANOUT~
-address_a[0] => altsyncram_2ca1:auto_generated.address_a[0]
-address_a[1] => altsyncram_2ca1:auto_generated.address_a[1]
-address_a[2] => altsyncram_2ca1:auto_generated.address_a[2]
-address_a[3] => altsyncram_2ca1:auto_generated.address_a[3]
-address_a[4] => altsyncram_2ca1:auto_generated.address_a[4]
-address_a[5] => altsyncram_2ca1:auto_generated.address_a[5]
-address_a[6] => altsyncram_2ca1:auto_generated.address_a[6]
+address_a[0] => altsyncram_47a1:auto_generated.address_a[0]
+address_a[1] => altsyncram_47a1:auto_generated.address_a[1]
+address_a[2] => altsyncram_47a1:auto_generated.address_a[2]
+address_a[3] => altsyncram_47a1:auto_generated.address_a[3]
+address_a[4] => altsyncram_47a1:auto_generated.address_a[4]
+address_a[5] => altsyncram_47a1:auto_generated.address_a[5]
+address_a[6] => altsyncram_47a1:auto_generated.address_a[6]
+address_a[7] => altsyncram_47a1:auto_generated.address_a[7]
 address_b[0] => ~NO_FANOUT~
 addressstall_a => ~NO_FANOUT~
 addressstall_b => ~NO_FANOUT~
-clock0 => altsyncram_2ca1:auto_generated.clock0
+clock0 => altsyncram_47a1:auto_generated.clock0
 clock1 => ~NO_FANOUT~
 clocken0 => ~NO_FANOUT~
 clocken1 => ~NO_FANOUT~
@@ -139,21 +149,21 @@ aclr0 => ~NO_FANOUT~
 aclr1 => ~NO_FANOUT~
 byteena_a[0] => ~NO_FANOUT~
 byteena_b[0] => ~NO_FANOUT~
-q_a[0] <= altsyncram_2ca1:auto_generated.q_a[0]
-q_a[1] <= altsyncram_2ca1:auto_generated.q_a[1]
-q_a[2] <= altsyncram_2ca1:auto_generated.q_a[2]
-q_a[3] <= altsyncram_2ca1:auto_generated.q_a[3]
-q_a[4] <= altsyncram_2ca1:auto_generated.q_a[4]
-q_a[5] <= altsyncram_2ca1:auto_generated.q_a[5]
-q_a[6] <= altsyncram_2ca1:auto_generated.q_a[6]
-q_a[7] <= altsyncram_2ca1:auto_generated.q_a[7]
+q_a[0] <= altsyncram_47a1:auto_generated.q_a[0]
+q_a[1] <= altsyncram_47a1:auto_generated.q_a[1]
+q_a[2] <= altsyncram_47a1:auto_generated.q_a[2]
+q_a[3] <= altsyncram_47a1:auto_generated.q_a[3]
+q_a[4] <= altsyncram_47a1:auto_generated.q_a[4]
+q_a[5] <= altsyncram_47a1:auto_generated.q_a[5]
+q_a[6] <= altsyncram_47a1:auto_generated.q_a[6]
+q_a[7] <= altsyncram_47a1:auto_generated.q_a[7]
 q_b[0] <= <GND>
 eccstatus[0] <= <GND>
 eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|DE0_PS2|en_us_rom:rom|altsyncram:altsyncram_component|altsyncram_2ca1:auto_generated
+|DE0_PS2|en_us_rom:convert|altsyncram:altsyncram_component|altsyncram_47a1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -210,6 +220,14 @@ address_a[6] => ram_block1a4.PORTAADDR6
 address_a[6] => ram_block1a5.PORTAADDR6
 address_a[6] => ram_block1a6.PORTAADDR6
 address_a[6] => ram_block1a7.PORTAADDR6
+address_a[7] => ram_block1a0.PORTAADDR7
+address_a[7] => ram_block1a1.PORTAADDR7
+address_a[7] => ram_block1a2.PORTAADDR7
+address_a[7] => ram_block1a3.PORTAADDR7
+address_a[7] => ram_block1a4.PORTAADDR7
+address_a[7] => ram_block1a5.PORTAADDR7
+address_a[7] => ram_block1a6.PORTAADDR7
+address_a[7] => ram_block1a7.PORTAADDR7
 clock0 => ram_block1a0.CLK0
 clock0 => ram_block1a1.CLK0
 clock0 => ram_block1a2.CLK0
@@ -233,14 +251,14 @@ clock => seg7:char1dec.clk
 clock => seg7:char0dec.clk
 reset => seg7:char1dec.rst_n
 reset => seg7:char0dec.rst_n
-ascii_code[0] => seg7:char0dec.num_in[0]
-ascii_code[1] => seg7:char0dec.num_in[1]
-ascii_code[2] => seg7:char0dec.num_in[2]
-ascii_code[3] => seg7:char0dec.num_in[3]
-ascii_code[4] => seg7:char1dec.num_in[0]
-ascii_code[5] => seg7:char1dec.num_in[1]
-ascii_code[6] => seg7:char1dec.num_in[2]
-ascii_code[7] => seg7:char1dec.num_in[3]
+ascii_code[0] => seg7:char0dec.num_in[1]
+ascii_code[1] => seg7:char0dec.num_in[2]
+ascii_code[2] => seg7:char0dec.num_in[3]
+ascii_code[3] => seg7:char0dec.num_in[4]
+ascii_code[4] => seg7:char1dec.num_in[1]
+ascii_code[5] => seg7:char1dec.num_in[2]
+ascii_code[6] => seg7:char1dec.num_in[3]
+ascii_code[7] => seg7:char1dec.num_in[4]
 char0[6] <= seg7:char0dec.num_out[6]
 char0[5] <= seg7:char0dec.num_out[5]
 char0[4] <= seg7:char0dec.num_out[4]

@@ -1,0 +1,6 @@
+
+State Machine - |DE0_PS2|ps2KBD:keyboard|state_reg
+Name state_reg.done state_reg.extract state_reg.idle 
+state_reg.idle 0 0 0 
+state_reg.extract 0 1 1 
+state_reg.done 1 0 1 

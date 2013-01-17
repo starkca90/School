@@ -27,7 +27,7 @@ begin
 
 	char1dec : seg7
 		port map (
-			num_in => '1' & ascii_code(7 downto 4),
+			num_in => ascii_code(7 downto 4) & '1',
 			clk => clock,
 			rst_n => reset,
 			num_out(0 to 6) => char1(0 to 6)
@@ -35,7 +35,7 @@ begin
 		
 	char0dec : seg7
 		port map (
-			num_in => '1' & ascii_code(3 downto 0),
+			num_in => ascii_code(3 downto 0) & '1',
 			clk => clock,
 			rst_n => reset,
 			num_out(0 to 6) => char0(0 to 6)

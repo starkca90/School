@@ -36,8 +36,8 @@
 # -------------------------------------------------------------------------- #
 
 
-set_global_assignment -name FAMILY "Cyclone IV GX"
-set_global_assignment -name DEVICE auto
+set_global_assignment -name FAMILY "Cyclone III"
+set_global_assignment -name DEVICE EP3C16F484C6
 set_global_assignment -name TOP_LEVEL_ENTITY DE0_PS2
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 12.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "10:08:50  JANUARY 16, 2013"
@@ -45,17 +45,6 @@ set_global_assignment -name LAST_QUARTUS_VERSION 12.1
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name SOURCE_FILE ../DE0.qsf
-set_global_assignment -name VHDL_FILE SEG7.vhd
-set_global_assignment -name VHDL_FILE ps2KBD.vhd
-set_global_assignment -name MIF_FILE en_us_mem.mif
-set_global_assignment -name VHDL_FILE ascii_to_7seg.vhd
-set_global_assignment -name VHDL_FILE DE0_PS2.vhd
-set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
-set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_location_assignment PIN_B1 -to LEDG[9]
 set_location_assignment PIN_B2 -to LEDG[8]
 set_location_assignment PIN_C2 -to LEDG[7]
@@ -308,5 +297,22 @@ set_location_assignment PIN_C3 -to DRAM_ADDR[3]
 set_location_assignment PIN_B3 -to DRAM_ADDR[2]
 set_location_assignment PIN_A3 -to DRAM_ADDR[1]
 set_location_assignment PIN_C4 -to DRAM_ADDR[0]
-set_global_assignment -name QIP_FILE en_us_rom.qip
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_global_assignment -name MIF_FILE en_us_mem.mif
+set_global_assignment -name VHDL_FILE en_us_rom.vhd
+set_global_assignment -name SOURCE_FILE en_us_rom.cmp
+set_global_assignment -name VHDL_FILE SEG7.vhd
+set_global_assignment -name VHDL_FILE ps2KBD.vhd
+set_global_assignment -name VHDL_FILE ascii_to_7seg.vhd
+set_global_assignment -name VHDL_FILE DE0_PS2.vhd
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name VHDL_FILE make_to_ascii.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 14622752 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

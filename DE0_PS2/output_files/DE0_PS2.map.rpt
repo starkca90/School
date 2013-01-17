@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_PS2
-Wed Jan 16 17:51:30 2013
+Wed Jan 16 22:49:10 2013
 Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -10,8 +10,23 @@ Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis IP Cores Summary
-  6. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. Analysis & Synthesis IP Cores Summary
+ 10. State Machine - |DE0_PS2|ps2KBD:keyboard|state_reg
+ 11. Logic Cells Representing Combinational Loops
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Source assignments for en_us_rom:convert|altsyncram:altsyncram_component|altsyncram_47a1:auto_generated
+ 15. Parameter Settings for User Entity Instance: en_us_rom:convert|altsyncram:altsyncram_component
+ 16. altsyncram Parameter Settings by Entity Instance
+ 17. Port Connectivity Checks: "ascii_to_7seg:display|seg7:char0dec"
+ 18. Port Connectivity Checks: "ascii_to_7seg:display|seg7:char1dec"
+ 19. Port Connectivity Checks: "ps2KBD:keyboard"
+ 20. Elapsed Time Per Partition
+ 21. Analysis & Synthesis Messages
 
 
 
@@ -37,24 +52,20 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Jan 16 17:51:30 2013        ;
+; Analysis & Synthesis Status        ; Successful - Wed Jan 16 22:49:10 2013    ;
 ; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
 ; Revision Name                      ; DE0_PS2                                  ;
 ; Top-level Entity Name              ; DE0_PS2                                  ;
-; Family                             ; Cyclone IV GX                            ;
-; Total logic elements               ; N/A until Partition Merge                ;
-;     Total combinational functions  ; N/A until Partition Merge                ;
-;     Dedicated logic registers      ; N/A until Partition Merge                ;
-; Total registers                    ; N/A until Partition Merge                ;
-; Total pins                         ; N/A until Partition Merge                ;
-; Total virtual pins                 ; N/A until Partition Merge                ;
-; Total memory bits                  ; N/A until Partition Merge                ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                ;
-; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                ;
-; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                ;
-; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                ;
-; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                ;
-; Total PLLs                         ; N/A until Partition Merge                ;
+; Family                             ; Cyclone III                              ;
+; Total logic elements               ; 55                                       ;
+;     Total combinational functions  ; 37                                       ;
+;     Dedicated logic registers      ; 40                                       ;
+; Total registers                    ; 40                                       ;
+; Total pins                         ; 26                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 2,048                                    ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
 +------------------------------------+------------------------------------------+
 
 
@@ -63,8 +74,9 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
 ; Top-level entity name                                                      ; DE0_PS2            ; DE0_PS2            ;
-; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -149,25 +161,283 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;   0.0%      ;
+;     2-8 processors         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                           ;
-+--------+--------------+---------+--------------+--------------+------------------------+----------------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance        ; IP Include File                        ;
-+--------+--------------+---------+--------------+--------------+------------------------+----------------------------------------+
-; Altera ; ROM: 1-PORT  ; 12.1    ; N/A          ; N/A          ; |DE0_PS2|en_us_rom:rom ; D:/GitHub/School/DE0_PS2/en_us_rom.vhd ;
-+--------+--------------+---------+--------------+--------------+------------------------+----------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                 ;
++----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------+---------+
+; en_us_mem.mif                    ; yes             ; User Memory Initialization File  ; A:/GitHub/School/DE0_PS2/en_us_mem.mif                               ;         ;
+; en_us_rom.vhd                    ; yes             ; User Wizard-Generated File       ; A:/GitHub/School/DE0_PS2/en_us_rom.vhd                               ;         ;
+; SEG7.vhd                         ; yes             ; User VHDL File                   ; A:/GitHub/School/DE0_PS2/SEG7.vhd                                    ;         ;
+; ps2KBD.vhd                       ; yes             ; User VHDL File                   ; A:/GitHub/School/DE0_PS2/ps2KBD.vhd                                  ;         ;
+; ascii_to_7seg.vhd                ; yes             ; User VHDL File                   ; A:/GitHub/School/DE0_PS2/ascii_to_7seg.vhd                           ;         ;
+; DE0_PS2.vhd                      ; yes             ; User VHDL File                   ; A:/GitHub/School/DE0_PS2/DE0_PS2.vhd                                 ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal121.inc                   ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/aglobal121.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_47a1.tdf           ; yes             ; Auto-Generated Megafunction      ; A:/GitHub/School/DE0_PS2/db/altsyncram_47a1.tdf                      ;         ;
++----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 55    ;
+;                                             ;       ;
+; Total combinational functions               ; 37    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 29    ;
+;     -- 3 input functions                    ; 5     ;
+;     -- <=2 input functions                  ; 3     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 37    ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 40    ;
+;     -- Dedicated logic registers            ; 40    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 26    ;
+; Total memory bits                           ; 2048  ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out                             ; 48    ;
+; Total fan-out                               ; 387   ;
+; Average fan-out                             ; 2.82  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                       ; Library Name ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+--------------+
+; |DE0_PS2                                  ; 37 (0)            ; 40 (0)       ; 2048        ; 0            ; 0       ; 0         ; 26   ; 0            ; |DE0_PS2                                                                                  ;              ;
+;    |ascii_to_7seg:display|                ; 14 (0)            ; 14 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_PS2|ascii_to_7seg:display                                                            ;              ;
+;       |seg7:char0dec|                     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_PS2|ascii_to_7seg:display|seg7:char0dec                                              ;              ;
+;       |seg7:char1dec|                     ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_PS2|ascii_to_7seg:display|seg7:char1dec                                              ;              ;
+;    |en_us_rom:convert|                    ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_PS2|en_us_rom:convert                                                                ;              ;
+;       |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_PS2|en_us_rom:convert|altsyncram:altsyncram_component                                ;              ;
+;          |altsyncram_47a1:auto_generated| ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_PS2|en_us_rom:convert|altsyncram:altsyncram_component|altsyncram_47a1:auto_generated ;              ;
+;    |ps2KBD:keyboard|                      ; 23 (23)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_PS2|ps2KBD:keyboard                                                                  ;              ;
++-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                             ;
++---------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------------+
+; Name                                                                                        ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF           ;
++---------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------------+
+; en_us_rom:convert|altsyncram:altsyncram_component|altsyncram_47a1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 256          ; 8            ; --           ; --           ; 2048 ; en_us_mem.mif ;
++---------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                               ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance            ; IP Include File                        ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------+
+; Altera ; ROM: 1-PORT  ; N/A     ; N/A          ; N/A          ; |DE0_PS2|en_us_rom:convert ; A:/GitHub/School/DE0_PS2/en_us_rom.vhd ;
++--------+--------------+---------+--------------+--------------+----------------------------+----------------------------------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------+
+; State Machine - |DE0_PS2|ps2KBD:keyboard|state_reg                      ;
++-------------------+----------------+-------------------+----------------+
+; Name              ; state_reg.done ; state_reg.extract ; state_reg.idle ;
++-------------------+----------------+-------------------+----------------+
+; state_reg.idle    ; 0              ; 0                 ; 0              ;
+; state_reg.extract ; 0              ; 1                 ; 1              ;
+; state_reg.done    ; 1              ; 0                 ; 1              ;
++-------------------+----------------+-------------------+----------------+
+
+
++------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops               ;
++--------------------------------------------------------+---+
+; Logic Cell Name                                        ;   ;
++--------------------------------------------------------+---+
+; ps2KBD:keyboard|n_next[3]                              ;   ;
+; Number of logic cells representing combinational loops ; 1 ;
++--------------------------------------------------------+---+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 40    ;
+; Number of registers using Synchronous Clear  ; 14    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 26    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 10    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |DE0_PS2|ps2KBD:keyboard|n_next[3]  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |DE0_PS2|ps2KBD:keyboard|state_next ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Source assignments for en_us_rom:convert|altsyncram:altsyncram_component|altsyncram_47a1:auto_generated ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                        ;
++---------------------------------+--------------------+------+-------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                         ;
++---------------------------------+--------------------+------+-------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: en_us_rom:convert|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+------------------------------------+
+; Parameter Name                     ; Value                ; Type                               ;
++------------------------------------+----------------------+------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                            ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                         ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                       ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                       ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                     ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                            ;
+; OPERATION_MODE                     ; ROM                  ; Untyped                            ;
+; WIDTH_A                            ; 8                    ; Signed Integer                     ;
+; WIDTHAD_A                          ; 8                    ; Signed Integer                     ;
+; NUMWORDS_A                         ; 256                  ; Signed Integer                     ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                            ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                            ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                            ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                            ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                            ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                            ;
+; WIDTH_B                            ; 1                    ; Untyped                            ;
+; WIDTHAD_B                          ; 1                    ; Untyped                            ;
+; NUMWORDS_B                         ; 1                    ; Untyped                            ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                            ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                            ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                            ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                            ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                            ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                            ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                            ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                            ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                            ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                            ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                            ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                            ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                     ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                            ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                            ;
+; BYTE_SIZE                          ; 8                    ; Untyped                            ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                            ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                            ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                            ;
+; INIT_FILE                          ; en_us_mem.mif        ; Untyped                            ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                            ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                            ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                            ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                            ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                            ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                            ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                            ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                            ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                            ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                            ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                            ;
+; DEVICE_FAMILY                      ; Cyclone III          ; Untyped                            ;
+; CBXI_PARAMETER                     ; altsyncram_47a1      ; Untyped                            ;
++------------------------------------+----------------------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                              ;
++-------------------------------------------+---------------------------------------------------+
+; Name                                      ; Value                                             ;
++-------------------------------------------+---------------------------------------------------+
+; Number of entity instances                ; 1                                                 ;
+; Entity Instance                           ; en_us_rom:convert|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; ROM                                               ;
+;     -- WIDTH_A                            ; 8                                                 ;
+;     -- NUMWORDS_A                         ; 256                                               ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                      ;
+;     -- WIDTH_B                            ; 1                                                 ;
+;     -- NUMWORDS_B                         ; 1                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                            ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                      ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                              ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                         ;
++-------------------------------------------+---------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ascii_to_7seg:display|seg7:char0dec"                                                     ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; num_in[0] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dp_out    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ascii_to_7seg:display|seg7:char1dec"                                                     ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; num_in[0] ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dp_out    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ps2KBD:keyboard"                                                                            ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; rx_en        ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; rx_done_tick ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rx_idle      ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -176,9 +446,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Wed Jan 16 17:51:28 2013
+    Info: Processing started: Wed Jan 16 22:49:07 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_PS2 -c DE0_PS2
-Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file en_us_rom.vhd
+    Info (12022): Found design unit 1: en_us_rom-SYN
+    Info (12023): Found entity 1: en_us_rom
 Info (12021): Found 2 design units, including 1 entities, in source file seg7.vhd
     Info (12022): Found design unit 1: seg7-behavior
     Info (12023): Found entity 1: seg7
@@ -191,38 +464,46 @@ Info (12021): Found 2 design units, including 1 entities, in source file ascii_t
 Info (12021): Found 2 design units, including 1 entities, in source file de0_ps2.vhd
     Info (12022): Found design unit 1: DE0_PS2-rtl
     Info (12023): Found entity 1: DE0_PS2
-Info (12021): Found 2 design units, including 1 entities, in source file en_us_rom.vhd
-    Info (12022): Found design unit 1: en_us_rom-SYN
-    Info (12023): Found entity 1: en_us_rom
+Info (12021): Found 2 design units, including 1 entities, in source file make_to_ascii.vhd
+    Info (12022): Found design unit 1: make_to_ascii-rtl
+    Info (12023): Found entity 1: make_to_ascii
 Info (12127): Elaborating entity "DE0_PS2" for the top level hierarchy
 Info (12128): Elaborating entity "ps2KBD" for hierarchy "ps2KBD:keyboard"
-Info (12128): Elaborating entity "en_us_rom" for hierarchy "en_us_rom:rom"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "en_us_rom:rom|altsyncram:altsyncram_component"
-Info (12130): Elaborated megafunction instantiation "en_us_rom:rom|altsyncram:altsyncram_component"
-Info (12133): Instantiated megafunction "en_us_rom:rom|altsyncram:altsyncram_component" with the following parameter:
+Info (12128): Elaborating entity "en_us_rom" for hierarchy "en_us_rom:convert"
+Info (12128): Elaborating entity "altsyncram" for hierarchy "en_us_rom:convert|altsyncram:altsyncram_component"
+Info (12130): Elaborated megafunction instantiation "en_us_rom:convert|altsyncram:altsyncram_component"
+Info (12133): Instantiated megafunction "en_us_rom:convert|altsyncram:altsyncram_component" with the following parameter:
     Info (12134): Parameter "address_aclr_a" = "NONE"
     Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
     Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
-    Info (12134): Parameter "init_file" = "./DE0_PS2/en_us_mem.mif"
-    Info (12134): Parameter "intended_device_family" = "Cyclone IV GX"
+    Info (12134): Parameter "init_file" = "en_us_mem.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone III"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-    Info (12134): Parameter "numwords_a" = "126"
+    Info (12134): Parameter "numwords_a" = "256"
     Info (12134): Parameter "operation_mode" = "ROM"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
     Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
-    Info (12134): Parameter "widthad_a" = "7"
+    Info (12134): Parameter "widthad_a" = "8"
     Info (12134): Parameter "width_a" = "8"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_r3b1.tdf
-    Info (12023): Found entity 1: altsyncram_r3b1
-Info (12128): Elaborating entity "altsyncram_r3b1" for hierarchy "en_us_rom:rom|altsyncram:altsyncram_component|altsyncram_r3b1:auto_generated"
-Error (127001): Can't find Memory Initialization File or Hexadecimal (Intel-Format) File ./DE0_PS2/en_us_mem.mif for ROM instance  File: D:/GitHub/School/DE0_PS2/en_us_rom.vhd Line: 85
-Error (12152): Can't elaborate user hierarchy "en_us_rom:rom|altsyncram:altsyncram_component|altsyncram_r3b1:auto_generated" File: c:/altera/12.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 0 warnings
-    Error: Peak virtual memory: 550 megabytes
-    Error: Processing ended: Wed Jan 16 17:51:30 2013
-    Error: Elapsed time: 00:00:02
-    Error: Total CPU time (on all processors): 00:00:02
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_47a1.tdf
+    Info (12023): Found entity 1: altsyncram_47a1
+Info (12128): Elaborating entity "altsyncram_47a1" for hierarchy "en_us_rom:convert|altsyncram:altsyncram_component|altsyncram_47a1:auto_generated"
+Info (12128): Elaborating entity "ascii_to_7seg" for hierarchy "ascii_to_7seg:display"
+Info (12128): Elaborating entity "seg7" for hierarchy "ascii_to_7seg:display|seg7:char1dec"
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 93 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
+    Info (21059): Implemented 22 output pins
+    Info (21061): Implemented 59 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 516 megabytes
+    Info: Processing ended: Wed Jan 16 22:49:10 2013
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 
