@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Tue Jan 22 14:30:47 2013
+Quartus II 64-Bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
+Revision Name : NIOSTUT
+Top-level Entity Name : NIOSTUT
+Family : Cyclone III
+Total logic elements : 1,589
+    Total combinational functions : 1,444
+    Dedicated logic registers : 823
+Total registers : 823
+Total pins : 18
+Total virtual pins : 0
+Total memory bits : 44,032
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

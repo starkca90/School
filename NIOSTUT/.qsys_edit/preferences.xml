@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable>
+  <columns>
+   <connections preferredWidth="127" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="520" />
+   <clocksource preferredWidth="520" />
+   <frequency preferredWidth="500" />
+  </columns>
+ </clocktable>
+ <library
+   expandedCategories="Library,Project,Library/Embedded Processors,Library/Interface Protocols/Serial,Library/Interface Protocols" />
+ <window width="1936" height="1056" x="-8" y="-8" />
+ <hdlexample language="VHDL" />
+</preferences>
