@@ -1,5 +1,5 @@
 Assembler report for NIOSTUT
-Tue Jan 22 14:31:07 2013
+Wed Jan 23 12:18:52 2013
 Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Jan 22 14:31:07 2013 ;
+; Assembler Status      ; Successful - Wed Jan 23 12:18:52 2013 ;
 ; Revision Name         ; NIOSTUT                               ;
 ; Top-level Entity Name ; NIOSTUT                               ;
 ; Family                ; Cyclone III                           ;
@@ -104,7 +104,7 @@ applicable agreement for further details.
 +----------------+------------------------------------------------------------+
 ; Device         ; EP3C16F484C6                                               ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                 ;
-; Checksum       ; 0x001E58E3                                                 ;
+; Checksum       ; 0x001E31AF                                                 ;
 +----------------+------------------------------------------------------------+
 
 
@@ -114,14 +114,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Tue Jan 22 14:31:05 2013
+    Info: Processing started: Wed Jan 23 12:18:51 2013
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off NIOSTUT -c NIOSTUT
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 445 megabytes
-    Info: Processing ended: Tue Jan 22 14:31:07 2013
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Wed Jan 23 12:18:52 2013
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:02
 
 

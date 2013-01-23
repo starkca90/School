@@ -1,3 +1,10 @@
+-- niostut.vhd
+-- Casey Stark <starkca@msoe.edu>
+-- January 18 2013
+-- 
+-- Provides top level entity for a NIOS II processor with
+-- input of SWITCHES on DE0 and output of LEDS on DE0.
+
 library ieee;
 use ieee.std_logic_1164.all;
 

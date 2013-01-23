@@ -16,6 +16,6 @@
  </clocktable>
  <library
    expandedCategories="Library,Project,Library/Embedded Processors,Library/Interface Protocols/Serial,Library/Interface Protocols" />
- <window width="1936" height="1056" x="-8" y="-8" />
+ <window width="1920" height="1040" x="0" y="0" />
  <hdlexample language="VHDL" />
 </preferences>

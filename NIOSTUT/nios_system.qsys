@@ -6,9 +6,12 @@
    version="1.0"
    description=""
    tags=""
-   categories="" />
+   categories="System" />
  <parameter name="bonusData"><![CDATA[bonusData 
 {
+   element $${FILENAME}
+   {
+   }
    element jtag_uart.avalon_jtag_slave
    {
       datum baseAddress
@@ -65,6 +68,14 @@
          type = "int";
       }
    }
+   element switches.s1
+   {
+      datum baseAddress
+      {
+         value = "12304";
+         type = "String";
+      }
+   }
    element leds.s1
    {
       datum baseAddress
@@ -78,14 +89,6 @@
       datum baseAddress
       {
          value = "4096";
-         type = "String";
-      }
-   }
-   element switches.s1
-   {
-      datum baseAddress
-      {
-         value = "12304";
          type = "String";
       }
    }
@@ -109,10 +112,10 @@
  <parameter name="globalResetBus" value="false" />
  <parameter name="hdlLanguage" value="VERILOG" />
  <parameter name="maxAdditionalLatency" value="1" />
- <parameter name="projectName" value="" />
+ <parameter name="projectName" value="NIOSTUT.qpf" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1358884921954" />
+ <parameter name="timeStamp" value="1358964121584" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />

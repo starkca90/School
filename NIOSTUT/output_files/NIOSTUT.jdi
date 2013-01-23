@@ -1,9 +1,9 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="d421ee51d105b43e62bf"/>
+    <hash md5_digest_80b="591dd46e1bd5e391f65a"/>
   </project>
   <file_info>
-    <file checksum="0x001E58E3" device="EP3C16F484C6" path="NIOSTUT.sof" usercode="0xFFFFFFFF"/>
+    <file checksum="0x001E31AF" device="EP3C16F484C6" path="NIOSTUT.sof" usercode="0xFFFFFFFF"/>
   </file_info>
   <hub_info ir_width="2" node_count="2"/>
   <node_info>
@@ -144,7 +144,7 @@
   <sld_infos>
     <sld_info hpath="nios_system:u0" name="u0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1358886595"/>
+        <assignment_value text="QSYS_NAME nios_system HAS_SOPCINFO 1 GENERATION_ID 1358964741"/>
       </assignment_values>
       <parameters/>
     </sld_info>

@@ -8576,8 +8576,8 @@ wren_a => ram_block1a31.PORTAWE
 
 
 |niostut|nios_system:u0|nios_system_switches:switches
-address[0] => Equal0.IN31
-address[1] => Equal0.IN30
+address[0] => Equal0.IN1
+address[1] => Equal0.IN0
 clk => readdata[0]~reg0.CLK
 clk => readdata[1]~reg0.CLK
 clk => readdata[2]~reg0.CLK
@@ -8685,8 +8685,8 @@ readdata[31] <= readdata[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |niostut|nios_system:u0|nios_system_leds:leds
-address[0] => Equal0.IN31
-address[1] => Equal0.IN30
+address[0] => Equal0.IN1
+address[1] => Equal0.IN0
 chipselect => always0.IN0
 clk => data_out[0].CLK
 clk => data_out[1].CLK

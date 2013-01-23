@@ -2,10 +2,10 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Jan 22, 2013 2:43:07 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1358887387915</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Jan 23, 2013 12:13:26 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1358964806059</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\GitHub\School\NIOSTUT\software\NIOSTUT_bsp</BspGeneratedLocation>
-        <BspSettingsFile>.\settings.bsp</BspSettingsFile>
+        <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\GitHub\School\NIOSTUT\nios_system.sopcinfo</SopcDesignFile>
         <JdiFile>default</JdiFile>
         <Cpu>nios2_processor</Cpu>
