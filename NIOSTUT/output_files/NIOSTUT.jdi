@@ -1,9 +1,9 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="591dd46e1bd5e391f65a"/>
+    <hash md5_digest_80b="c4001cac35b356aab419"/>
   </project>
   <file_info>
-    <file checksum="0x001E31AF" device="EP3C16F484C6" path="NIOSTUT.sof" usercode="0xFFFFFFFF"/>
+    <file checksum="0x001E512A" device="EP3C16F484C6" path="NIOSTUT.sof" usercode="0xFFFFFFFF"/>
   </file_info>
   <hub_info ir_width="2" node_count="2"/>
   <node_info>

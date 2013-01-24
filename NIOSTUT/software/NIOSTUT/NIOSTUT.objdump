@@ -237,9 +237,9 @@ alt_after_alt_main:
     1058:	003fff06 	br	1058 <alt_after_alt_main>
 
 0000105c <main>:
-
-#include <stdbool.h>
-
+#include <stdio.h>
+#include <ctype.h>  // needed for toupper() but not used here
+#include <unistd.h> // contains usleep function
 
 int main()
 { 
@@ -247,9 +247,9 @@ int main()
 	alt_putstr("WELCOME TO NIGHTRIDER\n");
     1060:	01000034 	movhi	r4,0
     1064:	21051704 	addi	r4,r4,5212
-
-#include <stdbool.h>
-
+#include <stdio.h>
+#include <ctype.h>  // needed for toupper() but not used here
+#include <unistd.h> // contains usleep function
 
 int main()
 { 
@@ -260,44 +260,54 @@ int main()
     1074:	04000044 	movi	r16,1
     1078:	00011c00 	call	11c0 <alt_putstr>
     107c:	0023883a 	mov	r17,zero
-	int direction = 0;
 
 	/* Event loop never exits. */
 	while (1)
 	{
+		// Read the switches, multiply by 1000 to have better control over delay
 		delay = (IORD_8DIRECT(SWITCHES_BASE, 0)) * 1000;
     1080:	008c0404 	movi	r2,12304
     1084:	11000023 	ldbuio	r4,0(r2)
 
+		// What direction are the LEDs going?
+		// Shift x corresponding direction
 		if(direction == 0)
     1088:	8804c03a 	cmpne	r2,r17,zero
     108c:	1000021e 	bne	r2,zero,1098 <main+0x3c>
+			// Left (to LED7)
 			x = x << 1;
     1090:	8421883a 	add	r16,r16,r16
     1094:	00000106 	br	109c <main+0x40>
 		else
+			// Right (to LED0)
 			x = x >> 1;
     1098:	8021d07a 	srai	r16,r16,1
 
+		// Is the LED at the end of the direction
 		if((x == 1) || (x == 128))
     109c:	00800044 	movi	r2,1
+			// Start going the other way
 			direction = !direction;
     10a0:	8807003a 	cmpeq	r3,r17,zero
-		if(direction == 0)
-			x = x << 1;
 		else
+			// Right (to LED0)
 			x = x >> 1;
 
+		// Is the LED at the end of the direction
 		if((x == 1) || (x == 128))
     10a4:	80800226 	beq	r16,r2,10b0 <main+0x54>
     10a8:	00802004 	movi	r2,128
     10ac:	8080011e 	bne	r16,r2,10b4 <main+0x58>
+			// Start going the other way
 			direction = !direction;
     10b0:	1823883a 	mov	r17,r3
 
+		// Output the new LED/x value
 		IOWR_8DIRECT(LEDS_BASE, 0, x);
     10b4:	008c0004 	movi	r2,12288
     10b8:	14000025 	stbio	r16,0(r2)
+
+		// Sleep for the switch specified amount of time
 		usleep(delay);
     10bc:	0140fa04 	movi	r5,1000
     10c0:	00010d00 	call	10d0 <__mulsi3>
