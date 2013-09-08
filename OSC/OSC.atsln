@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "OSC", "OSC\OSC.cproj", "{CE77D09C-0E28-4A28-9BC3-5AEA96FFDE51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE77D09C-0E28-4A28-9BC3-5AEA96FFDE51}.Debug|AVR.ActiveCfg = Debug|AVR
+		{CE77D09C-0E28-4A28-9BC3-5AEA96FFDE51}.Debug|AVR.Build.0 = Debug|AVR
+		{CE77D09C-0E28-4A28-9BC3-5AEA96FFDE51}.Release|AVR.ActiveCfg = Release|AVR
+		{CE77D09C-0E28-4A28-9BC3-5AEA96FFDE51}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

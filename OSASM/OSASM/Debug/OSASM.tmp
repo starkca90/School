@@ -1,0 +1,51 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.51</VERSION>
+ <DEVICE>"ATmega32"</DEVICE>
+ <WORKING_DIR>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRAssembler\2.1.51.46\AvrAssembler/Include</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRAssembler\2.1.51.46\AvrAssembler/Include\m32def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\Debug/OSASM.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\Debug/OSASM.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\Debug\OSASM.map</FILE>
+  <FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\Debug\OSASM.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <SPP0><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>20</LINE></SPP0>
+  <SPHP0><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>21</LINE></SPHP0>
+  <SPLP0><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>22</LINE></SPLP0>
+  <SPHP1><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>24</LINE></SPHP1>
+  <SPLP1><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>25</LINE></SPLP1>
+  <SPHP2><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>27</LINE></SPHP2>
+  <SPLP2><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>28</LINE></SPLP2>
+  <SPHP3><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>30</LINE></SPHP3>
+  <SPLP3><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>31</LINE></SPLP3>
+  <CPROCESS><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>33</LINE></CPROCESS>
+  <INIT><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>60</LINE></INIT>
+  <OC1AISR><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>202</LINE></OC1AISR>
+  <PADSTACK><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>47</LINE></PADSTACK>
+  <PADLOOP><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>52</LINE></PADLOOP>
+  <P1><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>378</LINE></P1>
+  <PADLOOP1><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>80</LINE></PADLOOP1>
+  <P2><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>385</LINE></P2>
+  <PADLOOP2><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>111</LINE></PADLOOP2>
+  <P3><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>392</LINE></P3>
+  <PADLOOP3><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>142</LINE></PADLOOP3>
+  <P0><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>370</LINE></P0>
+  <top0><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>266</LINE></top0>
+  <top1><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>280</LINE></top1>
+  <top2><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>295</LINE></top2>
+  <top3><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>312</LINE></top3>
+  <fail><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>399</LINE></fail>
+  <nextProcess><FILE>C:\Users\Casey\Dropbox\School Stuff\OSASM\OSASM\OSASM.asm</FILE><LINE>330</LINE></nextProcess>
+ </LABELS>
+</ASSEMBLER_INFO>

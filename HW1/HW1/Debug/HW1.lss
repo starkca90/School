@@ -1,0 +1,479 @@
+
+HW1.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000284  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000005  00800060  00800060  000002f8  2**0
+                  ALLOC
+  2 .stab         000006cc  00000000  00000000  000002f8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  3 .stabstr      00000085  00000000  00000000  000009c4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_aranges 00000080  00000000  00000000  00000a50  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   0000051e  00000000  00000000  00000ad0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 00000171  00000000  00000000  00000fee  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000365  00000000  00000000  0000115f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000c8  00000000  00000000  000014c4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    0000013c  00000000  00000000  0000158c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000010f  00000000  00000000  000016c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 6e 00 	jmp	0xdc	; 0xdc <__vector_1>
+   8:	0c 94 a2 00 	jmp	0x144	; 0x144 <__vector_2>
+   c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  10:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  14:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  18:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  1c:	0c 94 d6 00 	jmp	0x1ac	; 0x1ac <__vector_7>
+  20:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  24:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  28:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  2c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  30:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  34:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  38:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  3c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  40:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  44:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  48:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  4c:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+  50:	0c 94 47 00 	jmp	0x8e	; 0x8e <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_copy_data>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	e4 e8       	ldi	r30, 0x84	; 132
+  68:	f2 e0       	ldi	r31, 0x02	; 2
+  6a:	02 c0       	rjmp	.+4      	; 0x70 <__do_copy_data+0x10>
+  6c:	05 90       	lpm	r0, Z+
+  6e:	0d 92       	st	X+, r0
+  70:	a0 36       	cpi	r26, 0x60	; 96
+  72:	b1 07       	cpc	r27, r17
+  74:	d9 f7       	brne	.-10     	; 0x6c <__do_copy_data+0xc>
+
+00000076 <__do_clear_bss>:
+  76:	10 e0       	ldi	r17, 0x00	; 0
+  78:	a0 e6       	ldi	r26, 0x60	; 96
+  7a:	b0 e0       	ldi	r27, 0x00	; 0
+  7c:	01 c0       	rjmp	.+2      	; 0x80 <.do_clear_bss_start>
+
+0000007e <.do_clear_bss_loop>:
+  7e:	1d 92       	st	X+, r1
+
+00000080 <.do_clear_bss_start>:
+  80:	a5 36       	cpi	r26, 0x65	; 101
+  82:	b1 07       	cpc	r27, r17
+  84:	e1 f7       	brne	.-8      	; 0x7e <.do_clear_bss_loop>
+  86:	0e 94 66 00 	call	0xcc	; 0xcc <main>
+  8a:	0c 94 40 01 	jmp	0x280	; 0x280 <_exit>
+
+0000008e <__bad_interrupt>:
+  8e:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+00000092 <initButtons>:
+* Initializes on board push buttons for interrupts
+*/
+void initButtons(void)
+{
+	// PD2 and PD3 Input
+	DDRD |= 1<<PD2 | 1<<PD3;
+  92:	81 b3       	in	r24, 0x11	; 17
+  94:	8c 60       	ori	r24, 0x0C	; 12
+  96:	81 bb       	out	0x11, r24	; 17
+	// Enable Pull-Up Resistors
+	PORTD |= 1<<PD2 | 1<<PD3;
+  98:	82 b3       	in	r24, 0x12	; 18
+  9a:	8c 60       	ori	r24, 0x0C	; 12
+  9c:	82 bb       	out	0x12, r24	; 18
+	
+	// Trigger any logic change interrupt
+	MCUCR |= 1<< ISC00 | 1<<ISC10;
+  9e:	85 b7       	in	r24, 0x35	; 53
+  a0:	85 60       	ori	r24, 0x05	; 5
+  a2:	85 bf       	out	0x35, r24	; 53
+	// Enable INT0 & INT1
+	GICR |= 1<<INT0 | 1<<INT1;
+  a4:	8b b7       	in	r24, 0x3b	; 59
+  a6:	80 6c       	ori	r24, 0xC0	; 192
+  a8:	8b bf       	out	0x3b, r24	; 59
+}
+  aa:	08 95       	ret
+
+000000ac <initTimer>:
+
+void initTimer(void)
+{
+	// Clear TCCR1 Register
+	TCCR1A = 0;
+  ac:	1f bc       	out	0x2f, r1	; 47
+	TCCR1B = 0;
+  ae:	1e bc       	out	0x2e, r1	; 46
+	
+	// Set compare match register
+	OCR1A = 2603;
+  b0:	8b e2       	ldi	r24, 0x2B	; 43
+  b2:	9a e0       	ldi	r25, 0x0A	; 10
+  b4:	9b bd       	out	0x2b, r25	; 43
+  b6:	8a bd       	out	0x2a, r24	; 42
+	
+	// CTC Mode
+	TCCR1B |= 1<<WGM12;
+  b8:	8e b5       	in	r24, 0x2e	; 46
+  ba:	88 60       	ori	r24, 0x08	; 8
+  bc:	8e bd       	out	0x2e, r24	; 46
+	
+	// 1024 Prescale
+	TCCR1B |= (1<<CS10) | (1<<CS12);
+  be:	8e b5       	in	r24, 0x2e	; 46
+  c0:	85 60       	ori	r24, 0x05	; 5
+  c2:	8e bd       	out	0x2e, r24	; 46
+	
+	// Enable Timer Compare Interrupt
+	TIMSK |= 1<<OCIE1A;
+  c4:	89 b7       	in	r24, 0x39	; 57
+  c6:	80 61       	ori	r24, 0x10	; 16
+  c8:	89 bf       	out	0x39, r24	; 57
+	
+	
+}
+  ca:	08 95       	ret
+
+000000cc <main>:
+
+int main(void)
+{	
+	initButtons();
+  cc:	0e 94 49 00 	call	0x92	; 0x92 <initButtons>
+	
+	initTimer();
+  d0:	0e 94 56 00 	call	0xac	; 0xac <initTimer>
+	
+	DDRB = 0x03;
+  d4:	83 e0       	ldi	r24, 0x03	; 3
+  d6:	87 bb       	out	0x17, r24	; 23
+	
+	sei();
+  d8:	78 94       	sei
+  da:	ff cf       	rjmp	.-2      	; 0xda <main+0xe>
+
+000000dc <__vector_1>:
+*	- Checks if PB3 is pressed:
+*		* Yes, Run test mode
+*		* No, Run Mode 1
+*/
+ISR(INT0_vect)
+{		
+  dc:	1f 92       	push	r1
+  de:	0f 92       	push	r0
+  e0:	0f b6       	in	r0, 0x3f	; 63
+  e2:	0f 92       	push	r0
+  e4:	11 24       	eor	r1, r1
+  e6:	8f 93       	push	r24
+  e8:	9f 93       	push	r25
+  ea:	af 93       	push	r26
+  ec:	bf 93       	push	r27
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  ee:	8f ef       	ldi	r24, 0xFF	; 255
+  f0:	99 ef       	ldi	r25, 0xF9	; 249
+  f2:	a0 e0       	ldi	r26, 0x00	; 0
+  f4:	81 50       	subi	r24, 0x01	; 1
+  f6:	90 40       	sbci	r25, 0x00	; 0
+  f8:	a0 40       	sbci	r26, 0x00	; 0
+  fa:	e1 f7       	brne	.-8      	; 0xf4 <__vector_1+0x18>
+  fc:	00 c0       	rjmp	.+0      	; 0xfe <__vector_1+0x22>
+  fe:	00 00       	nop
+	_delay_ms(20);
+	
+	PD2Down = !PD2Down;
+ 100:	90 91 63 00 	lds	r25, 0x0063
+ 104:	81 e0       	ldi	r24, 0x01	; 1
+ 106:	91 11       	cpse	r25, r1
+ 108:	80 e0       	ldi	r24, 0x00	; 0
+ 10a:	80 93 63 00 	sts	0x0063, r24
+	
+	if(PD2Down)
+ 10e:	80 91 63 00 	lds	r24, 0x0063
+ 112:	88 23       	and	r24, r24
+ 114:	61 f0       	breq	.+24     	; 0x12e <__vector_1+0x52>
+	{
+		// PD2 & PD3 Pressed, Enter test mode
+		if(PD3Down)
+ 116:	80 91 62 00 	lds	r24, 0x0062
+ 11a:	88 23       	and	r24, r24
+ 11c:	21 f0       	breq	.+8      	; 0x126 <__vector_1+0x4a>
+		{
+			function = mode3;
+ 11e:	83 e0       	ldi	r24, 0x03	; 3
+ 120:	80 93 64 00 	sts	0x0064, r24
+ 124:	06 c0       	rjmp	.+12     	; 0x132 <__vector_1+0x56>
+		}
+		// Just PD2 is pressed
+		else
+		{
+			function = mode1;
+ 126:	81 e0       	ldi	r24, 0x01	; 1
+ 128:	80 93 64 00 	sts	0x0064, r24
+ 12c:	02 c0       	rjmp	.+4      	; 0x132 <__vector_1+0x56>
+		}
+	}
+	else
+	{
+		function = mode0;
+ 12e:	10 92 64 00 	sts	0x0064, r1
+	}
+}
+ 132:	bf 91       	pop	r27
+ 134:	af 91       	pop	r26
+ 136:	9f 91       	pop	r25
+ 138:	8f 91       	pop	r24
+ 13a:	0f 90       	pop	r0
+ 13c:	0f be       	out	0x3f, r0	; 63
+ 13e:	0f 90       	pop	r0
+ 140:	1f 90       	pop	r1
+ 142:	18 95       	reti
+
+00000144 <__vector_2>:
+
+ISR(INT1_vect)
+{
+ 144:	1f 92       	push	r1
+ 146:	0f 92       	push	r0
+ 148:	0f b6       	in	r0, 0x3f	; 63
+ 14a:	0f 92       	push	r0
+ 14c:	11 24       	eor	r1, r1
+ 14e:	8f 93       	push	r24
+ 150:	9f 93       	push	r25
+ 152:	af 93       	push	r26
+ 154:	bf 93       	push	r27
+ 156:	8f ef       	ldi	r24, 0xFF	; 255
+ 158:	99 ef       	ldi	r25, 0xF9	; 249
+ 15a:	a0 e0       	ldi	r26, 0x00	; 0
+ 15c:	81 50       	subi	r24, 0x01	; 1
+ 15e:	90 40       	sbci	r25, 0x00	; 0
+ 160:	a0 40       	sbci	r26, 0x00	; 0
+ 162:	e1 f7       	brne	.-8      	; 0x15c <__vector_2+0x18>
+ 164:	00 c0       	rjmp	.+0      	; 0x166 <__vector_2+0x22>
+ 166:	00 00       	nop
+	_delay_ms(20);
+	
+	PD3Down = !PD3Down;
+ 168:	90 91 62 00 	lds	r25, 0x0062
+ 16c:	81 e0       	ldi	r24, 0x01	; 1
+ 16e:	91 11       	cpse	r25, r1
+ 170:	80 e0       	ldi	r24, 0x00	; 0
+ 172:	80 93 62 00 	sts	0x0062, r24
+	
+	if(PD3Down)
+ 176:	80 91 62 00 	lds	r24, 0x0062
+ 17a:	88 23       	and	r24, r24
+ 17c:	61 f0       	breq	.+24     	; 0x196 <__vector_2+0x52>
+	{
+		// PD3 and PD2 Pressed, Enter test mode
+		if(PD2Down)
+ 17e:	80 91 63 00 	lds	r24, 0x0063
+ 182:	88 23       	and	r24, r24
+ 184:	21 f0       	breq	.+8      	; 0x18e <__vector_2+0x4a>
+		{
+			function = mode3;
+ 186:	83 e0       	ldi	r24, 0x03	; 3
+ 188:	80 93 64 00 	sts	0x0064, r24
+ 18c:	06 c0       	rjmp	.+12     	; 0x19a <__vector_2+0x56>
+		}
+		// Just PD3 is pressed
+		else
+		{
+			function = mode2;
+ 18e:	82 e0       	ldi	r24, 0x02	; 2
+ 190:	80 93 64 00 	sts	0x0064, r24
+ 194:	02 c0       	rjmp	.+4      	; 0x19a <__vector_2+0x56>
+		}
+	}
+	else
+	{
+		function = mode0;
+ 196:	10 92 64 00 	sts	0x0064, r1
+	}
+}
+ 19a:	bf 91       	pop	r27
+ 19c:	af 91       	pop	r26
+ 19e:	9f 91       	pop	r25
+ 1a0:	8f 91       	pop	r24
+ 1a2:	0f 90       	pop	r0
+ 1a4:	0f be       	out	0x3f, r0	; 63
+ 1a6:	0f 90       	pop	r0
+ 1a8:	1f 90       	pop	r1
+ 1aa:	18 95       	reti
+
+000001ac <__vector_7>:
+
+ISR(TIMER1_COMPA_vect)
+{	
+ 1ac:	1f 92       	push	r1
+ 1ae:	0f 92       	push	r0
+ 1b0:	0f b6       	in	r0, 0x3f	; 63
+ 1b2:	0f 92       	push	r0
+ 1b4:	11 24       	eor	r1, r1
+ 1b6:	8f 93       	push	r24
+ 1b8:	9f 93       	push	r25
+	count1++;
+ 1ba:	80 91 61 00 	lds	r24, 0x0061
+ 1be:	8f 5f       	subi	r24, 0xFF	; 255
+ 1c0:	80 93 61 00 	sts	0x0061, r24
+	
+	switch(function)
+ 1c4:	80 91 64 00 	lds	r24, 0x0064
+ 1c8:	81 30       	cpi	r24, 0x01	; 1
+ 1ca:	11 f1       	breq	.+68     	; 0x210 <__vector_7+0x64>
+ 1cc:	81 30       	cpi	r24, 0x01	; 1
+ 1ce:	30 f0       	brcs	.+12     	; 0x1dc <__vector_7+0x30>
+ 1d0:	82 30       	cpi	r24, 0x02	; 2
+ 1d2:	c1 f1       	breq	.+112    	; 0x244 <__vector_7+0x98>
+ 1d4:	83 30       	cpi	r24, 0x03	; 3
+ 1d6:	09 f0       	breq	.+2      	; 0x1da <__vector_7+0x2e>
+ 1d8:	4c c0       	rjmp	.+152    	; 0x272 <__vector_7+0xc6>
+ 1da:	45 c0       	rjmp	.+138    	; 0x266 <__vector_7+0xba>
+	{
+		case mode0:
+			count2++;
+ 1dc:	80 91 60 00 	lds	r24, 0x0060
+ 1e0:	8f 5f       	subi	r24, 0xFF	; 255
+ 1e2:	80 93 60 00 	sts	0x0060, r24
+			if(count1 >= 12)
+ 1e6:	80 91 61 00 	lds	r24, 0x0061
+ 1ea:	8c 30       	cpi	r24, 0x0C	; 12
+ 1ec:	30 f0       	brcs	.+12     	; 0x1fa <__vector_7+0x4e>
+			{
+				count1 = 0;
+ 1ee:	10 92 61 00 	sts	0x0061, r1
+				PORTB ^= 1 << PB0;
+ 1f2:	98 b3       	in	r25, 0x18	; 24
+ 1f4:	81 e0       	ldi	r24, 0x01	; 1
+ 1f6:	89 27       	eor	r24, r25
+ 1f8:	88 bb       	out	0x18, r24	; 24
+			}
+			if(count2 >= 2)
+ 1fa:	80 91 60 00 	lds	r24, 0x0060
+ 1fe:	82 30       	cpi	r24, 0x02	; 2
+ 200:	c0 f1       	brcs	.+112    	; 0x272 <__vector_7+0xc6>
+			{
+				count2 = 0;
+ 202:	10 92 60 00 	sts	0x0060, r1
+				PORTB ^= 1 << PB1;
+ 206:	98 b3       	in	r25, 0x18	; 24
+ 208:	82 e0       	ldi	r24, 0x02	; 2
+ 20a:	89 27       	eor	r24, r25
+ 20c:	88 bb       	out	0x18, r24	; 24
+ 20e:	31 c0       	rjmp	.+98     	; 0x272 <__vector_7+0xc6>
+			}
+			break;
+		
+		case mode1:
+			count2++;
+ 210:	80 91 60 00 	lds	r24, 0x0060
+ 214:	8f 5f       	subi	r24, 0xFF	; 255
+ 216:	80 93 60 00 	sts	0x0060, r24
+			if(count1 >= 12)
+ 21a:	80 91 61 00 	lds	r24, 0x0061
+ 21e:	8c 30       	cpi	r24, 0x0C	; 12
+ 220:	30 f0       	brcs	.+12     	; 0x22e <__vector_7+0x82>
+			{
+				count1 = 0;
+ 222:	10 92 61 00 	sts	0x0061, r1
+				PORTB ^= 1 << PB1;
+ 226:	98 b3       	in	r25, 0x18	; 24
+ 228:	82 e0       	ldi	r24, 0x02	; 2
+ 22a:	89 27       	eor	r24, r25
+ 22c:	88 bb       	out	0x18, r24	; 24
+			}
+			if(count2 >= 2)
+ 22e:	80 91 60 00 	lds	r24, 0x0060
+ 232:	82 30       	cpi	r24, 0x02	; 2
+ 234:	f0 f0       	brcs	.+60     	; 0x272 <__vector_7+0xc6>
+			{
+				count2 = 0;
+ 236:	10 92 60 00 	sts	0x0060, r1
+				PORTB ^= 1 << PB0;
+ 23a:	98 b3       	in	r25, 0x18	; 24
+ 23c:	81 e0       	ldi	r24, 0x01	; 1
+ 23e:	89 27       	eor	r24, r25
+ 240:	88 bb       	out	0x18, r24	; 24
+ 242:	17 c0       	rjmp	.+46     	; 0x272 <__vector_7+0xc6>
+			}
+			break;
+		
+		case mode2:
+			count2 = 0;
+ 244:	10 92 60 00 	sts	0x0060, r1
+			if(count1 >= 6)
+ 248:	80 91 61 00 	lds	r24, 0x0061
+ 24c:	86 30       	cpi	r24, 0x06	; 6
+ 24e:	30 f0       	brcs	.+12     	; 0x25c <__vector_7+0xb0>
+			{
+				count1 = 0;
+ 250:	10 92 61 00 	sts	0x0061, r1
+				PORTB ^= 1 << PB0;
+ 254:	98 b3       	in	r25, 0x18	; 24
+ 256:	81 e0       	ldi	r24, 0x01	; 1
+ 258:	89 27       	eor	r24, r25
+ 25a:	88 bb       	out	0x18, r24	; 24
+			}	
+			PORTB ^= 1 << PB1;
+ 25c:	98 b3       	in	r25, 0x18	; 24
+ 25e:	82 e0       	ldi	r24, 0x02	; 2
+ 260:	89 27       	eor	r24, r25
+ 262:	88 bb       	out	0x18, r24	; 24
+			break;
+ 264:	06 c0       	rjmp	.+12     	; 0x272 <__vector_7+0xc6>
+			
+		case mode3:
+			count1 = 0;
+ 266:	10 92 61 00 	sts	0x0061, r1
+			count2 = 0;
+ 26a:	10 92 60 00 	sts	0x0060, r1
+			PORTB = 0x03;
+ 26e:	83 e0       	ldi	r24, 0x03	; 3
+ 270:	88 bb       	out	0x18, r24	; 24
+			break;
+			
+		default:
+			break;
+	}
+ 272:	9f 91       	pop	r25
+ 274:	8f 91       	pop	r24
+ 276:	0f 90       	pop	r0
+ 278:	0f be       	out	0x3f, r0	; 63
+ 27a:	0f 90       	pop	r0
+ 27c:	1f 90       	pop	r1
+ 27e:	18 95       	reti
+
+00000280 <_exit>:
+ 280:	f8 94       	cli
+
+00000282 <__stop_program>:
+ 282:	ff cf       	rjmp	.-2      	; 0x282 <__stop_program>
