@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <systemtable>
+  <columns>
+   <connections preferredWidth="79" />
+   <irq preferredWidth="34" /></columns></systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="201" />
+   <clocksource preferredWidth="199" />
+   <frequency preferredWidth="196" /></columns></clocktable>
+ <window width="1121" height="952" x="54" y="38" />
+ <library
+   expandedCategories="Peripherals/Multiprocessor Coordination,Peripherals,PLL,Peripherals/Microcontroller Peripherals" /></preferences>

@@ -1,0 +1,185 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'generator|clkdiv_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -4.660
+TNS   : -123.191
+
+Type  : Slow 1200mV 85C Model Setup 'buttonDebounce:debounce1|data_out'
+Slack : -2.434
+TNS   : -13.754
+
+Type  : Slow 1200mV 85C Model Setup 'buttonDebounce:debounce2|data_out'
+Slack : -2.287
+TNS   : -13.372
+
+Type  : Slow 1200mV 85C Model Setup 'de0_vga_sync_generator:generator|h_count[0]'
+Slack : -0.556
+TNS   : -0.876
+
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -0.454
+TNS   : -3.450
+
+Type  : Slow 1200mV 85C Model Hold 'de0_vga_sync_generator:generator|h_count[0]'
+Slack : -0.564
+TNS   : -0.867
+
+Type  : Slow 1200mV 85C Model Hold 'generator|clkdiv_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.344
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'buttonDebounce:debounce2|data_out'
+Slack : 0.358
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.373
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'buttonDebounce:debounce1|data_out'
+Slack : 1.006
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'buttonDebounce:debounce1|data_out'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'buttonDebounce:debounce2|data_out'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'de0_vga_sync_generator:generator|h_count[0]'
+Slack : 0.363
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.581
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'generator|clkdiv_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.755
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Setup 'generator|clkdiv_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -4.050
+TNS   : -104.715
+
+Type  : Slow 1200mV 0C Model Setup 'buttonDebounce:debounce1|data_out'
+Slack : -2.227
+TNS   : -12.527
+
+Type  : Slow 1200mV 0C Model Setup 'buttonDebounce:debounce2|data_out'
+Slack : -2.085
+TNS   : -12.178
+
+Type  : Slow 1200mV 0C Model Setup 'de0_vga_sync_generator:generator|h_count[0]'
+Slack : -0.506
+TNS   : -0.786
+
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.266
+TNS   : -1.472
+
+Type  : Slow 1200mV 0C Model Hold 'de0_vga_sync_generator:generator|h_count[0]'
+Slack : -0.426
+TNS   : -0.582
+
+Type  : Slow 1200mV 0C Model Hold 'generator|clkdiv_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'buttonDebounce:debounce2|data_out'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.336
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'buttonDebounce:debounce1|data_out'
+Slack : 1.033
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'buttonDebounce:debounce1|data_out'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'buttonDebounce:debounce2|data_out'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'de0_vga_sync_generator:generator|h_count[0]'
+Slack : 0.419
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.577
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'generator|clkdiv_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.748
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Setup 'generator|clkdiv_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : -2.434
+TNS   : -61.935
+
+Type  : Fast 1200mV 0C Model Setup 'buttonDebounce:debounce1|data_out'
+Slack : -1.123
+TNS   : -6.238
+
+Type  : Fast 1200mV 0C Model Setup 'buttonDebounce:debounce2|data_out'
+Slack : -1.041
+TNS   : -6.065
+
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -0.049
+TNS   : -0.094
+
+Type  : Fast 1200mV 0C Model Setup 'de0_vga_sync_generator:generator|h_count[0]'
+Slack : 0.167
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'de0_vga_sync_generator:generator|h_count[0]'
+Slack : -0.358
+TNS   : -0.656
+
+Type  : Fast 1200mV 0C Model Hold 'generator|clkdiv_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'buttonDebounce:debounce2|data_out'
+Slack : 0.185
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.194
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'buttonDebounce:debounce1|data_out'
+Slack : 0.735
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'buttonDebounce:debounce1|data_out'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'buttonDebounce:debounce2|data_out'
+Slack : -1.000
+TNS   : -6.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'de0_vga_sync_generator:generator|h_count[0]'
+Slack : 0.373
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
+Slack : 9.380
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'generator|clkdiv_inst|altpll_component|auto_generated|pll1|clk[0]'
+Slack : 19.784
+TNS   : 0.000
+
+------------------------------------------------------------

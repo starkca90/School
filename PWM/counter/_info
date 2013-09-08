@@ -1,0 +1,44 @@
+m255
+K3
+13
+cModel Technology
+dC:\Users\Casey Stark\Desktop\serial
+Ecounter
+Z0 w1355329034
+Z1 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dC:\Users\Casey Stark\Desktop\PWM
+Z6 8C:/Users/Casey Stark/Desktop/PWM/counter.vhd
+Z7 FC:/Users/Casey Stark/Desktop/PWM/counter.vhd
+l0
+L6
+VgE9:z50P`icQ1>BCSWm:T1
+!s100 Ig3A?lCOWgWQfI8Gj3=OI0
+Z8 OV;C;10.1b;51
+32
+!i10b 1
+Z9 !s108 1355329060.896000
+Z10 !s90 -reportprogress|300|-work|counter|-2002|-explicit|C:/Users/Casey Stark/Desktop/PWM/counter.vhd|
+Z11 !s107 C:/Users/Casey Stark/Desktop/PWM/counter.vhd|
+Z12 o-work counter -2002 -explicit -O0
+Z13 tExplicit 1
+Abehavior
+R1
+R2
+R3
+R4
+DEx4 work 7 counter 0 22 gE9:z50P`icQ1>BCSWm:T1
+l29
+L19
+V6865@j25bPfV8dal:>D[>1
+!s100 4>2T>iM>2=Z4?Ljhi6NU:3
+R8
+32
+!i10b 1
+R9
+R10
+R11
+R12
+R13

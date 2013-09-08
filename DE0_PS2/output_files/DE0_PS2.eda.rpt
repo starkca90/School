@@ -1,0 +1,107 @@
+EDA Netlist Writer report for DE0_PS2
+Wed Jan 16 22:49:27 2013
+Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. EDA Netlist Writer Summary
+  3. Simulation Settings
+  4. Simulation Generated Files
+  5. EDA Netlist Writer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2012 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------+
+; EDA Netlist Writer Summary                                        ;
++---------------------------+---------------------------------------+
+; EDA Netlist Writer Status ; Successful - Wed Jan 16 22:49:26 2013 ;
+; Revision Name             ; DE0_PS2                               ;
+; Top-level Entity Name     ; DE0_PS2                               ;
+; Family                    ; Cyclone III                           ;
+; Simulation Files Creation ; Successful                            ;
++---------------------------+---------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------+
+; Simulation Settings                                                                                                        ;
++---------------------------------------------------------------------------------------------------+------------------------+
+; Option                                                                                            ; Setting                ;
++---------------------------------------------------------------------------------------------------+------------------------+
+; Tool Name                                                                                         ; ModelSim-Altera (VHDL) ;
+; Generate netlist for functional simulation only                                                   ; Off                    ;
+; Time scale                                                                                        ; 1 ps                   ;
+; Truncate long hierarchy paths                                                                     ; Off                    ;
+; Map illegal HDL characters                                                                        ; Off                    ;
+; Flatten buses into individual nodes                                                               ; Off                    ;
+; Maintain hierarchy                                                                                ; Off                    ;
+; Bring out device-wide set/reset signals as ports                                                  ; Off                    ;
+; Enable glitch filtering                                                                           ; Off                    ;
+; Do not write top level VHDL entity                                                                ; Off                    ;
+; Disable detection of setup and hold time violations in the input registers of bi-directional pins ; Off                    ;
+; Architecture name in VHDL output netlist                                                          ; structure              ;
+; Generate third-party EDA tool command script for RTL functional simulation                        ; Off                    ;
+; Generate third-party EDA tool command script for gate-level simulation                            ; Off                    ;
++---------------------------------------------------------------------------------------------------+------------------------+
+
+
++---------------------------------------------------------------------------------+
+; Simulation Generated Files                                                      ;
++---------------------------------------------------------------------------------+
+; Generated Files                                                                 ;
++---------------------------------------------------------------------------------+
+; A:/GitHub/School/DE0_PS2/simulation/modelsim/DE0_PS2_6_1200mv_85c_slow.vho      ;
+; A:/GitHub/School/DE0_PS2/simulation/modelsim/DE0_PS2_6_1200mv_0c_slow.vho       ;
+; A:/GitHub/School/DE0_PS2/simulation/modelsim/DE0_PS2_min_1200mv_0c_fast.vho     ;
+; A:/GitHub/School/DE0_PS2/simulation/modelsim/DE0_PS2.vho                        ;
+; A:/GitHub/School/DE0_PS2/simulation/modelsim/DE0_PS2_6_1200mv_85c_vhd_slow.sdo  ;
+; A:/GitHub/School/DE0_PS2/simulation/modelsim/DE0_PS2_6_1200mv_0c_vhd_slow.sdo   ;
+; A:/GitHub/School/DE0_PS2/simulation/modelsim/DE0_PS2_min_1200mv_0c_vhd_fast.sdo ;
+; A:/GitHub/School/DE0_PS2/simulation/modelsim/DE0_PS2_vhd.sdo                    ;
++---------------------------------------------------------------------------------+
+
+
++-----------------------------+
+; EDA Netlist Writer Messages ;
++-----------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit EDA Netlist Writer
+    Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
+    Info: Processing started: Wed Jan 16 22:49:26 2013
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off DE0_PS2 -c DE0_PS2
+Info (204019): Generated file DE0_PS2_6_1200mv_85c_slow.vho in folder "A:/GitHub/School/DE0_PS2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE0_PS2_6_1200mv_0c_slow.vho in folder "A:/GitHub/School/DE0_PS2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE0_PS2_min_1200mv_0c_fast.vho in folder "A:/GitHub/School/DE0_PS2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE0_PS2.vho in folder "A:/GitHub/School/DE0_PS2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE0_PS2_6_1200mv_85c_vhd_slow.sdo in folder "A:/GitHub/School/DE0_PS2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE0_PS2_6_1200mv_0c_vhd_slow.sdo in folder "A:/GitHub/School/DE0_PS2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE0_PS2_min_1200mv_0c_vhd_fast.sdo in folder "A:/GitHub/School/DE0_PS2/simulation/modelsim/" for EDA simulation tool
+Info (204019): Generated file DE0_PS2_vhd.sdo in folder "A:/GitHub/School/DE0_PS2/simulation/modelsim/" for EDA simulation tool
+Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 381 megabytes
+    Info: Processing ended: Wed Jan 16 22:49:27 2013
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

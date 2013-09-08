@@ -1,0 +1,146 @@
+<session jtag_chain="Disabled" sof_file="">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="auto_signaltap_0" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <multi attribute="frame size" size="2" value="944,1002"/>
+    <single attribute="jtag widget visible" value="1"/>
+    <multi attribute="jtag widget size" size="2" value="334,120"/>
+    <single attribute="instance widget visible" value="1"/>
+    <single attribute="config widget visible" value="1"/>
+    <single attribute="hierarchy widget visible" value="1"/>
+    <single attribute="data log widget visible" value="1"/>
+  </global_info>
+  <instance entity_name="sld_signaltap" is_auto_node="yes" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="active tab" value="1"/>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+    </position_info>
+    <signal_set global_temp="1" name="signal_set: 2013/01/16 09:19:05  #0">
+      <clock name="auto_stp_external_clock_0" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="128" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="VGA_VS" tap_mode="classic" type="output pin"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="VGA_B[0]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_B[1]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_B[2]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_B[3]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_G[0]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_G[1]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_G[2]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_G[3]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_HS" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_R[0]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_R[1]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_R[2]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_R[3]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_VS" tap_mode="classic" type="output pin"/>
+          <wire name="de0_vga_sync_generator:generator|v_on" tap_mode="classic" type="register"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="VGA_B[0]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_B[1]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_B[2]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_B[3]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_G[0]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_G[1]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_G[2]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_G[3]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_HS" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_R[0]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_R[1]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_R[2]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_R[3]" tap_mode="classic" type="output pin"/>
+          <wire name="VGA_VS" tap_mode="classic" type="output pin"/>
+          <wire name="de0_vga_sync_generator:generator|v_on" tap_mode="classic" type="register"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <net is_signal_inverted="no" name="VGA_HS"/>
+          <bus is_signal_inverted="no" link="all" name="VGA_G" order="msb_to_lsb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="VGA_G[3]"/>
+            <net is_signal_inverted="no" name="VGA_G[2]"/>
+            <net is_signal_inverted="no" name="VGA_G[1]"/>
+            <net is_signal_inverted="no" name="VGA_G[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="VGA_R" order="msb_to_lsb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="VGA_R[3]"/>
+            <net is_signal_inverted="no" name="VGA_R[2]"/>
+            <net is_signal_inverted="no" name="VGA_R[1]"/>
+            <net is_signal_inverted="no" name="VGA_R[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="VGA_B" order="msb_to_lsb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="VGA_B[3]"/>
+            <net is_signal_inverted="no" name="VGA_B[2]"/>
+            <net is_signal_inverted="no" name="VGA_B[1]"/>
+            <net is_signal_inverted="no" name="VGA_B[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="VGA_VS"/>
+          <net is_signal_inverted="no" name="de0_vga_sync_generator:generator|v_on"/>
+        </data_view>
+        <setup_view>
+          <net is_signal_inverted="no" name="VGA_HS"/>
+          <bus is_signal_inverted="no" link="all" name="VGA_G" order="msb_to_lsb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="VGA_G[3]"/>
+            <net is_signal_inverted="no" name="VGA_G[2]"/>
+            <net is_signal_inverted="no" name="VGA_G[1]"/>
+            <net is_signal_inverted="no" name="VGA_G[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="VGA_R" order="msb_to_lsb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="VGA_R[3]"/>
+            <net is_signal_inverted="no" name="VGA_R[2]"/>
+            <net is_signal_inverted="no" name="VGA_R[1]"/>
+            <net is_signal_inverted="no" name="VGA_R[0]"/>
+          </bus>
+          <bus is_signal_inverted="no" link="all" name="VGA_B" order="msb_to_lsb" radix="hex" state="collapse" type="output pin">
+            <net is_signal_inverted="no" name="VGA_B[3]"/>
+            <net is_signal_inverted="no" name="VGA_B[2]"/>
+            <net is_signal_inverted="no" name="VGA_B[1]"/>
+            <net is_signal_inverted="no" name="VGA_B[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="VGA_VS"/>
+          <net is_signal_inverted="no" name="de0_vga_sync_generator:generator|v_on"/>
+        </setup_view>
+      </presentation>
+      <trigger attribute_mem_mode="false" gap_record="true" global_temp="1" name="trigger: 2013/01/16 09:19:05  #1" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="1" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="true" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="dont_care" trigger_out="active high"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic">'VGA_VS' == falling edge
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>000000000000000
+            <pwr_up_transitional>000000000000000</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+      </trigger>
+    </signal_set>
+  </instance>
+  <mnemonics/>
+</session>

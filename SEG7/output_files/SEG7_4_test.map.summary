@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Fri Dec 14 23:48:58 2012
+Quartus II 32-bit Version : 12.1 Build 177 11/07/2012 SJ Web Edition
+Revision Name : SEG7_4_test
+Top-level Entity Name : seg7_4_test
+Family : Cyclone III
+Total logic elements : 81
+    Total combinational functions : 79
+    Dedicated logic registers : 72
+Total registers : 72
+Total pins : 35
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
