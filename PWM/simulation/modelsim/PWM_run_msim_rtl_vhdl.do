@@ -5,12 +5,12 @@ if {[file exists rtl_work]} {
 vlib rtl_work
 vmap work rtl_work
 
-vcom -93 -work work {C:/GitHub/School/PWM/counter.vhd}
-vcom -93 -work work {C:/GitHub/School/PWM/controller.vhd}
-vcom -93 -work work {C:/GitHub/School/PWM/clkdiv.vhd}
-vcom -93 -work work {C:/GitHub/School/PWM/pwm.vhd}
+vcom -93 -work work {C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/counter.vhd}
+vcom -93 -work work {C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/controller.vhd}
+vcom -93 -work work {C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/clkdiv.vhd}
+vcom -93 -work work {C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/pwm.vhd}
 
-vcom -93 -work work {C:/GitHub/School/PWM/pwm_tb.vhd}
+vcom -93 -work work {C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/pwm_tb.vhd}
 
 vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneiv_hssi -L cycloneiv_pcie_hip -L cycloneiv -L rtl_work -L work -voptargs="+acc"  pwm_tb
 

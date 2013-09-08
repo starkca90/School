@@ -73,12 +73,14 @@ BEGIN
 		address_tb <= "01";
 		chipselect_tb <= '1';
 		-- Write 24 to OCR
-		writedata_tb <= X"07";
+		writedata_tb <= X"18";
 		wait for 1 ms;
 		
 		-- Stop writing
 		write_tb <= '0';
-				
+		-- Show that enable/disable works
+		wait for 6 ms;
+		
 		write_tb <= '1';
 		address_tb <= "00";
 		-- Enable System
@@ -87,6 +89,23 @@ BEGIN
 		
 		write_tb <= '0';
 		wait for 6 ms;
-wait;
+		
+		write_tb <= '1';
+		address_tb <= "11";
+		-- Set TCNT to 20
+		writedata_tb <= X"14";
+		wait for 1 ms;
+		
+		write_tb <= '0';
+		wait for 6 ms;
+		
+		write_tb <= '1';
+		address_tb <= "10";
+		-- Write 34 as TOP
+		writedata_tb <= X"22";
+		wait for 1 ms;
+		
+		write_tb <= '0';
+		wait;
 	END PROCESS sim_process;
 END;

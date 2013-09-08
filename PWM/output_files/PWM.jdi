@@ -3,6 +3,6 @@
     <hash md5_digest_80b="00000000000000000000"/>
   </project>
   <file_info>
-    <file checksum="0x000C5046" device="EP4CGX15BF14C6" path="PWM.sof" usercode="0xFFFFFFFF"/>
+    <file checksum="0x000C47DB" device="EP4CGX15BF14C6" path="PWM.sof" usercode="0xFFFFFFFF"/>
   </file_info>
 </sld_project_info>

@@ -2,22 +2,22 @@ m255
 K3
 13
 cModel Technology
-Z0 dC:\GitHub\School\PWM\simulation\modelsim
+Z0 dC:\Users\Casey Stark\Desktop\SchoolRepo\PWM\simulation\modelsim
 Eclkdiv
-Z1 w1358883656
+Z1 w1355933241
 Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
 Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
-Z4 dC:\GitHub\School\PWM\simulation\modelsim
-Z5 8C:/GitHub/School/PWM/clkdiv.vhd
-Z6 FC:/GitHub/School/PWM/clkdiv.vhd
+Z4 dC:\Users\Casey Stark\Desktop\SchoolRepo\PWM\simulation\modelsim
+Z5 8C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/clkdiv.vhd
+Z6 FC:/Users/Casey Stark/Desktop/SchoolRepo/PWM/clkdiv.vhd
 l0
 L4
 V9z_L=Kkh_JPhSanJlNLKd3
 Z7 OV;C;10.1b;51
 31
-Z8 !s108 1359600274.777000
-Z9 !s90 -reportprogress|300|-93|-work|work|C:/GitHub/School/PWM/clkdiv.vhd|
-Z10 !s107 C:/GitHub/School/PWM/clkdiv.vhd|
+Z8 !s108 1355943859.317000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/clkdiv.vhd|
+Z10 !s107 C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/clkdiv.vhd|
 Z11 o-93 -work work -O0
 Z12 tExplicit 1
 !s100 foZ@C_bc<Q1@F3QNLPRCz3
@@ -39,20 +39,20 @@ R12
 !s100 zEb6OD3I1dJCRHUE=PW0T2
 !i10b 1
 Econtroller
-R1
+Z13 w1355938780
 R2
 R3
 R4
-Z13 8C:/GitHub/School/PWM/controller.vhd
-Z14 FC:/GitHub/School/PWM/controller.vhd
+Z14 8C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/controller.vhd
+Z15 FC:/Users/Casey Stark/Desktop/SchoolRepo/PWM/controller.vhd
 l0
 L4
 V>[Web=Piefj0`PB=]V>z;1
 R7
 31
-Z15 !s108 1359600274.701000
-Z16 !s90 -reportprogress|300|-93|-work|work|C:/GitHub/School/PWM/controller.vhd|
-Z17 !s107 C:/GitHub/School/PWM/controller.vhd|
+Z16 !s108 1355943859.207000
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/controller.vhd|
+Z18 !s107 C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/controller.vhd|
 R11
 R12
 !s100 56NZ8OfkNca;]SA_ZAf>E1
@@ -66,37 +66,37 @@ L23
 V5haI0LIP:79MUgd2EYSTT2
 R7
 31
-R15
 R16
 R17
+R18
 R11
 R12
 !s100 XWdj3zL[YNYL?laegRV[63
 !i10b 1
 Ecounter
-R1
-Z18 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
-Z19 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z19 w1355936122
+Z20 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z21 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
 R2
 R3
 R4
-Z20 8C:/GitHub/School/PWM/counter.vhd
-Z21 FC:/GitHub/School/PWM/counter.vhd
+Z22 8C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/counter.vhd
+Z23 FC:/Users/Casey Stark/Desktop/SchoolRepo/PWM/counter.vhd
 l0
 L6
 VPcP13c<mekE7H`EGX42ML0
 R7
 31
-Z22 !s108 1359600274.616000
-Z23 !s90 -reportprogress|300|-93|-work|work|C:/GitHub/School/PWM/counter.vhd|
-Z24 !s107 C:/GitHub/School/PWM/counter.vhd|
+Z24 !s108 1355943859.081000
+Z25 !s90 -reportprogress|300|-93|-work|work|C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/counter.vhd|
+Z26 !s107 C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/counter.vhd|
 R11
 R12
 !s100 i[MneM@]a36PGLLENbEaF1
 !i10b 1
 Abehavior
-R18
-R19
+R20
+R21
 R2
 R3
 DEx4 work 7 counter 0 22 PcP13c<mekE7H`EGX42ML0
@@ -105,28 +105,28 @@ L23
 ViZ>@bhm:EL@DgN52kD<W?0
 R7
 31
-R22
-R23
 R24
+R25
+R26
 R11
 R12
 !s100 MC?WlfkFfZ9F<7<c<ROzD0
 !i10b 1
 Epwm
-Z25 w1358883657
+Z27 w1355939102
 R2
 R3
 R4
-Z26 8C:/GitHub/School/PWM/pwm.vhd
-Z27 FC:/GitHub/School/PWM/pwm.vhd
+Z28 8C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/pwm.vhd
+Z29 FC:/Users/Casey Stark/Desktop/SchoolRepo/PWM/pwm.vhd
 l0
 L4
 V4R03hL?[<Rj@oI[Bzk:XQ2
 R7
 31
-Z28 !s108 1359600274.869000
-Z29 !s90 -reportprogress|300|-93|-work|work|C:/GitHub/School/PWM/pwm.vhd|
-Z30 !s107 C:/GitHub/School/PWM/pwm.vhd|
+Z30 !s108 1355943859.420000
+Z31 !s90 -reportprogress|300|-93|-work|work|C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/pwm.vhd|
+Z32 !s107 C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/pwm.vhd|
 R11
 R12
 !s100 E:cPMSkoAA3MFMf=JlEeh1
@@ -140,20 +140,20 @@ L19
 Vj@W;_5g?45Q0VdXjCV8;33
 R7
 31
-R28
-R29
 R30
+R31
+R32
 R11
 R12
 !s100 []:WZ1[ZbFMC@]cMS8G5C2
 !i10b 1
 Epwm_tb
-Z31 w1359600250
+Z33 w1355943262
 R2
 R3
 R4
-Z32 8C:/GitHub/School/PWM/pwm_tb.vhd
-Z33 FC:/GitHub/School/PWM/pwm_tb.vhd
+Z34 8C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/pwm_tb.vhd
+Z35 FC:/Users/Casey Stark/Desktop/SchoolRepo/PWM/pwm_tb.vhd
 l0
 L4
 Vf;H2iTOznIG`?<gBQbf2D1
@@ -161,9 +161,9 @@ Vf;H2iTOznIG`?<gBQbf2D1
 R7
 31
 !i10b 1
-Z34 !s108 1359600274.960000
-Z35 !s90 -reportprogress|300|-93|-work|work|C:/GitHub/School/PWM/pwm_tb.vhd|
-Z36 !s107 C:/GitHub/School/PWM/pwm_tb.vhd|
+Z36 !s108 1355943859.526000
+Z37 !s90 -reportprogress|300|-93|-work|work|C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/pwm_tb.vhd|
+Z38 !s107 C:/Users/Casey Stark/Desktop/SchoolRepo/PWM/pwm_tb.vhd|
 R11
 R12
 Apwm_tb_arch
@@ -172,13 +172,13 @@ R3
 DEx4 work 6 pwm_tb 0 22 f;H2iTOznIG`?<gBQbf2D1
 l31
 L7
-V^N1EdQ`ioz4em5gb?W0XQ3
-!s100 4;DY@5]?QUkKZR]?UDkU?3
+VUn9X>ERdXH:VYM0I>Bm_z1
+!s100 LVN8QdFaENi4h@JK=V0z52
 R7
 31
 !i10b 1
-R34
-R35
 R36
+R37
+R38
 R11
 R12
