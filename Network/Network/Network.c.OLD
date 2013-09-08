@@ -1,0 +1,106 @@
+/*
+ * Network.c
+ *
+ * Created: 12/10/2012 12:14:17 PM
+ *  Author: Casey Stark
+ */ 
+
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <stdbool.h>
+
+// Status Flags
+volatile bool BUSY = false;
+volatile bool IDLE = false;
+volatile bool COLLISION = false;
+volatile bool fallingEdge = false;
+
+void initialize(void)
+{
+	// PORTD as communication BUS
+	DDRD = 0x00;
+	PORTD = 0xFF;
+	PIND = 0xFF;
+	
+	// PORTB as status BUS
+	DDRB = 0xFF;
+	PORTB = 0x00;
+	
+	// Enable External Interrupt 1
+	GICR |= 1<<INT1;
+	// INT1 to trigger on Falling Edge
+	MCUCR |= 1<<ISC11;
+	// Looking for a falling edge on INT1
+	fallingEdge = true;
+	
+	// Clock divider = 1024, CTC Mode
+	TCCR1B |= (1<<CS12) | (1<<CS10) | (1<<WGM12);
+	// Timer 1 Output Compare Interrupt
+	TIMSK |= (1<<TOIE1);
+	
+	// 9 bit times
+	TCNT1 = -7;
+	
+	IDLE = false;
+	BUSY = false;
+	COLLISION = false;
+}
+
+int main(void)
+{
+	initialize();
+	sei();
+    while(1)
+    {
+        PORTB |=0b1000000;
+		//TODO:: Please write your application code 
+    }
+}
+
+ISR(INT1_vect)
+{
+	if(fallingEdge)
+	{
+		// Start looking for rising edge
+		fallingEdge = false;
+		MCUCR |= 1<<ISC10;
+	}
+	else
+	{
+		fallingEdge = true;
+		MCUCR &= ~(1<<ISC10);
+	}
+	
+	// Schedule Next Timer Interrupt
+	TCNT1 = -7;
+	
+	PORTB &= ~(0x07);
+	PORTB |= 1<<PB1;
+	
+	BUSY = true;
+	IDLE = false;
+	COLLISION = false;
+}
+
+ISR(TIMER1_OVF_vect)
+{
+	TCNT1 = -7;
+	
+	if(bit_is_set(PORTD,6))
+	{
+		PORTB &= ~(0x07);
+		PORTB |= 1<<PB0;
+		COLLISION = false;
+		BUSY = false;
+		IDLE = true;
+	}
+	else
+	{
+		PORTB &= ~(0x07);
+		PORTB |= 1<<PB2;
+		COLLISION = true;
+		BUSY = false;
+		IDLE = false;
+	}
+}
