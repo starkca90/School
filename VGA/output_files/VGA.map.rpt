@@ -1,6 +1,6 @@
 Analysis & Synthesis report for VGA
-Thu Jan 10 12:01:30 2013
-Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+Sat Sep 07 22:36:47 2013
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -25,20 +25,23 @@ Quartus II 64-Bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
  17. Parameter Settings for User Entity Instance: de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component
  18. Parameter Settings for User Entity Instance: de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component
  19. Parameter Settings for User Entity Instance: de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component
- 20. altsyncram Parameter Settings by Entity Instance
- 21. altpll Parameter Settings by Entity Instance
- 22. Port Connectivity Checks: "colors:color"
- 23. Port Connectivity Checks: "buttonDebounce:debounce1"
- 24. Port Connectivity Checks: "buttonDebounce:debounce2"
- 25. Elapsed Time Per Partition
- 26. Analysis & Synthesis Messages
+ 20. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. altpll Parameter Settings by Entity Instance
+ 23. Port Connectivity Checks: "colors:color"
+ 24. Port Connectivity Checks: "buttonDebounce:debounce1"
+ 25. Port Connectivity Checks: "buttonDebounce:debounce2"
+ 26. SignalTap II Logic Analyzer Settings
+ 27. Elapsed Time Per Partition
+ 28. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 29. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2012 Altera Corporation
+Copyright (C) 1991-2013 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -54,24 +57,24 @@ applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+------------------------------------+------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jan 10 12:01:30 2013    ;
-; Quartus II 64-Bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
-; Revision Name                      ; VGA                                      ;
-; Top-level Entity Name              ; VGA                                      ;
-; Family                             ; Cyclone III                              ;
-; Total logic elements               ; 222                                      ;
-;     Total combinational functions  ; 199                                      ;
-;     Dedicated logic registers      ; 91                                       ;
-; Total registers                    ; 91                                       ;
-; Total pins                         ; 28                                       ;
-; Total virtual pins                 ; 0                                        ;
-; Total memory bits                  ; 256                                      ;
-; Embedded Multiplier 9-bit elements ; 0                                        ;
-; Total PLLs                         ; 2                                        ;
-+------------------------------------+------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Sep 07 22:36:47 2013           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; VGA                                             ;
+; Top-level Entity Name              ; VGA                                             ;
+; Family                             ; Cyclone III                                     ;
+; Total logic elements               ; 746                                             ;
+;     Total combinational functions  ; 533                                             ;
+;     Dedicated logic registers      ; 483                                             ;
+; Total registers                    ; 483                                             ;
+; Total pins                         ; 29                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 2,176                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 2                                               ;
++------------------------------------+-------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -161,124 +164,207 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 4      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-8         ;   0.0%      ;
++----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                  ;
-+-----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path  ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                         ; Library ;
-+-----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------+---------+
-; VGA/colors.vhd                    ; yes             ; User VHDL File                   ; D:/GitHub/School/VGA/VGA/colors.vhd                                  ;         ;
-; VGA/VGA.vhd                       ; yes             ; User VHDL File                   ; D:/GitHub/School/VGA/VGA/VGA.vhd                                     ;         ;
-; VGA/de0_vga_sprite_control_pb.vhd ; yes             ; User VHDL File                   ; D:/GitHub/School/VGA/VGA/de0_vga_sprite_control_pb.vhd               ;         ;
-; VGA/de0_vga_sync_generator.vhd    ; yes             ; User VHDL File                   ; D:/GitHub/School/VGA/VGA/de0_vga_sync_generator.vhd                  ;         ;
-; VGA/buttonDebounce.vhd            ; yes             ; User VHDL File                   ; D:/GitHub/School/VGA/VGA/buttonDebounce.vhd                          ;         ;
-; VGA/de0_vga_display.vhd           ; yes             ; User VHDL File                   ; D:/GitHub/School/VGA/VGA/de0_vga_display.vhd                         ;         ;
-; clkdiv.vhd                        ; yes             ; User Wizard-Generated File       ; D:/GitHub/School/VGA/clkdiv.vhd                                      ;         ;
-; VGA.mif                           ; yes             ; User Memory Initialization File  ; D:/GitHub/School/VGA/VGA.mif                                         ;         ;
-; sprite.vhd                        ; yes             ; User Wizard-Generated File       ; D:/GitHub/School/VGA/sprite.vhd                                      ;         ;
-; altsyncram.tdf                    ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc             ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                       ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                    ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal121.inc                    ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/aglobal121.inc        ;         ;
-; a_rdenreg.inc                     ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                        ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                        ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                      ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_vi91.tdf            ; yes             ; Auto-Generated Megafunction      ; D:/GitHub/School/VGA/db/altsyncram_vi91.tdf                          ;         ;
-; altpll.tdf                        ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/altpll.tdf            ;         ;
-; stratix_pll.inc                   ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/stratix_pll.inc       ;         ;
-; stratixii_pll.inc                 ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/stratixii_pll.inc     ;         ;
-; cycloneii_pll.inc                 ; yes             ; Megafunction                     ; c:/altera/12.1/quartus/libraries/megafunctions/cycloneii_pll.inc     ;         ;
-; db/clkdiv_altpll.v                ; yes             ; Auto-Generated Megafunction      ; D:/GitHub/School/VGA/db/clkdiv_altpll.v                              ;         ;
-+-----------------------------------+-----------------+----------------------------------+----------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++-----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path  ; Used in Netlist ; File Type                        ; File Name with Absolute Path                                                   ; Library ;
++-----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------+---------+
+; VGA/colors.vhd                    ; yes             ; User VHDL File                   ; F:/Users/Documents/GitHub/School/VGA/VGA/colors.vhd                            ;         ;
+; VGA/VGA.vhd                       ; yes             ; User VHDL File                   ; F:/Users/Documents/GitHub/School/VGA/VGA/VGA.vhd                               ;         ;
+; VGA/de0_vga_sprite_control_pb.vhd ; yes             ; User VHDL File                   ; F:/Users/Documents/GitHub/School/VGA/VGA/de0_vga_sprite_control_pb.vhd         ;         ;
+; VGA/de0_vga_sync_generator.vhd    ; yes             ; User VHDL File                   ; F:/Users/Documents/GitHub/School/VGA/VGA/de0_vga_sync_generator.vhd            ;         ;
+; VGA/buttonDebounce.vhd            ; yes             ; User VHDL File                   ; F:/Users/Documents/GitHub/School/VGA/VGA/buttonDebounce.vhd                    ;         ;
+; VGA/de0_vga_display.vhd           ; yes             ; User VHDL File                   ; F:/Users/Documents/GitHub/School/VGA/VGA/de0_vga_display.vhd                   ;         ;
+; clkdiv.vhd                        ; yes             ; User Wizard-Generated File       ; F:/Users/Documents/GitHub/School/VGA/clkdiv.vhd                                ;         ;
+; VGA.mif                           ; yes             ; User Memory Initialization File  ; F:/Users/Documents/GitHub/School/VGA/VGA.mif                                   ;         ;
+; sprite.vhd                        ; yes             ; User Wizard-Generated File       ; F:/Users/Documents/GitHub/School/VGA/sprite.vhd                                ;         ;
+; altsyncram.tdf                    ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.tdf               ;         ;
+; stratix_ram_block.inc             ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_ram_block.inc        ;         ;
+; lpm_mux.inc                       ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.inc                  ;         ;
+; lpm_decode.inc                    ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.inc               ;         ;
+; aglobal130.inc                    ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/aglobal130.inc               ;         ;
+; a_rdenreg.inc                     ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/a_rdenreg.inc                ;         ;
+; altrom.inc                        ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altrom.inc                   ;         ;
+; altram.inc                        ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altram.inc                   ;         ;
+; altdpram.inc                      ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.inc                 ;         ;
+; db/altsyncram_vi91.tdf            ; yes             ; Auto-Generated Megafunction      ; F:/Users/Documents/GitHub/School/VGA/db/altsyncram_vi91.tdf                    ;         ;
+; altpll.tdf                        ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altpll.tdf                   ;         ;
+; stratix_pll.inc                   ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/stratix_pll.inc              ;         ;
+; stratixii_pll.inc                 ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/stratixii_pll.inc            ;         ;
+; cycloneii_pll.inc                 ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/cycloneii_pll.inc            ;         ;
+; db/clkdiv_altpll.v                ; yes             ; Auto-Generated Megafunction      ; F:/Users/Documents/GitHub/School/VGA/db/clkdiv_altpll.v                        ;         ;
+; sld_signaltap.vhd                 ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/sld_signaltap.vhd            ;         ;
+; sld_signaltap_impl.vhd            ; yes             ; Encrypted Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/sld_signaltap_impl.vhd       ;         ;
+; sld_ela_control.vhd               ; yes             ; Encrypted Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/sld_ela_control.vhd          ;         ;
+; lpm_shiftreg.tdf                  ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_shiftreg.tdf             ;         ;
+; lpm_constant.inc                  ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_constant.inc             ;         ;
+; dffeea.inc                        ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/dffeea.inc                   ;         ;
+; sld_mbpmg.vhd                     ; yes             ; Encrypted Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/sld_mbpmg.vhd                ;         ;
+; sld_ela_trigger_flow_mgr.vhd      ; yes             ; Encrypted Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd ;         ;
+; sld_buffer_manager.vhd            ; yes             ; Encrypted Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/sld_buffer_manager.vhd       ;         ;
+; db/altsyncram_3t14.tdf            ; yes             ; Auto-Generated Megafunction      ; F:/Users/Documents/GitHub/School/VGA/db/altsyncram_3t14.tdf                    ;         ;
+; altdpram.tdf                      ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altdpram.tdf                 ;         ;
+; memmodes.inc                      ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/others/maxplus2/memmodes.inc               ;         ;
+; a_hdffe.inc                       ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/a_hdffe.inc                  ;         ;
+; alt_le_rden_reg.inc               ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/alt_le_rden_reg.inc          ;         ;
+; altsyncram.inc                    ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altsyncram.inc               ;         ;
+; lpm_mux.tdf                       ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_mux.tdf                  ;         ;
+; muxlut.inc                        ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/muxlut.inc                   ;         ;
+; bypassff.inc                      ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/bypassff.inc                 ;         ;
+; altshift.inc                      ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/altshift.inc                 ;         ;
+; db/mux_jrc.tdf                    ; yes             ; Auto-Generated Megafunction      ; F:/Users/Documents/GitHub/School/VGA/db/mux_jrc.tdf                            ;         ;
+; lpm_decode.tdf                    ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_decode.tdf               ;         ;
+; declut.inc                        ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/declut.inc                   ;         ;
+; lpm_compare.inc                   ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_compare.inc              ;         ;
+; db/decode_4uf.tdf                 ; yes             ; Auto-Generated Megafunction      ; F:/Users/Documents/GitHub/School/VGA/db/decode_4uf.tdf                         ;         ;
+; lpm_counter.tdf                   ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.tdf              ;         ;
+; lpm_add_sub.inc                   ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc              ;         ;
+; cmpconst.inc                      ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/cmpconst.inc                 ;         ;
+; lpm_counter.inc                   ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/lpm_counter.inc              ;         ;
+; alt_counter_stratix.inc           ; yes             ; Megafunction                     ; d:/altera/13.0sp1/quartus/libraries/megafunctions/alt_counter_stratix.inc      ;         ;
+; db/cntr_5fi.tdf                   ; yes             ; Auto-Generated Megafunction      ; F:/Users/Documents/GitHub/School/VGA/db/cntr_5fi.tdf                           ;         ;
+; db/cmpr_hfc.tdf                   ; yes             ; Auto-Generated Megafunction      ; F:/Users/Documents/GitHub/School/VGA/db/cmpr_hfc.tdf                           ;         ;
+; db/cntr_95j.tdf                   ; yes             ; Auto-Generated Megafunction      ; F:/Users/Documents/GitHub/School/VGA/db/cntr_95j.tdf                           ;         ;
+; db/cntr_p1j.tdf                   ; yes             ; Auto-Generated Megafunction      ; F:/Users/Documents/GitHub/School/VGA/db/cntr_p1j.tdf                           ;         ;
+; db/cmpr_efc.tdf                   ; yes             ; Auto-Generated Megafunction      ; F:/Users/Documents/GitHub/School/VGA/db/cmpr_efc.tdf                           ;         ;
+; sld_rom_sr.vhd                    ; yes             ; Encrypted Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/sld_rom_sr.vhd               ;         ;
+; sld_hub.vhd                       ; yes             ; Encrypted Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/sld_hub.vhd                  ;         ;
+; sld_jtag_hub.vhd                  ; yes             ; Encrypted Megafunction           ; d:/altera/13.0sp1/quartus/libraries/megafunctions/sld_jtag_hub.vhd             ;         ;
++-----------------------------------+-----------------+----------------------------------+--------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 222   ;
-;                                             ;       ;
-; Total combinational functions               ; 199   ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 80    ;
-;     -- 3 input functions                    ; 28    ;
-;     -- <=2 input functions                  ; 91    ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 132   ;
-;     -- arithmetic mode                      ; 67    ;
-;                                             ;       ;
-; Total registers                             ; 91    ;
-;     -- Dedicated logic registers            ; 91    ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 28    ;
-; Total memory bits                           ; 256   ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Total PLLs                                  ; 2     ;
-;     -- PLLs                                 ; 2     ;
-;                                             ;       ;
-; Maximum fan-out                             ; 57    ;
-; Total fan-out                               ; 924   ;
-; Average fan-out                             ; 2.54  ;
-+---------------------------------------------+-------+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 746                      ;
+;                                             ;                          ;
+; Total combinational functions               ; 533                      ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 213                      ;
+;     -- 3 input functions                    ; 121                      ;
+;     -- <=2 input functions                  ; 199                      ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 424                      ;
+;     -- arithmetic mode                      ; 109                      ;
+;                                             ;                          ;
+; Total registers                             ; 483                      ;
+;     -- Dedicated logic registers            ; 483                      ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 29                       ;
+; Total memory bits                           ; 2176                     ;
+; Embedded Multiplier 9-bit elements          ; 0                        ;
+; Total PLLs                                  ; 2                        ;
+;     -- PLLs                                 ; 2                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
+; Maximum fan-out                             ; 253                      ;
+; Total fan-out                               ; 3405                     ;
+; Average fan-out                             ; 3.05                     ;
++---------------------------------------------+--------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                     ;
-+----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                           ; Library Name ;
-+----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
-; |VGA                                         ; 199 (0)           ; 91 (0)       ; 256         ; 0            ; 0       ; 0         ; 28   ; 0            ; |VGA                                                                                                          ;              ;
-;    |buttonDebounce:debounce1|                ; 28 (28)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|buttonDebounce:debounce1                                                                                 ;              ;
-;    |buttonDebounce:debounce2|                ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|buttonDebounce:debounce2                                                                                 ;              ;
-;    |de0_vga_display:display|                 ; 76 (76)           ; 20 (20)      ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display                                                                                  ;              ;
-;       |clkdiv:clockDiv|                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|clkdiv:clockDiv                                                                  ;              ;
-;          |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component                                          ;              ;
-;             |clkdiv_altpll:auto_generated|   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component|clkdiv_altpll:auto_generated             ;              ;
-;       |sprite:spriterom|                     ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|sprite:spriterom                                                                 ;              ;
-;          |altsyncram:altsyncram_component|   ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component                                 ;              ;
-;             |altsyncram_vi91:auto_generated| ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated  ;              ;
-;    |de0_vga_sprite_control_pb:sprite|        ; 24 (24)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sprite_control_pb:sprite                                                                         ;              ;
-;    |de0_vga_sync_generator:generator|        ; 65 (65)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator                                                                         ;              ;
-;       |clkdiv:clkdiv_inst|                   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst                                                      ;              ;
-;          |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component                              ;              ;
-;             |clkdiv_altpll:auto_generated|   ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated ;              ;
-+----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                      ; Library Name ;
++---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
+; |VGA                                                                                                    ; 533 (1)           ; 483 (0)      ; 2176        ; 0            ; 0       ; 0         ; 29   ; 0            ; |VGA                                                                                                                                                                                                                                                                                                                                     ; work         ;
+;    |buttonDebounce:debounce1|                                                                           ; 28 (28)           ; 22 (22)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|buttonDebounce:debounce1                                                                                                                                                                                                                                                                                                            ; work         ;
+;    |buttonDebounce:debounce2|                                                                           ; 6 (6)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|buttonDebounce:debounce2                                                                                                                                                                                                                                                                                                            ; work         ;
+;    |de0_vga_display:display|                                                                            ; 76 (76)           ; 20 (20)      ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display                                                                                                                                                                                                                                                                                                             ; work         ;
+;       |clkdiv:clockDiv|                                                                                 ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|clkdiv:clockDiv                                                                                                                                                                                                                                                                                             ; work         ;
+;          |altpll:altpll_component|                                                                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component                                                                                                                                                                                                                                                                     ; work         ;
+;             |clkdiv_altpll:auto_generated|                                                              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component|clkdiv_altpll:auto_generated                                                                                                                                                                                                                                        ; work         ;
+;       |sprite:spriterom|                                                                                ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|sprite:spriterom                                                                                                                                                                                                                                                                                            ; work         ;
+;          |altsyncram:altsyncram_component|                                                              ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component                                                                                                                                                                                                                                                            ; work         ;
+;             |altsyncram_vi91:auto_generated|                                                            ; 0 (0)             ; 0 (0)        ; 256         ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated                                                                                                                                                                                                                             ; work         ;
+;    |de0_vga_sprite_control_pb:sprite|                                                                   ; 24 (24)           ; 24 (24)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sprite_control_pb:sprite                                                                                                                                                                                                                                                                                                    ; work         ;
+;    |de0_vga_sync_generator:generator|                                                                   ; 65 (65)           ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator                                                                                                                                                                                                                                                                                                    ; work         ;
+;       |clkdiv:clkdiv_inst|                                                                              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst                                                                                                                                                                                                                                                                                 ; work         ;
+;          |altpll:altpll_component|                                                                      ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component                                                                                                                                                                                                                                                         ; work         ;
+;             |clkdiv_altpll:auto_generated|                                                              ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst|altpll:altpll_component|clkdiv_altpll:auto_generated                                                                                                                                                                                                                            ; work         ;
+;    |sld_hub:auto_hub|                                                                                   ; 121 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                    ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 120 (82)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                       ; work         ;
+;          |sld_rom_sr:hub_info_reg|                                                                      ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                               ; work         ;
+;          |sld_shadow_jsm:shadow_jsm|                                                                    ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                                                                                                                             ; work         ;
+;    |sld_signaltap:auto_signaltap_0|                                                                     ; 212 (1)           ; 306 (16)     ; 1920        ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                      ; work         ;
+;       |sld_signaltap_impl:sld_signaltap_body|                                                           ; 211 (0)           ; 290 (0)      ; 1920        ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body                                                                                                                                                                                                                                                                ; work         ;
+;          |sld_signaltap_implb:sld_signaltap_body|                                                       ; 211 (19)          ; 290 (86)     ; 1920        ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body                                                                                                                                                                                                                         ; work         ;
+;             |altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|                            ; 17 (0)            ; 46 (46)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem                                                                                                                                                          ; work         ;
+;                |lpm_decode:wdecoder|                                                                    ; 2 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder                                                                                                                                      ; work         ;
+;                   |decode_4uf:auto_generated|                                                           ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_decode:wdecoder|decode_4uf:auto_generated                                                                                                            ; work         ;
+;                |lpm_mux:mux|                                                                            ; 15 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux                                                                                                                                              ; work         ;
+;                   |mux_jrc:auto_generated|                                                              ; 15 (15)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altdpram:\stp_non_zero_ram_gen:attribute_mem_gen:attribute_mem|lpm_mux:mux|mux_jrc:auto_generated                                                                                                                       ; work         ;
+;             |altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|                                           ; 0 (0)             ; 0 (0)        ; 1920        ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram                                                                                                                                                                         ; work         ;
+;                |altsyncram_3t14:auto_generated|                                                         ; 0 (0)             ; 0 (0)        ; 1920        ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_3t14:auto_generated                                                                                                                                          ; work         ;
+;             |lpm_shiftreg:segment_offset_config_deserialize|                                            ; 0 (0)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:segment_offset_config_deserialize                                                                                                                                                                          ; work         ;
+;             |lpm_shiftreg:status_register|                                                              ; 17 (17)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|lpm_shiftreg:status_register                                                                                                                                                                                            ; work         ;
+;             |sld_buffer_manager:sld_buffer_manager_inst|                                                ; 59 (59)           ; 44 (44)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst                                                                                                                                                                              ; work         ;
+;             |sld_ela_control:ela_control|                                                               ; 4 (1)             ; 21 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control                                                                                                                                                                                             ; work         ;
+;                |lpm_shiftreg:trigger_config_deserialize|                                                ; 0 (0)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|lpm_shiftreg:trigger_config_deserialize                                                                                                                                                     ; work         ;
+;                |sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm| ; 2 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm                                                                                                      ; work         ;
+;                   |lpm_shiftreg:trigger_condition_deserialize|                                          ; 0 (0)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|lpm_shiftreg:trigger_condition_deserialize                                                           ; work         ;
+;                   |sld_mbpmg:\trigger_modules_gen:0:trigger_match|                                      ; 2 (0)             ; 2 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match                                                       ; work         ;
+;                      |sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1|                            ; 2 (2)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_basic_multi_level_trigger:\basic_multi_level_mbpm_trigger_gen:multi_level_mbpm|sld_mbpmg:\trigger_modules_gen:0:trigger_match|sld_sbpmg:\gen_sbpmg_pipeline_less_than_two:sm0:0:sm1 ; work         ;
+;                |sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|                          ; 1 (1)             ; 11 (1)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity                                                                                                                               ; work         ;
+;                   |lpm_shiftreg:trigger_config_deserialize|                                             ; 0 (0)             ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_ela_control:ela_control|sld_ela_trigger_flow_mgr:\builtin:ela_trigger_flow_mgr_entity|lpm_shiftreg:trigger_config_deserialize                                                                                       ; work         ;
+;             |sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|          ; 76 (9)            ; 61 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst                                                                                                                                        ; work         ;
+;                |lpm_counter:\adv_point_3_and_more:advance_pointer_counter|                              ; 6 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter                                                                              ; work         ;
+;                   |cntr_5fi:auto_generated|                                                             ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:\adv_point_3_and_more:advance_pointer_counter|cntr_5fi:auto_generated                                                      ; work         ;
+;                |lpm_counter:read_pointer_counter|                                                       ; 7 (0)             ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter                                                                                                       ; work         ;
+;                   |cntr_95j:auto_generated|                                                             ; 7 (7)             ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:read_pointer_counter|cntr_95j:auto_generated                                                                               ; work         ;
+;                |lpm_counter:status_advance_pointer_counter|                                             ; 6 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter                                                                                             ; work         ;
+;                   |cntr_5fi:auto_generated|                                                             ; 6 (6)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_advance_pointer_counter|cntr_5fi:auto_generated                                                                     ; work         ;
+;                |lpm_counter:status_read_pointer_counter|                                                ; 3 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter                                                                                                ; work         ;
+;                   |cntr_p1j:auto_generated|                                                             ; 3 (3)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_counter:status_read_pointer_counter|cntr_p1j:auto_generated                                                                        ; work         ;
+;                |lpm_shiftreg:info_data_shift_out|                                                       ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:info_data_shift_out                                                                                                       ; work         ;
+;                |lpm_shiftreg:ram_data_shift_out|                                                        ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:ram_data_shift_out                                                                                                        ; work         ;
+;                |lpm_shiftreg:status_data_shift_out|                                                     ; 15 (15)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_offload_buffer_mgr:\stp_non_zero_depth_offload_gen:stp_offload_buff_mgr_inst|lpm_shiftreg:status_data_shift_out                                                                                                     ; work         ;
+;             |sld_rom_sr:crc_rom_sr|                                                                     ; 19 (19)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr                                                                                                                                                                                                   ; work         ;
++---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                              ;
-+--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------+
-; Name                                                                                                               ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF     ;
-+--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------+
-; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 16           ; 16           ; --           ; --           ; 256  ; VGA.mif ;
-+--------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                                                                                                             ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------+
+; Name                                                                                                                                                                                                  ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF     ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------+
+; de0_vga_display:display|sprite:spriterom|altsyncram:altsyncram_component|altsyncram_vi91:auto_generated|ALTSYNCRAM                                                                                    ; AUTO ; ROM              ; 16           ; 16           ; --           ; --           ; 256  ; VGA.mif ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|altsyncram:\stp_non_zero_ram_gen:stp_buffer_ram|altsyncram_3t14:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 128          ; 15           ; 128          ; 15           ; 1920 ; None    ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                                                      ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------------------+---------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                          ; IP Include File                 ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------------------+---------------------------------+
-; Altera ; ALTPLL       ; 12.1    ; N/A          ; N/A          ; |VGA|de0_vga_display:display|clkdiv:clockDiv             ; D:/GitHub/School/VGA/clkdiv.vhd ;
-; Altera ; ROM: 1-PORT  ; 12.1    ; N/A          ; N/A          ; |VGA|de0_vga_display:display|sprite:spriterom            ; D:/GitHub/School/VGA/sprite.vhd ;
-; Altera ; ALTPLL       ; 12.1    ; N/A          ; N/A          ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst ; D:/GitHub/School/VGA/clkdiv.vhd ;
-+--------+--------------+---------+--------------+--------------+----------------------------------------------------------+---------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                                                                      ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------+-------------------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance                                          ; IP Include File                                 ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------+-------------------------------------------------+
+; Altera ; ALTPLL       ; 12.1    ; N/A          ; N/A          ; |VGA|de0_vga_display:display|clkdiv:clockDiv             ; F:/Users/Documents/GitHub/School/VGA/clkdiv.vhd ;
+; Altera ; ROM: 1-PORT  ; 12.1    ; N/A          ; N/A          ; |VGA|de0_vga_display:display|sprite:spriterom            ; F:/Users/Documents/GitHub/School/VGA/sprite.vhd ;
+; Altera ; ALTPLL       ; 12.1    ; N/A          ; N/A          ; |VGA|de0_vga_sync_generator:generator|clkdiv:clkdiv_inst ; F:/Users/Documents/GitHub/School/VGA/clkdiv.vhd ;
++--------+--------------+---------+--------------+--------------+----------------------------------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------+
@@ -286,43 +372,59 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------+-----------------------------------------------+------------------------+
 ; Latch Name                                         ; Latch Enable Signal                           ; Free of Timing Hazards ;
 +----------------------------------------------------+-----------------------------------------------+------------------------+
-; de0_vga_sync_generator:generator|h_on              ; de0_vga_sync_generator:generator|Equal0       ; yes                    ;
 ; de0_vga_sync_generator:generator|v_on              ; de0_vga_sync_generator:generator|pixel_row[9] ; yes                    ;
+; de0_vga_sync_generator:generator|h_on              ; de0_vga_sync_generator:generator|Equal0       ; yes                    ;
 ; Number of user-specified and inferred latches = 2  ;                                               ;                        ;
 +----------------------------------------------------+-----------------------------------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                 ;
-+-----------------------------------------------------+--------------------------------------------------------------+
-; Register name                                       ; Reason for Removal                                           ;
-+-----------------------------------------------------+--------------------------------------------------------------+
-; buttonDebounce:debounce2|counter[0]                 ; Merged with buttonDebounce:debounce1|counter[0]              ;
-; buttonDebounce:debounce2|counter[1]                 ; Merged with buttonDebounce:debounce1|counter[1]              ;
-; buttonDebounce:debounce2|counter[2]                 ; Merged with buttonDebounce:debounce1|counter[2]              ;
-; buttonDebounce:debounce2|counter[3]                 ; Merged with buttonDebounce:debounce1|counter[3]              ;
-; buttonDebounce:debounce2|counter[4]                 ; Merged with buttonDebounce:debounce1|counter[4]              ;
-; buttonDebounce:debounce2|counter[5]                 ; Merged with buttonDebounce:debounce1|counter[5]              ;
-; buttonDebounce:debounce2|counter[6]                 ; Merged with buttonDebounce:debounce1|counter[6]              ;
-; buttonDebounce:debounce2|counter[7]                 ; Merged with buttonDebounce:debounce1|counter[7]              ;
-; buttonDebounce:debounce2|counter[8]                 ; Merged with buttonDebounce:debounce1|counter[8]              ;
-; buttonDebounce:debounce2|counter[9]                 ; Merged with buttonDebounce:debounce1|counter[9]              ;
-; buttonDebounce:debounce2|counter[10]                ; Merged with buttonDebounce:debounce1|counter[10]             ;
-; buttonDebounce:debounce2|counter[11]                ; Merged with buttonDebounce:debounce1|counter[11]             ;
-; buttonDebounce:debounce2|counter[12]                ; Merged with buttonDebounce:debounce1|counter[12]             ;
-; buttonDebounce:debounce2|counter[13]                ; Merged with buttonDebounce:debounce1|counter[13]             ;
-; buttonDebounce:debounce2|counter[14]                ; Merged with buttonDebounce:debounce1|counter[14]             ;
-; buttonDebounce:debounce2|counter[15]                ; Merged with buttonDebounce:debounce1|counter[15]             ;
-; buttonDebounce:debounce2|counter[16]                ; Merged with buttonDebounce:debounce1|counter[16]             ;
-; de0_vga_sprite_control_pb:sprite|sprite_x_reg[1..4] ; Merged with de0_vga_sprite_control_pb:sprite|sprite_x_reg[0] ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_reg[1..3] ; Merged with de0_vga_sprite_control_pb:sprite|sprite_y_reg[0] ;
-; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[1..4] ; Merged with de0_vga_sprite_control_pb:sprite|sprite_x_nxt[0] ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[1..3] ; Merged with de0_vga_sprite_control_pb:sprite|sprite_y_nxt[0] ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[0]    ; Stuck at GND due to stuck port data_in                       ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_reg[0]    ; Stuck at GND due to stuck port data_in                       ;
-; Total Number of Removed Registers = 33              ;                                                              ;
-+-----------------------------------------------------+--------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                                                          ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                                          ; Reason for Removal                                                                                                                                                                                 ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; buttonDebounce:debounce2|counter[0]                                                                                                                                                    ; Merged with buttonDebounce:debounce1|counter[0]                                                                                                                                                    ;
+; buttonDebounce:debounce2|counter[1]                                                                                                                                                    ; Merged with buttonDebounce:debounce1|counter[1]                                                                                                                                                    ;
+; buttonDebounce:debounce2|counter[2]                                                                                                                                                    ; Merged with buttonDebounce:debounce1|counter[2]                                                                                                                                                    ;
+; buttonDebounce:debounce2|counter[3]                                                                                                                                                    ; Merged with buttonDebounce:debounce1|counter[3]                                                                                                                                                    ;
+; buttonDebounce:debounce2|counter[4]                                                                                                                                                    ; Merged with buttonDebounce:debounce1|counter[4]                                                                                                                                                    ;
+; buttonDebounce:debounce2|counter[5]                                                                                                                                                    ; Merged with buttonDebounce:debounce1|counter[5]                                                                                                                                                    ;
+; buttonDebounce:debounce2|counter[6]                                                                                                                                                    ; Merged with buttonDebounce:debounce1|counter[6]                                                                                                                                                    ;
+; buttonDebounce:debounce2|counter[7]                                                                                                                                                    ; Merged with buttonDebounce:debounce1|counter[7]                                                                                                                                                    ;
+; buttonDebounce:debounce2|counter[8]                                                                                                                                                    ; Merged with buttonDebounce:debounce1|counter[8]                                                                                                                                                    ;
+; buttonDebounce:debounce2|counter[9]                                                                                                                                                    ; Merged with buttonDebounce:debounce1|counter[9]                                                                                                                                                    ;
+; buttonDebounce:debounce2|counter[10]                                                                                                                                                   ; Merged with buttonDebounce:debounce1|counter[10]                                                                                                                                                   ;
+; buttonDebounce:debounce2|counter[11]                                                                                                                                                   ; Merged with buttonDebounce:debounce1|counter[11]                                                                                                                                                   ;
+; buttonDebounce:debounce2|counter[12]                                                                                                                                                   ; Merged with buttonDebounce:debounce1|counter[12]                                                                                                                                                   ;
+; buttonDebounce:debounce2|counter[13]                                                                                                                                                   ; Merged with buttonDebounce:debounce1|counter[13]                                                                                                                                                   ;
+; buttonDebounce:debounce2|counter[14]                                                                                                                                                   ; Merged with buttonDebounce:debounce1|counter[14]                                                                                                                                                   ;
+; buttonDebounce:debounce2|counter[15]                                                                                                                                                   ; Merged with buttonDebounce:debounce1|counter[15]                                                                                                                                                   ;
+; buttonDebounce:debounce2|counter[16]                                                                                                                                                   ; Merged with buttonDebounce:debounce1|counter[16]                                                                                                                                                   ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[1..4]                                                                                                                                    ; Merged with de0_vga_sprite_control_pb:sprite|sprite_x_reg[0]                                                                                                                                       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[1..3]                                                                                                                                    ; Merged with de0_vga_sprite_control_pb:sprite|sprite_y_reg[0]                                                                                                                                       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[1..4]                                                                                                                                    ; Merged with de0_vga_sprite_control_pb:sprite|sprite_x_nxt[0]                                                                                                                                       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[1..3]                                                                                                                                    ; Merged with de0_vga_sprite_control_pb:sprite|sprite_y_nxt[0]                                                                                                                                       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[0]                                                                                                                                       ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[0]                                                                                                                                       ; Stuck at GND due to stuck port data_in                                                                                                                                                             ;
+; Total Number of Removed Registers = 33                                                                                                                                                 ;                                                                                                                                                                                                    ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|segment_shift_clk_ena                                                      ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_enable_delayed                                                ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[0] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[0] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[1] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[1] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[2] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[2] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[3] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[3] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[4] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[4] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[5] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[5] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:offset_count[6] ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|\buffer_manager:next_address[6] ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[0]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[0]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[1]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[1]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[2]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[2]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[3]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[3]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[4]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[4]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[5]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[5]                                            ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|current_offset_delayed[6]                                                  ; Merged with sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|buffer_write_address_delayed[6]                                            ;
+; Total Number of Removed Registers = 15                                                                                                                                                 ;                                                                                                                                                                                                    ;
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -340,50 +442,72 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 91    ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 12    ;
+; Total registers                              ; 483   ;
+; Number of registers using Synchronous Clear  ; 12    ;
+; Number of registers using Synchronous Load   ; 26    ;
+; Number of registers using Asynchronous Clear ; 162   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 28    ;
+; Number of registers using Clock Enable       ; 233   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------+
-; Inverted Register Statistics                               ;
-+--------------------------------------------------+---------+
-; Inverted Register                                ; Fan out ;
-+--------------------------------------------------+---------+
-; de0_vga_sprite_control_pb:sprite|sprite_x_reg[8] ; 5       ;
-; de0_vga_sprite_control_pb:sprite|sprite_x_reg[6] ; 5       ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_reg[7] ; 5       ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_reg[6] ; 5       ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_reg[5] ; 4       ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_reg[4] ; 4       ;
-; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[8] ; 1       ;
-; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[6] ; 1       ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[7] ; 1       ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[6] ; 1       ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[5] ; 1       ;
-; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[4] ; 2       ;
-; Total number of inverted registers = 12          ;         ;
-+--------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Inverted Register Statistics                                                                                                                                                            ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; Inverted Register                                                                                                                                                             ; Fan out ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[8]                                                                                                                              ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_reg[6]                                                                                                                              ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[7]                                                                                                                              ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[6]                                                                                                                              ; 5       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[5]                                                                                                                              ; 4       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_reg[4]                                                                                                                              ; 4       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[8]                                                                                                                              ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_x_nxt[6]                                                                                                                              ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[7]                                                                                                                              ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[6]                                                                                                                              ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[5]                                                                                                                              ; 1       ;
+; de0_vga_sprite_control_pb:sprite|sprite_y_nxt[4]                                                                                                                              ; 2       ;
+; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|tdo                                                                                                             ; 1       ;
+; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[2]                                                                                                  ; 2       ;
+; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[1]                                                                                                  ; 3       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[1] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[2] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[3] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[4] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[5] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[6] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[7] ; 1       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|trigger_out_mode_ff                                               ; 3       ;
+; sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|modified_post_count[0] ; 1       ;
+; Total number of inverted registers = 24                                                                                                                                       ;         ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGA|de0_vga_sync_generator:generator|v_count[3]      ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_y_nxt[9] ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_x_nxt[5] ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_y_nxt[7] ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_x_nxt[6] ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |VGA|de0_vga_sync_generator:generator|pixel_row[8]    ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |VGA|de0_vga_sync_generator:generator|pixel_col[1]    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |VGA|de0_vga_sync_generator:generator|v_count[3]                                                                                                                         ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_y_nxt[9]                                                                                                                    ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_x_nxt[5]                                                                                                                    ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_y_nxt[7]                                                                                                                    ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |VGA|de0_vga_sprite_control_pb:sprite|sprite_x_nxt[6]                                                                                                                    ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |VGA|de0_vga_sync_generator:generator|pixel_row[8]                                                                                                                       ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; No         ; |VGA|de0_vga_sync_generator:generator|pixel_col[1]                                                                                                                       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|counter[6]   ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; Yes        ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|word_counter[3]                   ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 24 LEs               ; 8 LEs                  ; Yes        ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_rom_sr:crc_rom_sr|WORD_SR[1]                        ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |VGA|sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|sld_buffer_manager:sld_buffer_manager_inst|offset_count ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |VGA|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                                                                                  ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |VGA|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                                                                                     ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |VGA|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[0]                                                               ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |VGA|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                                                                                           ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 56 LEs               ; 32 LEs                 ; Yes        ; |VGA|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                                                                                    ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; Yes        ; |VGA|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------+
@@ -1204,6 +1328,66 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++----------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0              ;
++-------------------------------------------------+---------------------------+----------------+
+; Parameter Name                                  ; Value                     ; Type           ;
++-------------------------------------------------+---------------------------+----------------+
+; lpm_type                                        ; sld_signaltap             ; String         ;
+; sld_node_info                                   ; 805334528                 ; Untyped        ;
+; SLD_IP_VERSION                                  ; 6                         ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                         ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                         ; Signed Integer ;
+; sld_data_bits                                   ; 15                        ; Untyped        ;
+; sld_trigger_bits                                ; 1                         ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                        ; Signed Integer ;
+; sld_node_crc_hiword                             ; 719                       ; Untyped        ;
+; sld_node_crc_loword                             ; 56791                     ; Untyped        ;
+; SLD_INCREMENTAL_ROUTING                         ; 0                         ; Signed Integer ;
+; sld_sample_depth                                ; 128                       ; Untyped        ;
+; sld_segment_size                                ; 128                       ; Untyped        ;
+; SLD_RAM_BLOCK_TYPE                              ; AUTO                      ; String         ;
+; sld_state_bits                                  ; 11                        ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                         ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                         ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                         ; Signed Integer ;
+; sld_trigger_level                               ; 1                         ; Untyped        ;
+; sld_trigger_in_enabled                          ; 0                         ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                         ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                         ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                         ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                         ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,                  ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                         ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                         ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                      ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                      ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                      ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                      ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                      ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                      ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                      ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                      ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                      ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                      ; String         ;
+; sld_inversion_mask_length                       ; 24                        ; Untyped        ;
+; sld_inversion_mask                              ; 000000000000000000000000  ; Untyped        ;
+; sld_power_up_trigger                            ; 0                         ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd ; String         ;
+; sld_state_flow_use_generated                    ; 0                         ; Untyped        ;
+; sld_current_resource_width                      ; 1                         ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                       ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_BITS                      ; 1                         ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                         ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                       ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                         ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                         ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                     ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                         ; Signed Integer ;
++-------------------------------------------------+---------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                                                     ;
 +-------------------------------------------+--------------------------------------------------------------------------+
@@ -1278,13 +1462,49 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------+-------+----------+---------------------------+
 
 
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SignalTap II Logic Analyzer Settings                                                                                                                                                                                                                                    ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 1                   ; 15               ; 128          ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+
+
++-----------------------------------------------+
+; Elapsed Time Per Partition                    ;
++--------------------------------+--------------+
+; Partition Name                 ; Elapsed Time ;
++--------------------------------+--------------+
+; sld_signaltap:auto_signaltap_0 ; 00:00:01     ;
+; Top                            ; 00:00:01     ;
+; sld_hub:auto_hub               ; 00:00:01     ;
++--------------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                               ;
++---------------------------------------+---------------+-----------+----------------+-------------------+-------------------------------------------+---------+
+; Name                                  ; Type          ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection                         ; Details ;
++---------------------------------------+---------------+-----------+----------------+-------------------+-------------------------------------------+---------+
+; VGA_B[0]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|B_VGA[0]          ; N/A     ;
+; VGA_B[1]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|B_VGA[1]          ; N/A     ;
+; VGA_B[2]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|B_VGA[2]          ; N/A     ;
+; VGA_B[3]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|B_VGA[3]          ; N/A     ;
+; VGA_G[0]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|G_VGA[0]          ; N/A     ;
+; VGA_G[1]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|G_VGA[1]          ; N/A     ;
+; VGA_G[2]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|G_VGA[2]          ; N/A     ;
+; VGA_G[3]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|G_VGA[3]          ; N/A     ;
+; VGA_HS                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_sync_generator:generator|VGA_HS~2 ; N/A     ;
+; VGA_R[0]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|R_VGA[0]          ; N/A     ;
+; VGA_R[1]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|R_VGA[1]          ; N/A     ;
+; VGA_R[2]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|R_VGA[2]          ; N/A     ;
+; VGA_R[3]                              ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_display:display|R_VGA[3]          ; N/A     ;
+; VGA_VS                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_sync_generator:generator|VGA_VS~1 ; N/A     ;
+; VGA_VS                                ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_sync_generator:generator|VGA_VS~1 ; N/A     ;
+; de0_vga_sync_generator:generator|v_on ; pre-synthesis ; connected ; Top            ; post-synthesis    ; de0_vga_sync_generator:generator|v_on     ; N/A     ;
+; auto_stp_external_clock_0             ; dynamic pin   ; connected ; Top            ; post-synthesis    ; auto_stp_external_clock_0                 ; N/A     ;
++---------------------------------------+---------------+-----------+----------------+-------------------+-------------------------------------------+---------+
 
 
 +-------------------------------+
@@ -1292,10 +1512,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 12.1 Build 177 11/07/2012 SJ Web Edition
-    Info: Processing started: Thu Jan 10 12:01:27 2013
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Sep 07 22:36:36 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA -c VGA
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file vga/colors.vhd
     Info (12022): Found design unit 1: colors-RTL
     Info (12023): Found entity 1: colors
@@ -1420,32 +1640,59 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/clkd
     Info (12023): Found entity 1: clkdiv_altpll
 Info (12128): Elaborating entity "clkdiv_altpll" for hierarchy "de0_vga_display:display|clkdiv:clockDiv|altpll:altpll_component|clkdiv_altpll:auto_generated"
 Info (12128): Elaborating entity "de0_vga_sync_generator" for hierarchy "de0_vga_sync_generator:generator"
-Warning (10631): VHDL Process Statement warning at de0_vga_sync_generator.vhd(51): inferring latch(es) for signal or variable "h_on", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at de0_vga_sync_generator.vhd(78): inferring latch(es) for signal or variable "v_on", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "v_on" at de0_vga_sync_generator.vhd(78)
-Info (10041): Inferred latch for "h_on" at de0_vga_sync_generator.vhd(51)
+Warning (10631): VHDL Process Statement warning at de0_vga_sync_generator.vhd(73): inferring latch(es) for signal or variable "h_on", which holds its previous value in one or more paths through the process
+Warning (10631): VHDL Process Statement warning at de0_vga_sync_generator.vhd(100): inferring latch(es) for signal or variable "v_on", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "v_on" at de0_vga_sync_generator.vhd(100)
+Info (10041): Inferred latch for "h_on" at de0_vga_sync_generator.vhd(73)
 Info (12128): Elaborating entity "de0_vga_sprite_control_pb" for hierarchy "de0_vga_sprite_control_pb:sprite"
 Info (12128): Elaborating entity "buttonDebounce" for hierarchy "buttonDebounce:debounce2"
 Info (12128): Elaborating entity "colors" for hierarchy "colors:color"
-Warning (13012): Latch de0_vga_sync_generator:generator|h_on has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal de0_vga_sync_generator:generator|h_count[9]
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_3t14.tdf
+    Info (12023): Found entity 1: altsyncram_3t14
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_jrc.tdf
+    Info (12023): Found entity 1: mux_jrc
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_4uf.tdf
+    Info (12023): Found entity 1: decode_4uf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_5fi.tdf
+    Info (12023): Found entity 1: cntr_5fi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_hfc.tdf
+    Info (12023): Found entity 1: cmpr_hfc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_95j.tdf
+    Info (12023): Found entity 1: cntr_95j
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_p1j.tdf
+    Info (12023): Found entity 1: cntr_p1j
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_efc.tdf
+    Info (12023): Found entity 1: cmpr_efc
+Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
 Warning (13012): Latch de0_vga_sync_generator:generator|v_on has unsafe behavior
     Warning (13013): Ports D and ENA on the latch are fed by the same signal de0_vga_sync_generator:generator|v_count[9]
+Warning (13012): Latch de0_vga_sync_generator:generator|h_on has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal de0_vga_sync_generator:generator|h_count[9]
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info (286030): Timing-Driven Synthesis is running
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (18057): The assignment to disallow NOT gate push-back on register "sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|trigger_out_mode_ff" is ignored
+Info (286031): Timing-Driven Synthesis is running on partition "sld_signaltap:auto_signaltap_0"
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
+Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
+Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 17 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 2 node(s), including 0 DDIO, 2 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 275 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 14 input pins
-    Info (21059): Implemented 14 output pins
-    Info (21061): Implemented 229 logic cells
-    Info (21064): Implemented 16 RAM segments
+Info (21057): Implemented 835 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 18 input pins
+    Info (21059): Implemented 15 output pins
+    Info (21061): Implemented 768 logic cells
+    Info (21064): Implemented 31 RAM segments
     Info (21065): Implemented 2 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 494 megabytes
-    Info: Processing ended: Thu Jan 10 12:01:30 2013
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:03
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 583 megabytes
+    Info: Processing ended: Sat Sep 07 22:36:47 2013
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:09
 
 
