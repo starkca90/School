@@ -1,0 +1,341 @@
+/*
+* ZIGBEE.c
+*
+* Created: 10/19/2012 9:08:22 AM
+*  Author: starkca
+*/
+
+#define F_CPU 16000000UL
+#define ZIGBEE_PIN PD4
+#define LCD_PIN PD5
+#define SRCADDR 42
+#define DSTADDR 0
+#define TOLCD 0
+#define TOZIGBEE 1
+
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <avr/sleep.h>
+#include <util/delay.h>
+
+#include <stdio.h>
+#include <stdbool.h>
+
+#include "uart.h"
+#include "adc.h"
+
+// Should the Heart be toggled
+volatile bool pulseHrt = false;
+// Is heart currently being displayed or not
+volatile bool heart = false;
+// Heart is in process of changing
+volatile bool hrtCng = false;
+// Can the system goto sleep?
+volatile bool canSleep = false;
+// Should the temperature be updated?
+volatile bool updateTemp = false;
+// Is the system off?
+volatile bool systemOff = false;
+// Toggle system power status
+volatile bool togglePower = false;
+
+// Counter to keep track of how long system has been inactive
+volatile uint8_t sleepCnt = 0;
+// Destination Address
+volatile uint8_t destAddr = 0;
+
+
+/************************************************************************/
+/* Pulses the heart for the required heart beat.                        */
+/* Displays an H to signify the heart.									*/
+/*																		*/
+/* PARAMETERS:															*/
+/*	- VOID																*/
+/*																		*/
+/* RETURNS:																*/
+/*	- VOID																*/
+/************************************************************************/
+void pulseHeart(void)
+{
+	// Going to be printing messages, disable interrupts
+	cli();
+	
+	// Set flag to inform system the heart is changing
+	hrtCng = true;
+	
+	// The heart is current present
+	if(heart)
+	{
+		// Goto heart position
+		hrt;
+		// Clear the heart
+		printf(" ");
+	}
+	// Heart is not present
+	else
+	{
+		// Goto heart position
+		hrt;
+		// Display the heart with alarm (Pretty funny with African American Heart Monitor
+		// As seen on Family Guy)
+		//		printf("H\a");
+		// Display the heart without sound
+		printf("H");
+	}
+	
+	// Clear heart change flag
+	hrtCng = false;
+	// Toggle heart flag
+	heart = !heart;
+	// Clear toggle heart flag
+	pulseHrt = false;
+
+	// Enable Interrupts
+	sei();
+}
+
+/************************************************************************/
+/* Initialize Timer Counter 1 to track when the heart beat should pulse	*/
+/*																		*/
+/* PARAMETERS:															*/
+/*	- VOID																*/
+/*																		*/
+/* RETURNS:																*/
+/*	- VOID																*/
+/************************************************************************/
+void initHeart(void)
+{
+	// Clear the counter
+	TCCR1A = 0;
+	
+	// Set overflow value to get 1/2 interrupt
+	OCR1A = 7810;
+	
+	// CTC Mode
+	TCCR1B |= 1 << WGM12;
+	
+	// 1024 Prescale
+	TCCR1B |= (1 << CS10) | (1 << CS12);
+	
+	// Enable Interrupt
+	TIMSK |= 1 << OCIE1A;
+}
+
+/************************************************************************/
+/* Initializes the push button to control the functionality on or off   */
+/************************************************************************/
+void initButton(void)
+{
+	// PD2 Input
+	DDRD |= 1 << PD2;
+	// Enable Pull-Up Resistor
+	PORTD |= 1 << PD2;
+	
+	// Trigger falling edge Interrupt
+	MCUCR |= 1 << ISC10 | 1 << ISC00;
+	// Enable INT0 Interrupts
+	GICR |= 1 << INT0;
+}
+
+/************************************************************************/
+/* Toggles the pins that control the filter gates on where the          */
+/* USART data will be going to, either the XBee or LCD. Filter gate is	*/
+/* active low, therefore the destination pin is driven low, and other	*/
+/* pin is driven high.													*/
+/************************************************************************/
+void switchFunctions(uint8_t function)
+{
+	if(function == TOZIGBEE)
+	{
+		PORTD |= 1 << LCD_PIN;
+		PORTD &= ~(1 << ZIGBEE_PIN);
+	}
+	else if(function == TOLCD)
+	{
+		PORTD |= 1 << ZIGBEE_PIN;
+		PORTD &= ~(1 << LCD_PIN);
+	}
+	else
+	{
+		PORTD |= (1 << ZIGBEE_PIN) | (1 << LCD_PIN); 	
+	}
+}
+/************************************************************************/
+/* Main entry point into system                                         */
+/* Reads a temperature using the ATMEGA32 ADC subsystem, displays on	*/
+/* serially connected LCD and sends data via connected XBee Antenna		*/
+/************************************************************************/
+int main(void)
+{
+	// Set gate Bits as output
+	DDRD |= (1 << ZIGBEE_PIN) | (1 << LCD_PIN);
+	switchFunctions(TOLCD);
+	
+	uart_init();
+	initButton();
+	initHeart();
+	initADC();
+	
+	updateTemp = true;
+	
+	clrScr;
+	printf("CE3200 ZIGBEE 1.0\nWelcome");
+	
+	_delay_ms(1000);
+	
+	sei();
+	
+	while(1)
+	{
+		// System says it's time to pulse the heart
+		if(pulseHrt && !hrtCng)
+			pulseHeart();
+		
+		if(updateTemp)
+		{
+			switchFunctions(TOLCD);
+			
+			updateTemp = false;
+			// Will start the conversion then wait until conversion is done
+			adcStart();
+			// Get the value generated by ADC
+			uint8_t adcVal = getADCL();
+			
+			uint8_t adcValH = getADCH();
+			
+			// Fahrenheit = adcVal / 2
+			uint8_t tempF = adcVal >> 1;
+			
+			// Celsius = (F - 32) / 1.8
+			// 1.8 can be rounded to 2 for sake of performance
+			uint8_t tempC = (tempF - 32) >> 1;
+			
+			clrScr;
+			printf("%u F\t%u C",tempF,tempC);
+			pwr;
+			printf("ON");
+			
+			// Set PORTB as input
+			DDRB = 0x00;
+			// Read in destination address
+			destAddr = PINB;
+			
+			// Allow the final bits to move
+			_delay_ms(2);
+			
+			switchFunctions(TOZIGBEE);
+			
+			// Allow the switch signal to settle
+			_delay_ms(2);
+			
+			// Send Source Address
+			uart_putc(SRCADDR);
+			// Send ADCH
+			uart_putc(tempC);
+			// Send ADCL
+			uart_putc(tempF);
+			
+			// Allow the final bits to move
+			_delay_ms(10);
+			
+			switchFunctions(TOLCD);
+		}
+		
+		if(togglePower)
+		{
+			togglePower = false;
+			
+			_delay_ms(100);
+			while(!(PIND & 1 << PD2));
+			_delay_ms(100);
+			
+			// System is on, need to turn off
+			if(!systemOff)
+			{
+				// Turn off Timer/Counter 1 as this is where all flag sets happen
+				TCCR1B &= ~((1 << CS12) | (1 << CS11) | (1 << CS10));
+				pwr;
+				printf("OFF");
+				canSleep = true;
+				systemOff = true;
+			}
+			// System is off, need to turn on
+			else
+			{
+				// Re-Enable Timer/Counter 1 as this is where all flag sets happen
+				TCCR1B |= (1 << CS12) | (1 << CS10);
+				printf("ON");
+				canSleep = false;
+				systemOff = false;
+			}
+		}
+		
+		// Set sleep mode to idle
+		set_sleep_mode(SLEEP_MODE_IDLE);
+		
+		cli();
+		if(canSleep)
+		{
+			sleep;
+			printf("SLEEPING");
+			sleep_enable();
+			sei();
+			sleep_cpu();
+			sleep_disable();
+		}
+		
+		sei();
+	}
+	return 0;
+}
+
+/************************************************************************/
+/* Toggles functionality of system. Powering down will disable ability	*/
+/* for system to update temp and enter any other mode.					*/
+/************************************************************************/
+ISR(INT0_vect)
+{
+	togglePower = true;
+	updateTemp = true;
+}
+
+/************************************************************************/
+/* Interrupt for Timer Counter for Heart Beat and responsible for		*/
+/* tracking when the system can sleep and when it should wake up.		*/
+/************************************************************************/
+ISR(TIMER1_COMPA_vect)
+{
+	// System is currently sleeping, but hasn't slept enough yet
+	if(sleepCnt < 240 && canSleep)
+		// Increment counter for sleep time
+		sleepCnt++;
+	// System is currently sleeping, has slept enough
+	else if(sleepCnt >= 240 && canSleep)
+	{
+		// Reset sleep time
+		sleepCnt = 0;
+		// Inform system it cannot sleep
+		canSleep = false;
+		// Inform system we want to refresh the temp
+		updateTemp = true;
+	}
+	// System is currently running, but has not sat idle enough yet
+	else if(sleepCnt < 10 && !canSleep)
+	{
+		// Increment idle count
+		sleepCnt++;
+		
+		// Heart is currently not changing
+		if(!hrtCng)
+			// Set flag, system will get right on that
+			pulseHrt = true;
+	}
+	// System is currently running, has been idle long enough, time to enter sleep
+	else
+	{
+		// Reset idle count
+		sleepCnt = 0;
+		// Inform system it should enter sleep
+		canSleep = true;
+	}
+}
