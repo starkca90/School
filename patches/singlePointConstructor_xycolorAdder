@@ -1,0 +1,126 @@
+Index: polygon.h
+===================================================================
+--- polygon.h	(revision 26)
++++ polygon.h	(working copy)
+@@ -26,6 +26,17 @@
+ 	 */
+ 	Polygon(int points=0,Vertex *verticies=NULL);
+ 
++	/*
++	 * Constructor: Takes in two double values and one integer value
++	 * which resembles the x and y and color respectivly. These values are
++	 * then added to Vertex structure, which is then added to the verticies
++	 * list, and the point counter is updated accordingly.
++	 *
++	 * Parameters:	double x,y:		x and y values of original point
++	 * 				int color:		color of polygon border
++	 */
++	Polygon(const double x=0.0,const double y=0.0, const int color=0xffffff);
++
+ 	// Copy Constructor
+ 	Polygon(const Polygon& rhs);
+ 
+@@ -68,6 +79,15 @@
+ 	 */
+ 	void addVertex(const Vertex vertex);
+ 
++	/*
++	 * Add a vertex to the current polygon, accepts two doubles and one integer, which are added to
++	 * a Vertex and added to verticies with appropriate values adjusted.
++	 *
++	 * Parameters:	double x,y:		Coordinates of new point
++	 * 				int color:		Color of new point
++	 */
++	void addVertex(const double x,const double y,const int color);
++
+ protected:
+ 
+ 	/*
+Index: polygon.cpp
+===================================================================
+--- polygon.cpp	(revision 26)
++++ polygon.cpp	(working copy)
+@@ -32,6 +32,27 @@
+ 	this->verticies = verticies;
+ }
+ 
++/*
++ * Constructor: Takes in two double values and one integer value
++ * which resembles the x and y and color respectivly. These values are
++ * then added to Vertex structure, which is then added to the verticies
++ * list, and the point counter is updated accordingly.
++ *
++ * Parameters:	double x,y:		x and y values of original point
++ * 				int color:		color of polygon border
++ */
++Polygon::Polygon(const double x,const double y,const int color)
++{
++	Vertex origin;
++	origin.x=x;
++	origin.y=y;
++	origin.color=color;
++
++	verticies = new Vertex[1];
++	verticies[0] = origin;
++	points=1;
++}
++
+ // Copy Constructor
+ Polygon::Polygon(const Polygon& rhs)
+ {
+@@ -150,6 +171,34 @@
+ }
+ 
+ /*
++ * Add a vertex to the current polygon, accepts two doubles and one integer, which are added to
++ * a Vertex and added to verticies with appropriate values adjusted.
++ *
++ * Parameters:	double x,y:		Coordinates of new point
++ * 				int color:		Color of new point
++ */
++void Polygon::addVertex(const double x,const double y,const int color)
++{
++	Vertex *temp = new Vertex[points+1];
++
++	for(int i=0; i < points; i++)
++	{
++		temp[i] = verticies[i];
++	}
++
++	Vertex newPoint;
++	newPoint.x=x;
++	newPoint.y=y;
++	newPoint.color=color;
++
++	temp[points] = newPoint;
++
++	points++;
++
++	verticies = temp;
++}
++
++/*
+  * Assignment operator
+  *
+  * Parameters:	Polygon to be assigned to this
+Index: main.cpp
+===================================================================
+--- main.cpp	(revision 26)
++++ main.cpp	(working copy)
+@@ -78,8 +78,16 @@
+ 	Polygon* poly = new Polygon(4,polyVer);
+ 	std::cout << "4 Sided Polygon Created" << std::endl;
+ 
++	Polygon* polygon = new Polygon(5,400,0x696969);
++	polygon->addVertex(400,400,0x895436);
++	polygon->addVertex(197.5,5,0x741258);
++
+ 	GraphicsContext* gc = new X11Context(800,600,GraphicsContext::WHITE);
+ 
++	polygon->draw(gc);
++	sleep(5);
++	gc->clear();
++
+ 	std::cout << "\n\n\n***Shapes Created, GC created, start Draw Test***\n\n\n" << std::endl;
+ 
+ 	point->draw(gc);

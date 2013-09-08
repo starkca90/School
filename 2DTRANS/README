@@ -1,0 +1,69 @@
+2D Transformations
+==================
+
+Setup
+
+	Execute the command make from within root project directory
+	
+	Execute ./2DTrans to run
+	
+Usage
+	
+	Start by setting a color by pressing q, then one of the following numbers:
+		
+		- 1 = BLUE
+		- 2 = GREEN
+		- 3 = RED
+		- 4 = CYAN
+		- 5 = YELLOW
+		- 6 = WHITE
+		- 0 = BLACK
+		- Others = MAGENTA
+		
+	This value can be changed at any time during execution as long as no shape is currently being drawn
+	
+	**REMOVED**
+	If a filled shaped is desired, if applicable, press f to toggle fill flag
+	**REMOVED**
+	Note: Due to the current fill methods, to refill any shape during a transformation, it will take
+			a very long time, therefore has been removed at this time.
+	
+	Next, select a shape function by pressing one of the follow keys:
+	
+		- c = circle
+			-- click, drag, release to draw circle, stored in image
+		- e = erase the display and flush all shapes from the image
+		- F = Paint Bucket like feature, select any point on the display, then flood fill the spot with the current color
+		- l = line
+			-- Click and drag then release to set line magnitude and direction, stored in image
+		- p = point
+			-- Click and release anywhere in the display to set the pixel and store in image
+		- r = rectangle
+			-- click and drag to oposite corner from origin, then release, stored in image
+		- x = polygon
+			-- Note: Gives some issues under certain conditions, conditions are presently unknown but being
+				looked into, check back often for updates
+			-- click at release to set starting point, move mouse to next vertex, click and release
+				continue until desired points are set, press Esc before connecting to original point
+				draw method will fill in the blank
+	
+	Repeat above steps until desired drawing in created
+	
+	To transform the image:
+		
+		- Middle Mouse Button = Pan
+			-- While holding the middle mouse button, move the mouse, up, down, left or right, to have
+				image shift in the corresponding directions.
+		- Right Mouse Button = Rotate
+			-- While holding the right mouse button, move the mouse left to rotate clockwise, or 
+				right to rotate counter-clockwise
+		- z = zoom
+			-- Pressing z key once enables zoom, then move mouse up to zoom in, or down to zoom out.
+				Press z key again to disable.
+	
+	To save the image to a predefined file, press o
+	
+	To read in image from predefined file, press i
+	
+	More to come!!!	
+		

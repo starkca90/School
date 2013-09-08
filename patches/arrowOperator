@@ -1,0 +1,82 @@
+Index: shape.h
+===================================================================
+--- shape.h	(revision 22)
++++ shape.h	(working copy)
+@@ -67,4 +67,8 @@
+ 
+ 	Vertex vertex;
+ };
++
++// Global Decleration of << operator
++std::ostream& operator<<(std::ostream& os, const Shape& rhs);
++
+ #endif // !defined(EA_FE1B3F52_94EA_418f_9520_32FDC224D09B__INCLUDED_)
+Index: shape.cpp
+===================================================================
+--- shape.cpp	(revision 22)
++++ shape.cpp	(working copy)
+@@ -66,3 +66,8 @@
+ 	is >> vertex.y;
+ 	is >> vertex.color;
+ }
++
++std::ostream& operator<<(std::ostream& os, const Shape& rhs)
++{
++	return rhs.out(os);
++}
+Index: main.cpp
+===================================================================
+--- main.cpp	(revision 22)
++++ main.cpp	(working copy)
+@@ -131,41 +131,41 @@
+ 	std::cout << "Cloning Point" << std::endl;
+ 	Shape* point2 = point->clone();
+ 	std::cout << "Output Original Point\n" << point << "\t";
+-	point->out(std::cout);
++	std::cout << *point;
+ 	std::cout << "Output Clone\n" << point2 << "\t";
+-	point2->out(std::cout);
++	std::cout << *point2;
+ 	delete point2;
+ 
+ 	std::cout << "Cloning Line" << std::endl;
+ 	Shape* line2 = line->clone();
+ 	std::cout << "Output Original line\n" << line << "\t";
+-	line->out(std::cout);
++	std::cout << *line;
+ 	std::cout << "Output Clone\n" << line2 << "\t";
+-	line2->out(std::cout);
++	std::cout << *line2;
+ 	delete line2;
+ 
+ 	std::cout << "Cloning rectrangle" << std::endl;
+ 	Shape* rec3 = rec->clone();
+ 	std::cout << "Output Original Rectangle\n" << rec << "\t";
+-	rec->out(std::cout);
++	std::cout << *rec;
+ 	std::cout << "Output Clone\n" << rec3 << "\t";
+-	rec3->out(std::cout);
++	std::cout << *rec3;
+ 	delete rec3;
+ 
+ 	std::cout << "Cloning Circle" << std::endl;
+ 	Shape* circle3 = circle->clone();
+ 	std::cout << "Output Original circle\n" << circle << "\t";
+-	circle->out(std::cout);
++	std::cout << *circle;
+ 	std::cout << "Output Clone\n" << circle3 << "\t";
+-	circle3->out(std::cout);
++	std::cout << *circle3;
+ 	delete circle3;
+ 
+ 	std::cout << "Cloning Polygon" << std::endl;
+ 	Shape* poly2 = poly->clone();
+ 	std::cout << "Output Original Polygon\n" << poly << "\t";
+-	poly->out(std::cout);
++	std::cout << *poly;
+ 	std::cout << "Output Polygon\n" << poly2 << "\t";
+-	poly2->out(std::cout);
++	std::cout << *poly2;
+ 	delete poly2;
+ 
+ 	delete rec;
