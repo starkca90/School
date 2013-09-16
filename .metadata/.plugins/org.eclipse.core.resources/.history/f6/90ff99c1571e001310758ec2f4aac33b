@@ -1,7 +1,0 @@
-package com.starkca.todolistfragment;
-
-import android.support.v4.app.Fragment;
-
-public class ToDoLIstFragment extends Fragment {
-
-}
