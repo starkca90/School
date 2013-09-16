@@ -1,0 +1,25 @@
+package com.starkca.todolist;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.ListView;
+
+public class ToDoListActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_to_do_list);
+        ListView myListView = (ListView) findViewById(R.id.myListView);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.to_do_list, menu);
+        return true;
+    }
+    
+}
