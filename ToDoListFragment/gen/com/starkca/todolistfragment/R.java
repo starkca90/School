@@ -17,19 +17,21 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int ic_action_search=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f080004;
-        public static final int edit_text=0x7f080002;
-        public static final int list_view=0x7f080003;
+        public static final int EditFragment=0x7f080004;
+        public static final int action_settings=0x7f080005;
+        public static final int editFragment=0x7f080002;
+        public static final int listFragment=0x7f080003;
         public static final int myEditText=0x7f080000;
         public static final int myListView=0x7f080001;
     }
     public static final class layout {
-        public static final int activity_to_do_list=0x7f030000;
-        public static final int edit_text_fragment=0x7f030001;
-        public static final int list_view_fragment=0x7f030002;
+        public static final int fragment_edittext=0x7f030000;
+        public static final int fragment_listview=0x7f030001;
+        public static final int to_do_activity=0x7f030002;
     }
     public static final class menu {
         public static final int to_do_list=0x7f070000;
@@ -41,20 +43,6 @@ public final class R {
         public static final int app_name=0x7f050000;
     }
     public static final class style {
-        /** 
-        Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
-    
-
-            Theme customizations available in newer API levels can go in
-            res/values-vXX/styles.xml, while customizations related to
-            backward-compatibility can go here.
-        
-         */
-        public static final int AppBaseTheme=0x7f060000;
-        /**  Application theme. 
- All customizations that are NOT specific to a particular API-level can go here. 
-         */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f060000;
     }
 }
