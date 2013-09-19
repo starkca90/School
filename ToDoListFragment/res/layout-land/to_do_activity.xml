@@ -15,4 +15,13 @@
 
     </fragment>
 
+    <fragment
+        android:id="@+id/listFragment"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="2"
+        android:name="com.starkca.todolistfragment.ListViewFrag">
+
+    </fragment>
+
 </LinearLayout>
