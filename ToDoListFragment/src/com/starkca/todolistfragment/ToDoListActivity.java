@@ -1,7 +1,8 @@
 package com.starkca.todolistfragment;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 
 public class ToDoListActivity extends Activity implements EditTextFrag.OnItemEnteredListener{
@@ -26,8 +27,10 @@ public class ToDoListActivity extends Activity implements EditTextFrag.OnItemEnt
 		ListViewFrag fragment = (ListViewFrag) getFragmentManager().findFragmentById(R.id.listFragment);
 		if(fragment != null && fragment.isInLayout()) {
 			fragment.updateText(item);
-		}
-		
+		} else {
+			Intent intent = new Intent(getApplicationContext(), ListActivity.class);
+			intent.putExtra(ListActivity.EXTRA_ITEM, item);
+			startActivity(intent);
+		}	
 	}
-    
 }

@@ -22,15 +22,16 @@ public final class R {
     }
     public static final class id {
         public static final int action_settings=0x7f080004;
-        public static final int editFragment=0x7f080002;
-        public static final int listFragment=0x7f080003;
-        public static final int myEditText=0x7f080000;
-        public static final int myListView=0x7f080001;
+        public static final int editFragment=0x7f080003;
+        public static final int listFragment=0x7f080000;
+        public static final int myEditText=0x7f080001;
+        public static final int myListView=0x7f080002;
     }
     public static final class layout {
-        public static final int fragment_edittext=0x7f030000;
-        public static final int fragment_listview=0x7f030001;
-        public static final int to_do_activity=0x7f030002;
+        public static final int activity_list=0x7f030000;
+        public static final int fragment_edittext=0x7f030001;
+        public static final int fragment_listview=0x7f030002;
+        public static final int to_do_activity=0x7f030003;
     }
     public static final class menu {
         public static final int to_do_list=0x7f070000;
