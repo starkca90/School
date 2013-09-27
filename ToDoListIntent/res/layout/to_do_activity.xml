@@ -11,14 +11,14 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        class="com.starkca.todolistfragment.EditTextFrag"/>
+        class="com.starkca.todolistintent.EditTextFrag"/>
 
     <fragment
         android:id="@+id/listFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="2"
-        class="com.starkca.todolistfragment.ListViewFrag"
+        class="com.starkca.todolistintent.ListViewFrag"
         tools:layout="@layout/fragment_listview" />
 
 </LinearLayout>

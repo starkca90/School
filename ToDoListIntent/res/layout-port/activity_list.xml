@@ -2,13 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal" xmlns:tools="http://schemas.android.com/tools">
-    
+    android:orientation="vertical" >
+  
     <fragment
-        android:id="@+id/editFragment"
+        android:id="@+id/listFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        class="com.starkca.todolistfragment.EditTextFrag"
-        tools:layout="@layout/fragment_edittext" />
+        android:name="com.starkca.todolistintent.ListViewFrag" />
 
 </LinearLayout>

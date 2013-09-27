@@ -1,0 +1,18 @@
+<resources>
+
+    <string name="app_name">ToDoListIntent</string>
+	<string name="addItemHint">New To Do Item</string>
+	<string name="addContentDescription">New To Do Item</string>
+	
+	<string name="action_settings">None</string>
+	
+	<string name="taskheader">Task</string>
+	<string name="dateheader">Date</string>
+	<string name="timeheader">Time</string>
+	<string name="reminderheader">Enable Reminder</string>
+	<string name="detailtaskhint">ToDo Task</string>
+	<string name="bUpdateText">Update Task</string>
+	<string name="bRemoveText">Remove Task</string>
+	<string name="bReminderText">Reminder</string>
+
+</resources>

@@ -8,7 +8,7 @@
         android:id="@+id/editFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        class="com.starkca.todolistfragment.EditTextFrag"
+        class="com.starkca.todolistintent.EditTextFrag"
         tools:layout="@layout/fragment_edittext" />
 
 </LinearLayout>
