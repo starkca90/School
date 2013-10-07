@@ -6,16 +6,22 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import com.starkca.todolistintent.R;
+import com.starkca.todolistintent.DateDialogFragment.DateDialogFragmentListener;
+import com.starkca.todolistintent.ToDoDetailFrag.ToDoDetailFragListener;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -24,6 +30,7 @@ public class ListViewFrag extends Fragment {
 	ArrayList<ToDoItem> todoItems;
 	ArrayAdapter<ToDoItem> aa;
 	private String FileName ="todoItems";
+	public static final int newItem = -1;
 	
 	private String tag = this.getClass().toString();
 	
@@ -42,7 +49,7 @@ public class ListViewFrag extends Fragment {
 			todoItems = new ArrayList<ToDoItem>();
 		} catch (Exception e) {
 			Log.e(tag, e.getMessage());
-		}
+		}		
 	}
 
 	@Override
@@ -58,6 +65,30 @@ public class ListViewFrag extends Fragment {
 				android.R.layout.simple_list_item_1, todoItems);
 
 		myListView.setAdapter(aa);
+		myListView.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, 
+					int position, long id) {
+				ToDoItem item = (ToDoItem) parent.getItemAtPosition(position);
+				
+				// Launch new Activity to display details of item
+				Intent i = new Intent(getActivity(), ToDoDetailActivity.class);
+				ToDoDetailFrag tddf = ToDoDetailFrag.newInstance(position, item);
+				
+				tddf.setToDoDetailFragListener(new ToDoDetailFragListener() {
+
+					@Override
+					public void ToDoDetailFragItemUpdate(int index,
+							ToDoItem item) {
+						todoItems.set(index, item);
+						aa.notifyDataSetChanged();					
+					}
+				});
+				i.putExtra(ToDoDetailActivity.EXTRA_ITEM, item);
+				startActivity(i);				
+			}	
+		});
 		
 		if(todoItems.size() != 0)
 			aa.notifyDataSetChanged();
@@ -82,9 +113,11 @@ public class ListViewFrag extends Fragment {
 		
 	}
 
-	public void updateText(ToDoItem item) {
+	public void updateTask(ToDoItem item) {
 		Log.i(tag, "Updating text: " + item + " Size: " + String.valueOf(todoItems.size()));
-		todoItems.add(0, item);
+		
+			todoItems.add(0, item);
+		
 		aa.notifyDataSetChanged();
 	}
 }

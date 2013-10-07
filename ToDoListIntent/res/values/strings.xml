@@ -14,5 +14,9 @@
 	<string name="bUpdateText">Update Task</string>
 	<string name="bRemoveText">Remove Task</string>
 	<string name="bReminderText">Reminder</string>
+	
+	<string name="set_date">Set Date</string>
+	<string name="set_time">Set Time</string>
+	<string name="blank">OOPS</string>
 
 </resources>

@@ -1,35 +1,25 @@
 package com.starkca.todolistintent;
 
 import java.io.Serializable;
+import java.util.Calendar;
 
 public class ToDoItem implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	public class Date {
-		public Integer year;
-		public Integer month;
-		public Integer day;
-	}
-	
-	public class Time {
-		public Integer hour;
-		public Integer minute;
-	}
-
 	private String task;
-	private Date date;
-	private Time time;
+	private Calendar cal;
+	private Boolean notify;
 	
 	public ToDoItem() {
 		super();
 	}
 	
-	public ToDoItem(String task, Date date, Time time){
+	public ToDoItem(String task, Calendar cal, Boolean notify){
 		super();
 		this.task = task;
-		this.date = date;
-		this.time = time;
+		this.cal = cal;
+		this.notify = notify;
 	}
 	
 	@Override
@@ -45,19 +35,19 @@ public class ToDoItem implements Serializable {
 		this.task = task;
 	}
 	
-	public Date getDate(){
-		return date;
+	public Calendar getCal() {
+		return cal;
 	}
 	
-	public void setDate(Date date) {
-		this.date = date;
+	public void setCal(Calendar cal) {
+		this.cal = cal;
 	}
 	
-	public Time getTime() {
-		return time;
+	public Boolean getNotify() {
+		return notify;
 	}
 	
-	public void setTime(Time time) {
-		this.time = time;
+	public void setNotify(Boolean notify) {
+		this.notify = notify;
 	}
 }

@@ -16,8 +16,8 @@ public class ToDoListActivity extends Activity implements EditTextFrag.OnItemEnt
     protected void onCreate(Bundle savedInstanceState) {
     	Log.i(tag, "onCreate");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_itemdetail);
-//        setContentView(R.layout.to_do_activity);
+//        setContentView(R.layout.fragment_itemdetail);
+        setContentView(R.layout.to_do_activity);
     }
 
 
@@ -36,7 +36,7 @@ public class ToDoListActivity extends Activity implements EditTextFrag.OnItemEnt
 		ListViewFrag fragment = (ListViewFrag) getFragmentManager().findFragmentById(R.id.listFragment);
 		if(fragment != null && fragment.isInLayout()) {
 			Log.i(tag, "-> Updating Fragment");
-			fragment.updateText(item);
+			fragment.updateTask(item);
 		} else {
 			Log.i(tag, "-> Loading Fragment");
 			Intent intent = new Intent(getApplicationContext(), ListActivity.class);

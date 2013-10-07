@@ -1,7 +1,8 @@
 package com.starkca.todolistintent;
 
+import java.util.Calendar;
+
 import com.starkca.todolistintent.R;
-import com.starkca.todolistintent.ToDoItem.Date;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -59,7 +60,8 @@ public class EditTextFrag extends Fragment {
 	
 	// May also be triggered from Activity
 	public void updateList() {
-		ToDoItem newItem = new ToDoItem(myEditText.getText().toString(), null, null);
+		Calendar cal = Calendar.getInstance();
+		ToDoItem newItem = new ToDoItem(myEditText.getText().toString(), cal, false);
 		myEditText.setText("");
 		listener.onItemEntered(newItem);
 	}

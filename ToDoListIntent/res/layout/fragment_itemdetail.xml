@@ -10,15 +10,12 @@
         android:layout_height="wrap_content"
         android:text="@string/taskheader" />
 
-    <EditText
+   <EditText
         android:id="@+id/detailtask"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/detailtaskhint" >
-
-        <requestFocus />
-    </EditText>
+        android:hint="@string/detailtaskhint" />
 
     <TextView
         android:id="@+id/textView2"
@@ -26,12 +23,11 @@
         android:layout_height="wrap_content"
         android:text="@string/dateheader" />
 
-    <EditText
-        android:id="@+id/editText2"
+    <TextView
+        android:id="@+id/detaildate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="time" />
+        android:text="@string/blank" />
 
     <TextView
         android:id="@+id/textView3"
@@ -39,12 +35,11 @@
         android:layout_height="wrap_content"
         android:text="@string/timeheader" />
 
-    <EditText
-        android:id="@+id/editText3"
+    <TextView
+        android:id="@+id/detailtime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="time" />
+        android:text="@string/blank" />
 
     <TextView
         android:id="@+id/textView4"
