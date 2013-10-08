@@ -18,6 +18,6 @@
 	<string name="set_time">Set Time</string>
 	<string name="blank">OOPS</string>
 	<string name="menu_text">Show ToDo List</string>
-	<string name="map">MapIt</string>
+	<string name="map">Show on map</string>
 
 </resources>

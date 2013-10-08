@@ -12,12 +12,7 @@ public class ToDoItem implements Serializable {
 	private Boolean notify;
 	private String location;
 	
-	public ToDoItem() {
-		super();
-	}
-	
 	public ToDoItem(String task, Calendar cal, Boolean notify, String location){
-		super();
 		this.task = task;
 		this.cal = cal;
 		this.notify = notify;

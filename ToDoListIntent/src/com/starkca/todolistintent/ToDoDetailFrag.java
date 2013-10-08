@@ -18,6 +18,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -37,6 +40,30 @@ public class ToDoDetailFrag extends Fragment {
 	static int sIndex;
 	static ToDoItem sItem;
 	static ToDoDetailFragListener sListener;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setHasOptionsMenu(true);
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        Log.i(tag, "onCreateOptionsMenu");
+        // Inflate the menu; this adds items to the action bar if it is present.
+        inflater.inflate(R.menu.detail, menu);
+    }
+
+    public boolean onOptionsItemSelected (MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.map:
+                mapIt(sItem.getLocation());
+                return true;
+        }
+        return false;
+    }
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -180,18 +207,11 @@ public class ToDoDetailFrag extends Fragment {
 					sendNotification(sItem.toString(), sItem.toString()
 							+ " is due");
 
-				} else {
-					Log.i(tag, "Disable Notification");
-					// TODO Remove notification
-				}
+				} else Log.i(tag, "Disable Notification");
 			}
 
 		});
 
-	}
-	
-	public void showMap() {
-		mapIt(sItem.getLocation());
 	}
 	
 	private void mapIt(String location) {
@@ -200,7 +220,7 @@ public class ToDoDetailFrag extends Fragment {
 		getActivity().startActivity(intent);
 	}
 
-	private void sendNotification(String title, String body) {
+    private void sendNotification(String title, String body) {
 
 		NotificationManager nm = (NotificationManager) getActivity()
 				.getSystemService(getActivity().NOTIFICATION_SERVICE);

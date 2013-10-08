@@ -1,7 +1,5 @@
 package com.starkca.todolistintent;
 
-import com.starkca.todolistintent.R;
-
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.os.Bundle;

@@ -1,7 +1,5 @@
 package com.starkca.todolistintent;
 
-import com.starkca.todolistintent.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,7 +15,6 @@ public class ToDoListActivity extends Activity implements EditTextFrag.OnItemEnt
     protected void onCreate(Bundle savedInstanceState) {
     	Log.i(tag, "onCreate");
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.fragment_itemdetail);
         setContentView(R.layout.to_do_activity);
     }
 

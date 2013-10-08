@@ -7,7 +7,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-import com.starkca.todolistintent.R;
 import com.starkca.todolistintent.ToDoDetailFrag.ToDoDetailFragListener;
 
 import android.app.Fragment;
@@ -29,7 +28,6 @@ public class ListViewFrag extends Fragment {
 	ArrayList<ToDoItem> todoItems;
 	ArrayAdapter<ToDoItem> aa;
 	private String FileName ="todoItems";
-	public static final int newItem = -1;
 	
 	private String tag = this.getClass().toString();
 	
@@ -64,6 +62,7 @@ public class ListViewFrag extends Fragment {
 				android.R.layout.simple_list_item_1, todoItems);
 
 		myListView.setAdapter(aa);
+        // Remove item if long pressed
 		myListView.setOnItemLongClickListener(new OnItemLongClickListener() {
 
 			@Override
@@ -75,6 +74,7 @@ public class ListViewFrag extends Fragment {
 			}
 			
 		});
+        // Display item details when pressed
 		myListView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override

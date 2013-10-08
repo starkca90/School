@@ -2,8 +2,6 @@ package com.starkca.todolistintent;
 
 import java.util.Calendar;
 
-import com.starkca.todolistintent.R;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -13,11 +11,10 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.view.KeyEvent;
 
-
-
 public class EditTextFrag extends Fragment {
 
 	private OnItemEnteredListener listener;
+    private final String defaultAddress = "1600 Amphitheatre Pkwy, Mountain View, CA";
 	EditText myEditText;
 	
 	@Override
@@ -61,7 +58,7 @@ public class EditTextFrag extends Fragment {
 	// May also be triggered from Activity
 	public void updateList() {
 		Calendar cal = Calendar.getInstance();
-		ToDoItem newItem = new ToDoItem(myEditText.getText().toString(), cal, false, "1600 Amphitheatre Pkwy, Mountain View, CA");
+		ToDoItem newItem = new ToDoItem(myEditText.getText().toString(), cal, false, defaultAddress);
 		myEditText.setText("");
 		listener.onItemEntered(newItem);
 	}
