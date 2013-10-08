@@ -61,7 +61,7 @@ public class EditTextFrag extends Fragment {
 	// May also be triggered from Activity
 	public void updateList() {
 		Calendar cal = Calendar.getInstance();
-		ToDoItem newItem = new ToDoItem(myEditText.getText().toString(), cal, false);
+		ToDoItem newItem = new ToDoItem(myEditText.getText().toString(), cal, false, "1600 Amphitheatre Pkwy, Mountain View, CA");
 		myEditText.setText("");
 		listener.onItemEntered(newItem);
 	}

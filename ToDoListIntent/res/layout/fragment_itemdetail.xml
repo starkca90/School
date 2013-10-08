@@ -16,6 +16,19 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/detailtaskhint" />
+   
+   <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/locationheader" />
+
+   <EditText
+        android:id="@+id/detaillocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/detailtaskhint" />
 
     <TextView
         android:id="@+id/textView2"
@@ -53,29 +66,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/bReminderText" />
-
-    <LinearLayout
-        android:id="@+id/button_bar"
-        style="?android:attr/buttonBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center" >
-
-        <Button
-            android:id="@+id/bUpdate"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/bUpdateText" />
-
-        <Button
-            android:id="@+id/bRemove"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/bRemoveText" />
-    </LinearLayout>
 
 </LinearLayout>

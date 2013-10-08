@@ -1,8 +1,11 @@
 package com.starkca.todolistintent;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class ToDoDetailActivity extends Activity {
 	
@@ -26,4 +29,22 @@ public class ToDoDetailActivity extends Activity {
 			} 
 		}
 	}
+	
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.map:
+            	ToDoDetailFrag.showMap()
+                return true;
+         }
+        return false;
+    }
+	
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+    	Log.i(tag, "onCreateOptionsMenu");
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.detail, menu);
+        
+        return true;
+    }
 }

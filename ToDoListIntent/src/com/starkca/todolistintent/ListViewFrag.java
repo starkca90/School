@@ -6,10 +6,8 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import com.starkca.todolistintent.R;
-import com.starkca.todolistintent.DateDialogFragment.DateDialogFragmentListener;
 import com.starkca.todolistintent.ToDoDetailFrag.ToDoDetailFragListener;
 
 import android.app.Fragment;
@@ -22,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -65,6 +64,17 @@ public class ListViewFrag extends Fragment {
 				android.R.layout.simple_list_item_1, todoItems);
 
 		myListView.setAdapter(aa);
+		myListView.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> parent, View view,
+					int position, long id) {
+				todoItems.remove(position);
+				aa.notifyDataSetChanged();
+				return true;
+			}
+			
+		});
 		myListView.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override

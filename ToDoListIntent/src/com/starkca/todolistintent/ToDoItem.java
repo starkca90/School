@@ -10,16 +10,18 @@ public class ToDoItem implements Serializable {
 	private String task;
 	private Calendar cal;
 	private Boolean notify;
+	private String location;
 	
 	public ToDoItem() {
 		super();
 	}
 	
-	public ToDoItem(String task, Calendar cal, Boolean notify){
+	public ToDoItem(String task, Calendar cal, Boolean notify, String location){
 		super();
 		this.task = task;
 		this.cal = cal;
 		this.notify = notify;
+		this.location = location;
 	}
 	
 	@Override
@@ -49,5 +51,13 @@ public class ToDoItem implements Serializable {
 	
 	public void setNotify(Boolean notify) {
 		this.notify = notify;
+	}
+	
+	public String getLocation() {
+		return location;
+	}
+	
+	public void setLocation(String location) {
+		this.location = location;
 	}
 }

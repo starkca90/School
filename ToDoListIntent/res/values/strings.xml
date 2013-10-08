@@ -7,16 +7,17 @@
 	<string name="action_settings">None</string>
 	
 	<string name="taskheader">Task</string>
-	<string name="dateheader">Date</string>
-	<string name="timeheader">Time</string>
+	<string name="locationheader">Location</string>
+	<string name="dateheader">Date (Tap Date to Edit)</string>
+	<string name="timeheader">Time (Tap Time to Edit)</string>
 	<string name="reminderheader">Enable Reminder</string>
 	<string name="detailtaskhint">ToDo Task</string>
-	<string name="bUpdateText">Update Task</string>
-	<string name="bRemoveText">Remove Task</string>
 	<string name="bReminderText">Reminder</string>
 	
 	<string name="set_date">Set Date</string>
 	<string name="set_time">Set Time</string>
 	<string name="blank">OOPS</string>
+	<string name="menu_text">Show ToDo List</string>
+	<string name="map">MapIt</string>
 
 </resources>
