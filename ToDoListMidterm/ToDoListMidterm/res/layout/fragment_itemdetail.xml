@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/taskheader" />
+
+   <EditText
+        android:id="@+id/detailtask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/detailtaskhint" />
+   
+   <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/locationheader" />
+
+   <EditText
+        android:id="@+id/detaillocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/detailtaskhint" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/dateheader" />
+
+    <TextView
+        android:id="@+id/detaildate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/blank" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/timeheader" />
+
+    <TextView
+        android:id="@+id/detailtime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/blank" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reminderheader" />
+
+    <ToggleButton
+        android:id="@+id/bReminder"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bReminderText" />
+
+</LinearLayout>
