@@ -6,15 +6,18 @@ import java.util.Locale;
 
 import com.starkca.todolistmidterm.DateDialogFragment.DateDialogFragmentListener;
 import com.starkca.todolistmidterm.TimeDialogFragment.TimeDialogFragmentListener;
+import com.starkca.todolistmidterm.ToDoItem.Priority;
+import com.starkca.todolistmidterm.ToDoItem.State;
 
-import android.app.Fragment;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.NotificationManager;
+import android.content.Context;
 import android.content.Intent;
-import android.net.NetworkInfo.State;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.NotificationCompat;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -26,7 +29,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
@@ -101,6 +103,7 @@ public class ToDoDetailFrag extends Fragment {
 
 		sItem = item;
 
+		// Setup Task EditText box
 		final EditText task = (EditText) view.findViewById(R.id.detailtask);
 		task.setText(item.getTask());
 		task.addTextChangedListener(new TextWatcher() {
@@ -122,7 +125,8 @@ public class ToDoDetailFrag extends Fragment {
 			}
 
 		});
-
+		
+		// Setup Location EditText box
 		final EditText location = (EditText) view
 				.findViewById(R.id.detaillocation);
 		location.setText(item.getLocation());
@@ -145,17 +149,18 @@ public class ToDoDetailFrag extends Fragment {
 			}
 		});
 
-		final TextView dateText = (TextView) view.findViewById(R.id.detaildate);
-		Calendar cal = Calendar.getInstance();
+		// Create Calendar to use in Date and Time setup
+		final Calendar cal = Calendar.getInstance();
 		cal.setTimeInMillis(item.getDate());
+		
+		// Setup Date TextView box
+		final TextView dateText = (TextView) view.findViewById(R.id.detaildate);
 		String shortDateStr = DATE_FORMAT.format(cal.getTime());
 		dateText.setText(shortDateStr);
 		dateText.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Calendar cal = Calendar.getInstance();
-				cal.setTimeInMillis(sItem.getDate());
 				DateDialogFragment ddf = DateDialogFragment.newInstance(
 						R.string.set_date, cal);
 
@@ -175,16 +180,14 @@ public class ToDoDetailFrag extends Fragment {
 			}
 		});
 
+		// Setup Time TextView box
 		final TextView timeText = (TextView) view.findViewById(R.id.detailtime);
-		cal.setTimeInMillis(item.getDate());
 		String shortTimeStr = TIME_FORMAT.format(cal.getTime());
 		timeText.setText(shortTimeStr);
 		timeText.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Calendar cal = Calendar.getInstance();
-				cal.setTimeInMillis(sItem.getDate());
 				TimeDialogFragment tdf = TimeDialogFragment.newInstance(
 						R.string.set_time, cal);
 
@@ -199,18 +202,19 @@ public class ToDoDetailFrag extends Fragment {
 						sListener.ToDoDetailFragItemUpdate(sIndex, sItem);
 					}
 				});
-				tdf.show(getFragmentManager(), "date picker dialog fragment");
+				tdf.show(getFragmentManager(), "time picker dialog fragment");
 			}
 		});
 
-		final ToggleButton button = (ToggleButton) view
+		// Setup Notification ToggleButton
+		final ToggleButton notificationBut = (ToggleButton) view
 				.findViewById(R.id.bReminder);
-		button.setChecked(item.getNotify());
-		button.setOnClickListener(new OnClickListener() {
+		notificationBut.setChecked(sItem.getNotify());
+		notificationBut.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				sItem.setNotify(button.isChecked());
+				sItem.setNotify(notificationBut.isChecked());
 				sListener.ToDoDetailFragItemUpdate(sIndex, sItem);
 
 				if (sItem.getNotify()) {
@@ -223,26 +227,43 @@ public class ToDoDetailFrag extends Fragment {
 
 		});
 		
+		// Setup State RadioGroup
 		RadioGroup stateGroup = (RadioGroup) view.findViewById(R.id.radioGroupState);
 		
+		State selectedState = sItem.getState();
+		if(selectedState == ToDoItem.State.values()[0])
+			stateGroup.check(R.id.state0);
+		else if(selectedState == ToDoItem.State.values()[1])
+			stateGroup.check(R.id.state1);
+		else
+			stateGroup.check(R.id.state2);
 		
 		stateGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
 			@Override
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				if(checkedId == R.id.state0)
-					sItem.setState(ToDoItem.State.values()[0]);
+					sItem.setState(State.values()[0]);
 				else if(checkedId == R.id.state1)
-					sItem.setState(ToDoItem.State.values()[1]);
+					sItem.setState(State.values()[1]);
 				else
-					sItem.setState(ToDoItem.State.values()[2]);	
+					sItem.setState(State.values()[2]);	
 				
 				sListener.ToDoDetailFragItemUpdate(sIndex, sItem);
 			}
 			
 		});
 		
+		// Setup Priority RadioGroup
 		RadioGroup priorGroup = (RadioGroup) view.findViewById(R.id.radioGroupPrior);
+		
+		Priority selectedPrior = sItem.getPriority();
+		if(selectedPrior == Priority.values()[0])
+			priorGroup.check(R.id.prior0);
+		else if(selectedPrior == Priority.values()[1])
+			priorGroup.check(R.id.prior1);
+		else
+			priorGroup.check(R.id.prior2);
 		
 		priorGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
@@ -271,13 +292,17 @@ public class ToDoDetailFrag extends Fragment {
     private void sendNotification(String title, String body) {
 
 		NotificationManager nm = (NotificationManager) getActivity()
-				.getSystemService(getActivity().NOTIFICATION_SERVICE);
-		Intent intent = new Intent(getActivity(), ToDoListActivity.class);
+				.getSystemService(Context.NOTIFICATION_SERVICE);
+		Intent intent = new Intent(getActivity(), ToDoDetailActivity.class);
+		intent.putExtra(ToDoDetailActivity.EXTRA_ITEM, sItem);
 		PendingIntent pi = PendingIntent.getActivity(getActivity(), 0, intent,
 				0);
-		Notification n = new Notification(R.drawable.ic_launcher, body,
-				System.currentTimeMillis());
-		n.setLatestEventInfo(getActivity(), title, body, pi);
+		Notification n = new NotificationCompat.Builder(getActivity())
+			.setContentTitle(title)
+			.setContentText(body)
+			.setSmallIcon(R.drawable.ic_launcher)
+			.setContentIntent(pi)
+			.build();
 		n.defaults = Notification.DEFAULT_ALL;
 		n.flags |= (Notification.FLAG_AUTO_CANCEL | Notification.FLAG_SHOW_LIGHTS);
 		nm.notify(139868, n);

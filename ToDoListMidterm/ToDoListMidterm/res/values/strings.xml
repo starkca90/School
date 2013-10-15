@@ -28,5 +28,9 @@
 	<string name="priorL">Low</string>
 	<string name="priorM">Medium</string>
 	<string name="priorH">High</string>
+	
+	<string name="stringChrono">Sort Chronologically</string>
+	<string name="stringPrior">Sort by Priority</string>
+	<string name="stringState">Sort by State</string>
 
 </resources>

@@ -1,24 +1,44 @@
 package com.starkca.todolistmidterm;
 
+import java.util.List;
+
 import android.app.Activity;
-import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.view.KeyEvent;
 
 public class EditTextFrag extends Fragment {
 
 	private OnItemEnteredListener listener;
-	EditText myEditText;
+	AutoCompleteTextView myEditText;
+	private TasksDataSource datasource;
+	List<String> allToDoItems;
+	ArrayAdapter<String> aa;
+	
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		datasource = new TasksDataSource(getActivity());
+		datasource.open();
+		
+		allToDoItems = datasource.getAllToDoItems();
+	}
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.fragment_edittext, container, false);
 		
-		myEditText = (EditText) view.findViewById(R.id.myEditText);
+		aa = new ArrayAdapter<String>(getActivity(), 
+				android.R.layout.simple_dropdown_item_1line, allToDoItems);
+		
+		myEditText = (AutoCompleteTextView) view.findViewById(R.id.myEditText);
+		myEditText.setAdapter(aa);
 		
 		myEditText.setOnKeyListener(new View.OnKeyListener() {
 			
@@ -28,6 +48,7 @@ public class EditTextFrag extends Fragment {
 					if((keyCode == KeyEvent.KEYCODE_DPAD_CENTER) ||
 							(keyCode == KeyEvent.KEYCODE_ENTER)) {
 						updateList();
+						return true;
 					}
 				}
 				return false;
@@ -56,6 +77,7 @@ public class EditTextFrag extends Fragment {
 	public void updateList() {
 		String enteredTask = myEditText.getText().toString();
 		myEditText.setText(getString(R.string.addItemHint));
+		aa.add(enteredTask);
 		listener.onItemEntered(enteredTask);
 
 	}

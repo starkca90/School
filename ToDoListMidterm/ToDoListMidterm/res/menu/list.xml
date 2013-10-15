@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/sortChrono" android:title="@string/stringChrono"></item>
+    <item android:id="@+id/sortPrior" android:title="@string/stringPrior"></item>
+    <item android:id="@+id/sortState" android:title="@string/stringState"></item>
+    
+
+</menu>

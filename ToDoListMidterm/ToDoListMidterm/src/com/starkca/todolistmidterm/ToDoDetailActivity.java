@@ -1,10 +1,10 @@
 package com.starkca.todolistmidterm;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 
-public class ToDoDetailActivity extends Activity {
+public class ToDoDetailActivity extends FragmentActivity {
 	
 	private String tag = this.getClass().toString();
 	public static final String EXTRA_ITEM = "task";
@@ -20,7 +20,7 @@ public class ToDoDetailActivity extends Activity {
 		if(extras != null) {
 			ToDoItem item = (ToDoItem) extras.getSerializable(EXTRA_ITEM);
 			Log.i(tag, "-> Getting Extras: " + item);
-			ToDoDetailFrag fragment = (ToDoDetailFrag) getFragmentManager().findFragmentById(R.id.detailFragment);
+			ToDoDetailFrag fragment = (ToDoDetailFrag) getSupportFragmentManager().findFragmentById(R.id.detailFragment);
 			if(fragment != null && fragment.isInLayout()) {
 				fragment.showDetails(item);
 			} 

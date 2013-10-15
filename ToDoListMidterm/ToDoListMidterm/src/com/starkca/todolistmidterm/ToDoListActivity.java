@@ -1,13 +1,13 @@
 package com.starkca.todolistmidterm;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class ToDoListActivity extends Activity implements EditTextFrag.OnItemEnteredListener{
+public class ToDoListActivity extends FragmentActivity implements EditTextFrag.OnItemEnteredListener{
 	
 	private String tag = this.getClass().toString();
 	
@@ -21,7 +21,7 @@ public class ToDoListActivity extends Activity implements EditTextFrag.OnItemEnt
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.show_list:
-                ListViewFrag fragment = (ListViewFrag) getFragmentManager().findFragmentById(R.id.listFragment);
+                ListViewFrag fragment = (ListViewFrag) getSupportFragmentManager().findFragmentById(R.id.listFragment);
                 if(fragment != null && fragment.isInLayout()) {
 
                 } else {
@@ -46,7 +46,7 @@ public class ToDoListActivity extends Activity implements EditTextFrag.OnItemEnt
 	@Override
 	public void onItemEntered(String task) {
 		Log.i(tag, "onItemEntered");
-		ListViewFrag fragment = (ListViewFrag) getFragmentManager().findFragmentById(R.id.listFragment);
+		ListViewFrag fragment = (ListViewFrag) getSupportFragmentManager().findFragmentById(R.id.listFragment);
 		if(fragment != null && fragment.isInLayout()) {
 			Log.i(tag, "-> Updating Fragment");
 			fragment.updateTask(task);

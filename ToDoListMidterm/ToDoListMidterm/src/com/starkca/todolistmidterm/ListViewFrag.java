@@ -1,14 +1,18 @@
 package com.starkca.todolistmidterm;
 
+import java.util.Comparator;
 import java.util.List;
 
 import com.starkca.todolistmidterm.ToDoDetailFrag.ToDoDetailFragListener;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -25,6 +29,33 @@ public class ListViewFrag extends Fragment {
 	
 	private String tag = this.getClass().toString();
 	
+	private static Comparator<ToDoItem> ToDoItemChronoComparator = new Comparator<ToDoItem>() {
+		public int compare(ToDoItem item1, ToDoItem item2) {
+			Long date1 = item1.getDate();
+			Long date2 = item2.getDate();
+			
+			return date1.compareTo(date2);
+		}
+	};
+	
+	private static Comparator<ToDoItem> ToDoItemPriorComparator = new Comparator<ToDoItem>() {
+		public int compare(ToDoItem item1, ToDoItem item2) {
+			Integer prior1 = item1.getPriority().ordinal();
+			Integer prior2 = item2.getPriority().ordinal();
+			
+			return prior2.compareTo(prior1);
+		}
+	};
+	
+	private static Comparator<ToDoItem> ToDoItemStateComparator = new Comparator<ToDoItem>() {
+		public int compare(ToDoItem item1, ToDoItem item2) {
+			Integer state1 = item1.getState().ordinal();
+			Integer state2 = item2.getState().ordinal();
+			
+			return state1.compareTo(state2);
+		}
+	};
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		Log.i(tag, "onCreate");
@@ -33,8 +64,33 @@ public class ListViewFrag extends Fragment {
 		datasource = new TasksDataSource(getActivity());
 		datasource.open();
 		
-		todoItems = datasource.getAllToDoItems();		
+		todoItems = datasource.getAllActiveToDoItems();	
+		
+		setHasOptionsMenu(true);
 	}
+	
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        Log.i(tag, "onCreateOptionsMenu");
+        // Inflate the menu; this adds items to the action bar if it is present.
+        inflater.inflate(R.menu.list, menu);
+    }
+
+    public boolean onOptionsItemSelected (MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.sortChrono:
+            	aa.sort(ToDoItemChronoComparator);
+                return true;
+            case R.id.sortPrior:
+            	aa.sort(ToDoItemPriorComparator);
+            	return true;
+            case R.id.sortState:
+            	aa.sort(ToDoItemStateComparator);
+            	return true;
+        }
+        return false;
+    }
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
