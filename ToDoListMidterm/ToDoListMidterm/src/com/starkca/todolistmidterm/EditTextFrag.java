@@ -1,7 +1,5 @@
 package com.starkca.todolistmidterm;
 
-import java.util.Calendar;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
@@ -56,8 +54,9 @@ public class EditTextFrag extends Fragment {
 	
 	// May also be triggered from Activity
 	public void updateList() {
-		listener.onItemEntered(myEditText.getText().toString());
+		String enteredTask = myEditText.getText().toString();
 		myEditText.setText(getString(R.string.addItemHint));
+		listener.onItemEntered(enteredTask);
 
 	}
 }

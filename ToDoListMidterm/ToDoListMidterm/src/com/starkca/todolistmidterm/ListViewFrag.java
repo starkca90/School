@@ -109,7 +109,7 @@ public class ListViewFrag extends Fragment {
 	}
 
 	public void updateTask(String task) {
-		ToDoItem item = datasource.createToDoItem(task);
+		ToDoItem item = datasource.createToDoItem(task, getActivity());
 		aa.add(item);
 	}
 }

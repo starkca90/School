@@ -1,13 +1,18 @@
 package com.starkca.todolistmidterm;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+
+import com.starkca.todolistmidterm.ToDoItem.State;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.renderscript.RenderScript.Priority;
+import android.util.Log;
 
 public class TasksDataSource {
 
@@ -16,7 +21,8 @@ public class TasksDataSource {
 	private MySQLiteHelper dbHelper;
 	private String[] allColumns = { MySQLiteHelper.COLUMN_ID,
 			MySQLiteHelper.COLUMN_TASK, MySQLiteHelper.COLUMN_DATE,
-			MySQLiteHelper.COLUMN_NOTIFY, MySQLiteHelper.COLUMN_LOC };
+			MySQLiteHelper.COLUMN_NOTIFY, MySQLiteHelper.COLUMN_LOC,
+			MySQLiteHelper.COLUMN_STATE, MySQLiteHelper.COLUMN_PRIOR };
 	
 	public TasksDataSource(Context context) {
 		dbHelper = new MySQLiteHelper(context);
@@ -30,9 +36,16 @@ public class TasksDataSource {
 		dbHelper.close();
 	}
 	
-	public ToDoItem createToDoItem(String task) {
+	public ToDoItem createToDoItem(String task, Context context) {
 		ContentValues values = new ContentValues();
+		
 		values.put(MySQLiteHelper.COLUMN_TASK, task);
+		values.put(MySQLiteHelper.COLUMN_DATE, Calendar.getInstance().getTimeInMillis());
+		values.put(MySQLiteHelper.COLUMN_LOC, context.getString(R.string.address));
+		values.put(MySQLiteHelper.COLUMN_NOTIFY, 0);
+		values.put(MySQLiteHelper.COLUMN_STATE, State.NOTSTARTED.ordinal());
+		values.put(MySQLiteHelper.COLUMN_PRIOR, ToDoItem.Priority.LOW.ordinal());
+		
 		long insertId = database.insert(MySQLiteHelper.TABLE_TASKS, null, values);
 		Cursor cursor = database.query(MySQLiteHelper.TABLE_TASKS, 
 					allColumns, MySQLiteHelper.COLUMN_ID + " = " + insertId, null, null, null, null);
@@ -57,7 +70,8 @@ public class TasksDataSource {
 		cursor.moveToFirst();
 		while(!cursor.isAfterLast()) {
 			ToDoItem item = cursorToItem(cursor);
-			items.add(item);
+			if (item.getState() != State.DELETE)
+				items.add(item);
 			cursor.moveToNext();
 		}
 		// make sure to close the cursor
@@ -81,21 +95,29 @@ public class TasksDataSource {
 		
 		item.setLocation(cursor.getString(4));
 		
+		item.setState(State.values()[cursor.getInt(5)]);
+		
+		item.setPriority(ToDoItem.Priority.values()[cursor.getInt(6)]);
+		
 		return item;
 	}
 
 	public void updateToDoItem(ToDoItem item) {
 		ContentValues values = new ContentValues();
 		long id = item.getId();
-		System.out.println("Item updated with id: " + id);
 		
+		values.put(MySQLiteHelper.COLUMN_ID, id);
 		values.put(MySQLiteHelper.COLUMN_TASK, item.getTask());
 		values.put(MySQLiteHelper.COLUMN_DATE, item.getDate());
 		values.put(MySQLiteHelper.COLUMN_NOTIFY, item.getNotify() ? 1 : 0);
 		values.put(MySQLiteHelper.COLUMN_LOC, item.getLocation());
-		
-		database.update(MySQLiteHelper.TABLE_TASKS, values, MySQLiteHelper.COLUMN_ID + " = " + id, null);
-		database.delete(MySQLiteHelper.TABLE_TASKS, MySQLiteHelper.COLUMN_ID + " = " + id, null);
+		values.put(MySQLiteHelper.COLUMN_STATE, item.getState().ordinal());
+		values.put(MySQLiteHelper.COLUMN_PRIOR, item.getPriority().ordinal());
+		database = dbHelper.getWritableDatabase();
+		if (database.isOpen())
+			database.update(MySQLiteHelper.TABLE_TASKS, values, MySQLiteHelper.COLUMN_ID + "=" + id, null);
+		else
+			Log.i("TasksDataSource", "I found out why this is broken!!!");
 		
 	}
 }

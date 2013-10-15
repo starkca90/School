@@ -20,5 +20,13 @@
 	<string name="blank">OOPS</string>
 	<string name="menu_text">Show ToDo List</string>
 	<string name="map">Show on map</string>
+	
+	<string name="stateNS">Not Started</string>
+	<string name="stateS">Started</string>
+	<string name="stateC">Complete</string>
+	
+	<string name="priorL">Low</string>
+	<string name="priorM">Medium</string>
+	<string name="priorH">High</string>
 
 </resources>

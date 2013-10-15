@@ -11,6 +11,16 @@ public class ToDoItem implements Serializable{
 	private long date;
 	private Boolean notify;
 	private String location;
+	private State state;
+	private Priority priority;
+	
+	public enum State {
+		NOTSTARTED, STARTED, COMPLETE, DELETE
+	}
+	
+	public enum Priority {
+		LOW, MEDIUM, HIGH
+	}
 	
 	public long getId() {
 		return id;
@@ -55,5 +65,21 @@ public class ToDoItem implements Serializable{
 	
 	public void setLocation(String location) {
 		this.location = location;
+	}
+	
+	public State getState() {
+		return state;
+	}
+	
+	public void setState(State state) {
+		this.state = state;
+	}
+	
+	public Priority getPriority() {
+		return priority;
+	}
+	
+	public void setPriority(Priority priority) {
+		this.priority = priority;
 	}
 }

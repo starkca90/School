@@ -12,6 +12,7 @@ import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.net.NetworkInfo.State;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
@@ -25,6 +26,9 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 
@@ -218,7 +222,44 @@ public class ToDoDetailFrag extends Fragment {
 			}
 
 		});
+		
+		RadioGroup stateGroup = (RadioGroup) view.findViewById(R.id.radioGroupState);
+		
+		
+		stateGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				if(checkedId == R.id.state0)
+					sItem.setState(ToDoItem.State.values()[0]);
+				else if(checkedId == R.id.state1)
+					sItem.setState(ToDoItem.State.values()[1]);
+				else
+					sItem.setState(ToDoItem.State.values()[2]);	
+				
+				sListener.ToDoDetailFragItemUpdate(sIndex, sItem);
+			}
+			
+		});
+		
+		RadioGroup priorGroup = (RadioGroup) view.findViewById(R.id.radioGroupPrior);
+		
+		priorGroup.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+				if(checkedId == R.id.prior0)
+					sItem.setPriority(ToDoItem.Priority.values()[0]);
+				else if(checkedId == R.id.prior1)
+					sItem.setPriority(ToDoItem.Priority.values()[1]);
+				else
+					sItem.setPriority(ToDoItem.Priority.values()[2]);
+				
+				sListener.ToDoDetailFragItemUpdate(sIndex, sItem);
+				
+			}
+			
+		});
 	}
 	
 	private void mapIt(String location) {
