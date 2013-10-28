@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TrackMe</string>
+    <string name="action_normal">Normal Type</string>
+    <string name="action_satellite">Satellite Type</string>
+    <string name="action_terrain">Terrain Type</string>
+    <string name="hello_world">Hello World</string>
+
+</resources>
