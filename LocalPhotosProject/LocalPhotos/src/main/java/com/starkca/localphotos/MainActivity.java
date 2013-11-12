@@ -12,8 +12,6 @@ import android.view.MotionEvent;
 import android.widget.Toast;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
 import java.io.IOException;
@@ -22,6 +20,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -29,8 +28,29 @@ import javax.xml.parsers.ParserConfigurationException;
 
 public class MainActivity extends Activity implements SimpleGestureListener {
 
+    private class ImageData {
+        private String title;
+        private String url;
+
+        public ImageData(String title, String url) {
+            this.title = title;
+            this.url = url;
+        }
+
+        public String getURL() {
+            return url;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+    }
+
     private String tag = this.getClass().toString();
     private SimpleGestureFilter detector;
+    private ArrayList<ImageData> imageURLs = new ArrayList<ImageData>();
+    private ArrayList<Bitmap> downloadedImages = new ArrayList<Bitmap>();
+    private int bitmapIndex = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +59,7 @@ public class MainActivity extends Activity implements SimpleGestureListener {
 
         detector = new SimpleGestureFilter(this, this);
 
-        new downloadTextTask().execute("apple", "cat");
+        new downloadTextTask().execute("milwaukee", "wi", "1");
     }
 
     @Override
@@ -117,12 +137,13 @@ public class MainActivity extends Activity implements SimpleGestureListener {
         return str;
     }
 
-    private String pictureList(String word) {
+    private int pictureList(String city, String state, String page) {
         InputStream in;
         String strDefinition = "";
         try {
+            // Get IMAGE_URL_COUNT pictures of city, state using flickr photo search
             in = openHttpConnection(
-                    "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=7250416d2b7ab0029b7b200f82cd7f79&tags=milwaukee+wi&safe_search=1&extras=url_m&per_page=4");
+                    "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=7250416d2b7ab0029b7b200f82cd7f79&tags=" + city + "+" + state + "&safe_search=1&extras=url_m&page=" + page);
             Document doc = null;
             DocumentBuilderFactory dbf =
                     DocumentBuilderFactory.newInstance();
@@ -137,54 +158,22 @@ public class MainActivity extends Activity implements SimpleGestureListener {
                 e.printStackTrace();
             }
             doc.getDocumentElement().normalize();
-            // Retrieve the <Photos> element
+            // Retrieve the <Photo> elements
             NodeList photoElements = doc.getElementsByTagName("photo");
-
-
-//            NodeList photoElements = doc.getElementsByTagName("photos");
-//            for(int i = 0; i < photoElements.getLength(); i++) {
-//                Node itemNode = photoElements.item(i);
-//                if(itemNode.getNodeType() == Node.ELEMENT_NODE) {
-//                    // Conver the
-//                }
-//            }
-
-//            // Retrieve all the <Definition> elements
-//            NodeList definitionElements = doc.getElementsByTagName("Definition");
-//
-//            // Iterate through each <Definition> elements
-//            for(int i = 0; i < definitionElements.getLength(); i++) {
-//                Node itemNode = definitionElements.item(i);
-//                if(itemNode.getNodeType() == Node.ELEMENT_NODE) {
-//                    // Convert the Definition node into an Element
-//                    Element definitionElement = (Element) itemNode;
-//
-//                    // Get all the <WordDefinition> elements under
-//                    // the <Definition> element
-//                    NodeList wordDefinitionElements = definitionElement
-//                            .getElementsByTagName("WordDefinition");
-//
-//                    strDefinition = "";
-//                    // Iterate through each <WrodDefinition> elements
-//                    for(int j = 0; j < wordDefinitionElements.getLength(); j++) {
-//                        // Convert <WordDefinition node into an Element
-//                        Element wordDefinitionElement = (Element)
-//                                wordDefinitionElements.item(j);
-//
-//                        // Get all the child nodes under the
-//                        // <WordDefinition> element
-//                        NodeList textNodes = wordDefinitionElement.getChildNodes();
-//
-//                        strDefinition +=  textNodes.item(0)
-//                                .getNodeValue() + ".\n";
-//                    }
-//                }
-//            }
+            for(int i = 0; i < photoElements.getLength(); i++) {
+                // Get the title and URL of each of the photos
+                String title = photoElements.item(i).getAttributes().item(5).getNodeValue();
+                String url = photoElements.item(i).getAttributes().item(9).getNodeValue();
+                // Create a new ImageData with the photo title and url
+                ImageData image = new ImageData(title, url);
+                // Add the ImageData to the URL array
+                imageURLs.add(image);
+            }
         } catch(IOException e1) {
             Log.d(tag, e1.getLocalizedMessage());
         }
         // Return the definitions of the word
-        return strDefinition;
+        return imageURLs.size();
     }
 
     @Override
@@ -206,13 +195,13 @@ public class MainActivity extends Activity implements SimpleGestureListener {
         // TODO: Not sure what to do...
     }
 
-    private class downloadTextTask extends AsyncTask<String, Void, String> {
-        protected String doInBackground(String... words) {
-            return pictureList(words[0]);
+    private class downloadTextTask extends AsyncTask<String, Void, Integer> {
+        protected Integer doInBackground(String... local) {
+            return pictureList(local[0], local[1], local[2]);
         }
 
-        protected void onPostExecute(String result) {
-            Toast.makeText(getBaseContext(), result, Toast.LENGTH_LONG).show();
+        protected void onPostExecute(Integer result) {
+            Toast.makeText(getBaseContext(), "Found " + String.valueOf(result) + " photos", Toast.LENGTH_LONG).show();
         }
     }
 
