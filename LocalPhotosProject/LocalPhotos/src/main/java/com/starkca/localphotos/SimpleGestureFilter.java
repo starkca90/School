@@ -111,7 +111,6 @@ public class SimpleGestureFilter extends SimpleOnGestureListener {
             velocityX = Math.abs(velocityX);
             velocityY = Math.abs(velocityY);
 
-            Toast.makeText(context, "X: " + velocityX + "\r\nY: " + velocityY, Toast.LENGTH_LONG).show();
 
             if((velocityX > minSwipeVelocity) && (xDistance > minSwipeDistance)) {
                 result = true;
