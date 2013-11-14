@@ -1,7 +1,6 @@
 package com.starkca.localphotos;
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
@@ -105,7 +104,6 @@ public class SimpleGestureFilter extends SimpleOnGestureListener {
         final float xDistance = Math.abs(e1.getX() - e2.getX());
         final float yDistance = Math.abs(e1.getY() - e2.getY());
         boolean result = false;
-        Log.i("GestureFilter", xDistance + "\r\n" + yDistance);
 
         if(!((xDistance > maxSwipeDistance) || (yDistance > maxSwipeDistance))) {
             velocityX = Math.abs(velocityX);
